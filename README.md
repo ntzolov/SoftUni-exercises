@@ -1,2 +1,3 @@
-<h1 align:"center">My educational stuff!</h1>
-
+<div align="center">
+  <p>My stuff</p>
+</div>
