@@ -1,2 +1,1 @@
-# SoftUni
-SoftUni materials and exercises.
+My educational stuff!
