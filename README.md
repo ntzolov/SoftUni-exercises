@@ -1,1 +1,1 @@
-<h1>My educational stuff!</h1>
+<h1><strong>My educational stuff!</h1></strong>
