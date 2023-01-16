@@ -1,7 +1,21 @@
-// This seems to be very hard. Waiting for more lectures...
+function orbit(input) {
+  let rows = input[0];
+  let cols = input[1];
+  let starRow = input[2];
+  let starCol = input[3];
+  let matrix = [];
 
-function orbit(arr) {
-
+  for (let i = 0; i < rows; i++) {
+    matrix.push([]);
+  }
+  
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      matrix[row][col] =
+        Math.max(Math.abs(row - starRow), Math.abs(col - starCol)) + 1;
+    }
+  }
+  console.log(matrix.map((row) => row.join(' ')).join('\n'));
 }
 
-orbit([4, 4, 0, 0]);
+orbit([3, 3, 2, 2]);
