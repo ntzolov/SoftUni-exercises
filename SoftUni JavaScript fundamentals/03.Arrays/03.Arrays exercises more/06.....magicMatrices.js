@@ -1,9 +1,9 @@
-// One '*' in Judge. 
-
 function magicMatrices(arr) {
   let isEqual = true;
   let tempNumOne = 0;
   let tempNumTwo = 0;
+  let rowsSum = 0;
+  let columnsSum = 0;
 
   for (let i = 0; i < arr.length; i++) {
     tempNumOne = 0;
@@ -18,6 +18,7 @@ function magicMatrices(arr) {
       break;
     }
   }
+  tempNumTwo = rowsSum
   tempNumOne = 0;
   tempNumTwo = 0;
 
@@ -34,8 +35,9 @@ function magicMatrices(arr) {
       break;
     }
   }
+  tempNumTwo = columnsSum
 
-  if (!isEqual) {
+  if (!isEqual || rowsSum !== columnsSum) {
     console.log('false');
   } else {
     console.log('true');
@@ -43,7 +45,7 @@ function magicMatrices(arr) {
 }
 
 magicMatrices([
-  [4, 5, 6],
-  [6, 5, 4],
-  [5, 5, 5],
+  [0, 1, 1],
+  [1, 0, 1],
+  [1, 1, 0],
 ]);
