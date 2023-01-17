@@ -36,7 +36,7 @@ function passwordValidator(str) {
     }
     return true;
   }
-  // Check if password contain a least 2 digits
+  // Check if password contain at least 2 digits
   function isTwoDigits(str) {
     let counter = 0;
     for (let i = 0; i < str.length; i++) {
