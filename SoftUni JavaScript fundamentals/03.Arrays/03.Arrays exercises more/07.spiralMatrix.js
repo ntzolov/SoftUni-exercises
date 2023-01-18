@@ -44,7 +44,7 @@ function spiralMatrix(n) {
   for (let i = 0; i < arr.length; i++) {
     let currArray = arr[i];
     currArray = currArray.join(' ');
-    console.log(currArray);
+    console.table(currArray);
   }
 }
 
