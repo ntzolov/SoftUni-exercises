@@ -13,7 +13,7 @@ function piccolo(input) {
   }
 
   let carsInParkingArray = Object.entries(carsInParking).sort(
-    (a, b) => a[0].localeCompare(b[0]) || a-b
+    (a, b) => a[0].localeCompare(b[0])
   );
   let carsInParkingSorted = Object.fromEntries(carsInParkingArray);
 

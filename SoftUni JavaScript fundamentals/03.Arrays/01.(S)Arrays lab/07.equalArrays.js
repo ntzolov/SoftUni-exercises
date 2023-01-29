@@ -1,5 +1,5 @@
 function equalArrays(arr1, arr2) {
-  isIdentical = true;
+  let isIdentical = true;
   let sum = 0;
   let index = 0;
   for (let i = 0; i < arr1.length; i++) {
@@ -17,4 +17,4 @@ function equalArrays(arr1, arr2) {
   }
 }
 
-equalArrays(['1','2','3','4','5'], ['1','2','4','4','5']);
+equalArrays(['1','2','3','4','5'], ['1','2','3','4','5']);
