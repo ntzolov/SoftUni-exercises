@@ -40,7 +40,7 @@ function travelTime(data) {
     result = '';
   }
 }
-
+this
 travelTime([
   'Bulgaria > Sofia > 25000',
   'aaa > Sofia > 1',
