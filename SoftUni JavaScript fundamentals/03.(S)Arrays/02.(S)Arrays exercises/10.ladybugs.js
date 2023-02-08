@@ -12,12 +12,16 @@ function ladybugs(arr) {
   }
 
   for (let i = 2; i < arr.length; i++) {
-    let currMove = arr[i]
+    let currMove = arr[i];
     let start = Number(currMove.split(' ')[0]);
     let direction = String(arr[i].split(' ')[1]);
     let step = Number(currMove.split(' ')[2]);
 
-    if (fieldsArray[start] === 0 || start > fieldsArray.length - 1 || start < 0) {
+    if (
+      fieldsArray[start] === 0 ||
+      start > fieldsArray.length - 1 ||
+      start < 0
+    ) {
       continue;
     }
 
@@ -47,4 +51,3 @@ function ladybugs(arr) {
 }
 
 ladybugs([10, '0 4 8 9 14', '1 left 1']);
-

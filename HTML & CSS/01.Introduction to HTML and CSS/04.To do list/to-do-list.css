@@ -7,3 +7,7 @@
   border: 1px solid #f7f381;
   box-shadow: 0 0 10px 2px #333333;
 }
+
+p {
+  text-align: center;
+}

@@ -1,5 +1,3 @@
-// I can find if age < 0 on the first place...
-
 function ages(age) {
     let result = null;
     if (age >= 0 && age <= 2) {

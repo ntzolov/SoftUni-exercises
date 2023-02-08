@@ -3,14 +3,15 @@
 function netherRealms(input) {
   let demons = {};
   let result = [];
-  let lines = input.split(/,\s+/);
+  let lines = input.split(',');
   let health = 0;
   let damage = 0;
   let patternHealth = /[^\d\+\-*\/\.]/;
   let patternName = /^[^\s,]+$/;
   let patternAddAndSubtract = /(?<number>-?\d+(\.\d+)?)/g;
 
-  for (const line of lines) {
+  for (let line of lines) {
+    line = line.trim()
     if (patternName.test(line)) {
       demons[line] = {};
 
@@ -61,4 +62,4 @@ function netherRealms(input) {
 }
 
 
-netherRealms('q, s, 5a');
+netherRealms('M3ph1st0**, Azazel');

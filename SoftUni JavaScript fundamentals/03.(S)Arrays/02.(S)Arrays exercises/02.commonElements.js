@@ -6,9 +6,6 @@ function commonElements(arr1, arr2) {
         continue;
       }
     }
-    // if (arr2.includes(arr1[i])) {
-    //   console.log(arr1[i]);
-    // }
   }
 }
 
