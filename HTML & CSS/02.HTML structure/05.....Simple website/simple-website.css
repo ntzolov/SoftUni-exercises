@@ -1,0 +1,56 @@
+body {
+  background-color: #cccccc;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  background-color: #444;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+li {
+  font-size: 24px;
+  line-height: 40px;
+  height: 40px;
+  padding: 20px;
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+section {
+  margin-left: 20px;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+section article header p {
+  font-style: italic;
+}
+
+section article > p {
+  font-size: 24px;
+}
+
+footer {
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+footer p {
+  margin: 0;
+}
+
+
+/* Something wrong with the footer i guess */
