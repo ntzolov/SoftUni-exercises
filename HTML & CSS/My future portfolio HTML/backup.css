@@ -1,0 +1,86 @@
+
+
+/* 
+50514F grey
+F25F5C red
+FFE066 yellow
+247BA0 dark blue
+70C1B3 light blue
+*/
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #50514f;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* display: flex; */
+  margin: auto;
+  background-color: #f25f5c;
+
+  width: 50px;
+  max-width: 500px;
+  height: 50px;
+  max-height: calc(100vh - 2px);
+  /* overflow:hidden; */
+  /* animation-name: scaleFromCenterTo1; */
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+/* .page {
+  margin:auto;
+  background-color: #50514f;
+  border: 1px solid black;
+  width: auto;
+  height: calc(100vh - 2px);
+  overflow: hidden;
+  animation-name: scaleFromCenterTo098;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function:ease-in-out;
+} */
+
+/* @keyframes scaleFromCenterTo1 {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleFromCenterTo098 {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(0.98);
+  }
+} */
+
+.test {
+  animation-name: test;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes test {
+  from {
+    width: 50px;
+    height: 50px;
+  }
+  to {
+    width: 700px;
+    height: 1500px;
+  }
+}
