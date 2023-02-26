@@ -234,7 +234,7 @@ function sendContact() {
 
 let timeLeft = 20;
 function countdown() {
-  document.getElementById('seconds').innerHTML = String(`Please wait... ${timeLeft}s`);
+  document.getElementById('seconds').innerHTML = String(`Content in ${timeLeft}s`);
   if (timeLeft > 0) {
     setTimeout(countdown, 1000);
     setTimeout(hideTimer, 20000);
