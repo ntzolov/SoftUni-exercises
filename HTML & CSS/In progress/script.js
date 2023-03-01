@@ -1,6 +1,6 @@
 function colorHome() {
   document.getElementById('container-flex-middle').style.backgroundColor =
-    '#54616d';
+    '#54616d00';
 }
 
 function colorProjects() {
@@ -21,7 +21,7 @@ function colorSkills() {
   document.getElementById('container-flex-middle').style.backgroundImage =
     'none';
   document.getElementById('container-flex-middle').style.backgroundColor =
-    '#ce5a57';
+    '#db6b67';
 }
 
 function colorContactMe() {
@@ -33,7 +33,7 @@ function colorContactMe() {
 
 function hideTimer() {
   let timer = document.getElementById('clock');
-  timer.style.display = 'none';
+  timer.style.visibility = 'hidden';
 }
 
 function home() {
@@ -58,7 +58,6 @@ function home() {
     skills.style.display = 'none';
     contactMe.style.display = 'none';
   }
-  main.style.display = 'initial';
 
   projectsButton.style.fontSize = '1rem';
   educationButton.style.fontSize = '1rem';
