@@ -21,6 +21,8 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Mitr&family=Righteous&family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
 
 * {
   padding: 0;
@@ -238,7 +240,7 @@ a:hover {
   flex-direction: column;
   width: 80%;
   height: 100%;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Russo One', sans-serif;
   background-color: #6c849b00;
   border: 1px solid black;
   cursor: default;
@@ -299,7 +301,7 @@ a:hover {
   width: fit-content;
   align-self: center;
   background-color: rgb(245, 245, 245);
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid #000000;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
   cursor: pointer;
@@ -326,8 +328,7 @@ a:hover {
   filter: blur(4px);
   padding-right: 5px;
   color: rgb(245, 245, 245);
-  text-shadow: 1px 1px 0px rgb(0, 0, 0), 5px 4px 11px rgb(0, 0, 0),
-    0 2px 5px rgb(0, 0, 0);
+  text-shadow: 1px 1px 2px rgba(0, 0,0, 1), -1px 0px 2px rgba(0,0,0, 1), 2px 2px 2px black;
 }
 
 .flex-middle-item-2-0-inner-top-text-1 > span:nth-child(1) {
@@ -366,8 +367,7 @@ a:hover {
   filter: blur(4px);
   padding-right: 10px;
   color: rgb(245, 245, 245);
-  text-shadow: 1px 1px 0px rgb(0, 0, 0), 5px 4px 11px rgb(0, 0, 0),
-    0 2px 5px rgb(0, 0, 0);
+  text-shadow: 1px 1px 2px rgba(0, 0,0, 1), -1px 0px 2px rgba(0,0,0, 1), 2px 2px 2px black;
 }
 
 .flex-middle-item-2-0-inner-top-text-2 > span:nth-child(1) {
@@ -379,9 +379,6 @@ a:hover {
 }
 
 .flex-middle-item-2-0-inner-top-text-3 {
-  color: rgb(245, 245, 245);
-  text-shadow: 1px 1px 0px rgb(0, 0, 0), 5px 4px 11px rgb(0, 0, 0),
-    0 2px 5px rgb(0, 0, 0);
   line-height: 1;
   text-align: center;
   font-size: clamp(0.5em, 3.5vw, 0.7em);
@@ -396,10 +393,9 @@ a:hover {
   display: inline-block;
   opacity: 0;
   filter: blur(4px);
-  padding-right: 10px;
+  padding-right: 1px;
   color: rgb(245, 245, 245);
-  text-shadow: 1px 1px 0px rgb(0, 0, 0), 5px 4px 11px rgb(0, 0, 0),
-    0 2px 5px rgb(0, 0, 0);
+  text-shadow: 1px 1px 2px rgba(0, 0,0, 1), -1px 0px 2px rgba(0,0,0, 1), 2px 2px 2px black;
 }
 
 .flex-middle-item-2-0-inner-top-text-3 > span:nth-child(1) {
@@ -683,8 +679,7 @@ a:hover {
   }
   100% {
     color: rgba(255, 255, 255, 100);
-    text-shadow: 1px 1px 0px rgb(0, 0, 0), 5px 4px 11px rgb(0, 0, 0),
-      0 2px 5px rgb(0, 0, 0);
+    text-shadow: 1px 1px 2px rgba(0, 0,0, 1), -1px 0px 2px rgba(0,0,0, 1), 2px 2px 2px black;
   }
 }
 
@@ -778,7 +773,7 @@ a:hover {
   font-size: small;
   border: 1px solid black;
   padding: 0 2px;
-  box-shadow: 1px 1px 0 #efd81d;
+  box-shadow: 2px 2px 0 #efd81d;
 }
 
 .html {
@@ -787,7 +782,7 @@ a:hover {
   font-size: small;
   border: 1px solid black;
   padding: 0 2px;
-  box-shadow: 1px 1px 0 #dd4b25;
+  box-shadow: 2px 2px 0 #dd4b25;
 }
 
 .css {
@@ -796,7 +791,7 @@ a:hover {
   font-size: small;
   border: 1px solid black;
   padding: 0 2px;
-  box-shadow: 1px 1px 0 #254bdd;
+  box-shadow: 2px 2px 0 #254bdd;
 }
 
 .mongodb {
@@ -805,7 +800,7 @@ a:hover {
   font-size: small;
   border: 1px solid black;
   padding: 0 2px;
-  box-shadow: 1px 1px 0 #118d4d;
+  box-shadow: 2px 2px 0 #118d4d;
 }
 
 .react {
@@ -814,7 +809,7 @@ a:hover {
   font-size: small;
   border: 1px solid black;
   padding: 0 2px;
-  box-shadow: 1px 1px 0 #5ed3f3;
+  box-shadow: 2px 2px 0 #5ed3f3;
 }
 
 .vscode {
@@ -823,7 +818,7 @@ a:hover {
   font-size: small;
   border: 1px solid black;
   padding: 0 2px;
-  box-shadow: 1px 1px 0 #2e7db5;
+  box-shadow: 2px 2px 0 #2e7db5;
 }
 
 .nodejs {
@@ -832,7 +827,7 @@ a:hover {
   font-size: small;
   border: 1px solid black;
   padding: 0 2px;
-  box-shadow: 1px 1px 0 #8cbf3d;
+  box-shadow: 2px 2px 0 #8cbf3d;
 }
 
 .sass {
@@ -841,7 +836,7 @@ a:hover {
   font-size: small;
   border: 1px solid black;
   padding: 0 2px;
-  box-shadow: 1px 1px 0 #c76494;
+  box-shadow: 2px 2px 0 #c76494;
 }
 
 .wordpress {
@@ -850,7 +845,7 @@ a:hover {
   font-size: small;
   border: 1px solid black;
   padding: 0 2px;
-  box-shadow: 1px 1px 0 #30353a;
+  box-shadow: 2px 2px 0 #30353a;
 }
 
 .docker {
@@ -859,7 +854,7 @@ a:hover {
   font-size: small;
   border: 1px solid black;
   padding: 0 2px;
-  box-shadow: 1px 1px 0 #2496ed;
+  box-shadow: 2px 2px 0 #2496ed;
 }
 
 .aws {
@@ -868,62 +863,73 @@ a:hover {
   font-size: small;
   border: 1px solid black;
   padding: 0 2px;
-  box-shadow: 1px 1px 0 #ff9900;
+  box-shadow: 2px 2px 0 #ff9900;
 }
 
 .javascript:hover {
   background-color: #efd81d;
   color: #000000;
+  box-shadow: none;
 }
 
 .html:hover {
   background-color: #dd4b25;
   color: #ffffff;
+  box-shadow: none;
 }
 
 .css:hover {
   background-color: #254bdd;
   color: #ffffff;
+  box-shadow: none;
 }
 
 .mongodb:hover {
   background-color: #118d4d;
   color: #000000;
+  box-shadow: none;
 }
 
 .react:hover {
   background-color: #5ed3f3;
   color: #ffffff;
+  box-shadow: none;
 }
 
 .vscode:hover {
   background-color: #2e7db5;
   color: #000000;
+  box-shadow: none;
 }
 
 .nodejs:hover {
   background-color: #8cbf3d;
   color: #000000;
+  box-shadow: none;
 }
 
 .sass:hover {
   background-color: #c76494;
   color: #ffffff;
+  box-shadow: none;
 }
 
 .wordpress:hover {
   background-color: #30353a;
   color: #ffffff;
+  box-shadow: none;
 }
 
 .docker:hover {
   background-color: #2496ed;
   color: #000000;
+  box-shadow: none;
 }
 
 .aws:hover {
   background-color: #ff9900;
   color: #000000;
+  box-shadow: none;
 }
 
 /* CONTENT CONTACT ME */
