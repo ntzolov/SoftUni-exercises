@@ -1,0 +1,35 @@
+body {
+  font-family: 'Helvetica', sans-serif;
+  margin: 50px;
+}
+
+header {
+  border-bottom: 1px solid black;
+}
+
+header span {
+  display: inline-block;
+  font-size: 48px;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+
+header nav {
+  display: inline-block;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: green;
+  margin: auto 10px;
+  
+}
+
+h1 {
+  font-weight: 400;
+}

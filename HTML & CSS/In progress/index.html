@@ -19,6 +19,36 @@
   </head>
   <body onload="countdown()">
     <div class="outside">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMin slice"
+        viewBox="24 105 156 95">
+        <rect x="0" y="0" width="300" height="300" fill="#05052e" />
+        <path
+          class="top-outer"
+          fill="#101d42"
+          stroke="#0a1638"
+          stroke-width="1"
+          d="M68 1c23,0 67,17 69,39 4,38 5,52 -5,69 -20,36 -68,46 -120,-9 -27,-28 -7,-101 56,-99z" />
+        <path
+          class="top-inner"
+          fill="#22315c"
+          stroke="#1c2c59"
+          stroke-width="1"
+          d="M69 22c33,-7 52,21 54,37 3,26 -1,28 -8,40 -15,25 -48,25 -85,-14 -19,-20 -4,-53 39,-63z" />
+        <path
+          class="bottom-outer"
+          fill="#150736"
+          stroke="#1a0a3d"
+          stroke-width="1"
+          d="M158 158c30,13 56,50 44,75 -9,18 -22,46 -42,55 -20,10 -48,2 -73,-19 -29,-25 -27,-55 -9,-79 17,-22 43,-48 80,-32z" />
+        <path
+          class="bottom-inner"
+          fill="#24124d"
+          stroke="#200e47"
+          stroke-width="1"
+          d="M136 180c32,-9 45,13 46,29 3,27 8,29 0,42 -14,25 -52,24 -79,0 -21,-18 -2,-61 33,-71z" />
+      </svg>
       <div class="container-flex" id="main-container">
         <div class="container-flex-top">
           <div class="flex-top-item-1">
@@ -64,15 +94,13 @@
                 </div>
 
                 <span class="flex-middle-item-2-0-inner-top-text-1">
-                  <span>Hello</span><span>there</span>
+                  <span>Hello!</span>
                 </span>
                 <span class="flex-middle-item-2-0-inner-top-text-2">
-                  <span>I'm</span><span><u>Nikolay</u></span
-                  >
+                  <span>I'm</span><span>Nikolay</span>
                 </span>
                 <span class="flex-middle-item-2-0-inner-top-text-3">
-                  <span>"Frontend</span><span>Web</span
-                  ><span>Developer".</span>
+                  <span>"Frontend</span><span>Web</span><span>Developer".</span>
                 </span>
 
                 <span class="flex-middle-item-2-0-inner-top-text-4">
@@ -107,7 +135,7 @@
               <div class="flex-middle-item-2-0-inner-bottom">
                 <span class="flex-middle-item-2-0-inner-bottom-text-5">
                   More information and contact, can be found in the
-                  <i>sections</i> around.
+                  <i id="sections">sections</i> around.
                 </span>
                 <div id="clock">
                   <span id="seconds"></span>
