@@ -246,3 +246,8 @@ function showButtons() {
   let allButtons = document.getElementById('main-container');
   allButtons.style.pointerEvents = 'initial';
 }
+
+function testFullscreen() {
+  let elem = document.documentElement;
+  elem.requestFullscreen();
+}
