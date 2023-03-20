@@ -5,6 +5,7 @@ function movies(arrayOfMovies) {
     if (line.includes('addMovie')) {
       let name = line.split('addMovie ')[1];
       info.push({ name });
+      console.log(info);
     } else if (line.includes('directedBy')) {
       let [movie, director] = line.split(' directedBy ')
       let object = (info.find(({name}) => name === movie)) // ({search current object specific key})
