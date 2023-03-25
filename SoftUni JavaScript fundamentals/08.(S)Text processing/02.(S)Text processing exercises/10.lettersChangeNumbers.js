@@ -1,6 +1,6 @@
 function lettersChangeNumbers(data) {
   let cases = data.split(' ');
-  let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  let alphabet = 'qwertyuiopasdfghjklzxcvbnm'.split('').sort();
   let sumsArray = [];
 
   for (let line of cases) {

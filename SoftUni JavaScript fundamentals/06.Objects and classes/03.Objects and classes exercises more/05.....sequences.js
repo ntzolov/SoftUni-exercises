@@ -1,14 +1,31 @@
+// I have to sort arrays based on their length and print them....
+
 function sequences(input) {
+  for (let i = 0; i < input.length; i++) {
+    for (let j = input.length - 1; j > i; j--) {
+      let array1 = JSON.parse(input[i]);
+      let array2 = JSON.parse(input[j]);
+      let isSame =
+        array1.length === array2.length &&
+        array1.every((el) => array2.includes(el));
+      if (isSame) {
+        input.splice(j, 1);
+      }
+    }
+  }
+
   let obj = {};
   for (let i = 0; i < input.length; i++) {
-    obj[i] = JSON.parse(input[i]);
+    let line = JSON.parse(input[i]);
+    obj[i] = line;
   }
 
-  for (let el of Object.values(obj)) {
-    el.sort((a, b) => b - a);
+  for (let [key, value] of Object.entries(obj)) {
+    value.sort((a, b) => b - a);
   }
 
-  console.debug(obj);
+  console.table(obj);
+
 }
 
 sequences([
