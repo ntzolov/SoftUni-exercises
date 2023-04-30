@@ -1,4 +1,4 @@
-function fromJsonToHtmlTable(json) {
+function fromJSONToHTMLTable(json) {
   let jsonToArray = JSON.parse(json);
   let result = [];
 
@@ -6,7 +6,7 @@ function fromJsonToHtmlTable(json) {
   let row = [];
   row.push('  <tr>');
   for (let key in jsonToArray[0]) {
-    row.push(`<th>${key}</th>`);
+    row.push(`<th>${escapeString(key)}</th>`);
   }
   row.push('</tr>');
   result.push(row.join(''));
@@ -15,7 +15,7 @@ function fromJsonToHtmlTable(json) {
   for (let obj of jsonToArray) {
     row.push('  <tr>');
     for (let key in obj) {
-      row.push(`<td>${obj[key]}</td>`);
+      row.push(`<td>${escapeString(obj[key])}</td>`);
     }
     row.push('</tr>');
     result.push(row.join(''));
@@ -23,20 +23,21 @@ function fromJsonToHtmlTable(json) {
   }
   result.push('</table>');
 
-  function escaper(value) {
-    return value
-      .toString()
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
+  function escapeString(key) {
+    let entityMap = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;',
+    };
+    return key.toString().replace(/[&<>"']/g, (key) => entityMap[key]);
   }
 
-  console.log(escaper(result.join('\n')));
+  return result.join('\n');
 }
 
-fromJsonToHtmlTable(`[{"Name":"Pesho",
+fromJSONToHTMLTable(`[{"Name":"Pesho",
 "Score":4,
 " Grade":8},
 {"Name":"Gosho",

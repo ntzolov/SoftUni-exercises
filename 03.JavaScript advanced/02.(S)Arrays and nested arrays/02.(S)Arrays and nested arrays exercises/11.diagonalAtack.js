@@ -1,5 +1,3 @@
-// solve current input (1 test in judge)
-
 function diagonalAtack(arr) {
   // Variables for every diagonal sum
   let sum1 = 0;
@@ -26,21 +24,21 @@ function diagonalAtack(arr) {
     magicNumber = sum1;
     counter1 = 0;
     counter2 = arr.length - 1;
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr.length; j++) {
+        let currArray = arr[i];
+        if (counter1 === j || counter2 === j) {
+          continue;
+        } else {
+          arr[i][j] = magicNumber;
+        }
+      }
+      counter1++;
+      counter2--;
+    }
   }
 
   // Fill magicNumber to places except the diagonals
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr.length; j++) {
-      let currArray = arr[i];
-      if (counter1 === j || counter2 === j) {
-        continue;
-      } else {
-        arr[i][j] = magicNumber;
-      }
-    }
-    counter1++;
-    counter2--;
-  }
 
   // console.log every row in a new row
   for (let i = 0; i < arr.length; i++) {
