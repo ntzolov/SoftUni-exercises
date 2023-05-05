@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/css/styles.css" />
+
+  <title>Gem Collection</title>
+</head>
+
+<body>
+  <h1>My Gem Collection</h1>
+  <div id="main">
+    <div class="form-wrapper">
+      <h1>
+        Add your new Gem
+        <span>Fill the information about your new precious stone!</span>
+      </h1>
+      <form>
+        <div class="inner-wrap">
+          <input type="text" id="gem-name" name="field1" placeholder="Gemstone Name"/>
+          <input type="text" id="color" name="field2" placeholder="Color" />
+          <input type="number" id="carats" name="field3" placeholder="Carats"/>
+          <input type="number" id="price" name="field4" placeholder="Price" />
+
+            <select name="field5" id="type">
+              <option value="" placeholder="Type"></option>
+              <option value="Precious">Precious</option>
+              <option value="Semi-Precious">Semi-Precious</option>
+            </select>
+        </div>
+        <div class="button-section">
+          <input type="button" id="add-btn" value="Add Gem" />
+        </div>
+      </form>
+    </div>
+    <div id="side-wrapper">
+      <div class="side">
+        <h3>Preview</h3>
+        <ul id="preview-list">
+        </ul>
+      </div>
+     <div class="side">
+      <h3>Collection</h3>
+      <ul id="collection">
+      </ul>
+     </div>
+      
+    </div>
+    
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
