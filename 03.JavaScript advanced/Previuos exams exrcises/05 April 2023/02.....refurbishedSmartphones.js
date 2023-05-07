@@ -9,10 +9,13 @@ class RefurbishedSmartphones {
   addSmartphone(model, storage, price, condition) {
     if (
       model !== '' &&
+      typeof model === 'string' &&
       storage >= 0 &&
       Number.isInteger(storage) === true &&
       price >= 0 &&
-      condition !== ''
+      typeof price === 'number' &&
+      condition !== '' &&
+      typeof condition === 'string'
     ) {
       this.availableSmartphones.push({ model, storage, price, condition });
       return `New smartphone added: ${model} / ${storage} GB / ${condition} condition - ${price.toFixed(
@@ -59,7 +62,7 @@ class RefurbishedSmartphones {
       this.soldSmartphones.push({
         model: modelSold,
         storage: storageSold,
-        price,
+        soldPrice: price,
       });
 
       this.revenue += price;
@@ -68,7 +71,7 @@ class RefurbishedSmartphones {
   }
 
   upgradePhones() {
-    if (!this.availableSmartphones.length === 0) {
+    if (this.availableSmartphones.length === 0) {
       throw new Error('There are no available smartphones!');
     } else {
       for (let smartphone of this.availableSmartphones) {
@@ -98,7 +101,7 @@ class RefurbishedSmartphones {
     }
 
     if (criteria === 'storage') {
-      this.soldSmartphones.sort((a, b) => b.storage.localeCompare(a.storage));
+      this.soldSmartphones.sort((a, b) => b.storage - a.storage);
     }
 
     let sortedSoldSmartphones = [
@@ -110,20 +113,34 @@ class RefurbishedSmartphones {
       sortedSoldSmartphones.push(
         `${smartphone.model} / ${
           smartphone.storage
-        } GB / ${smartphone.price.toFixed(2)}$`
+        } GB / ${smartphone.soldPrice.toFixed(2)}$`
       );
     }
 
-    return sortedSoldSmartphones.join('\n')
+    return sortedSoldSmartphones.join('\n');
   }
 }
 
 let retailer = new RefurbishedSmartphones('SecondLife Devices');
-retailer.addSmartphone('Samsung S20 Ultra', 256, 1000, 'good');
-retailer.addSmartphone('Iphone 12 mini', 128, 800, 'perfect');
-retailer.addSmartphone('Xiaomi Redmi Note 10 Pro', 128, 330, 'perfect');
-retailer.sellSmartphone('Samsung S20 Ultra', 256);
-retailer.sellSmartphone('Xiaomi Redmi Note 10 Pro', 256);
-console.log(retailer.salesJournal('model'));
+// console.log(retailer.addSmartphone('Samsung S20 Ultra', 256, 1000, 'good'));
+// retailer.addSmartphone('Testphone', 64, 1000, 'good');
+// retailer.addSmartphone('Samsung S18', 32, 1000, 'good');
+// retailer.addSmartphone('Iphone 12 mini', 128, 800, 'perfect');
+// retailer.addSmartphone('Xiaomi Redmi Note 10 Pro', 128, 330, 'perfect');
+// retailer.sellSmartphone('Samsung S20 Ultra', 128);
+// retailer.sellSmartphone('Xiaomi Redmi Note 10 Pro', 256);
+// console.log(retailer.availableSmartphones.length);
+// console.log(retailer.upgradePhones());
+// console.log(retailer.salesJournal('model'));
+// console.log(retailer.availableSmartphones);
+// console.log(retailer.soldSmartphones);
 
-
+console.log(retailer.addSmartphone('nokia', 32, 100, 'good'));
+console.log(retailer.addSmartphone('nokia 2', 32, 100, 'good'));
+console.log(retailer.addSmartphone('nokia 3', 32, 100, 'good'));
+console.log(retailer.upgradePhones());
+console.log(retailer.sellSmartphone('nokia', 64));
+console.log(retailer.salesJournal('storage'));
+console.log(retailer.availableSmartphones);
+console.log(retailer.revenue);
+console.log(retailer.soldSmartphones);
