@@ -1,26 +1,20 @@
 (function solve() {
   String.prototype.ensureStart = function (str) {
-    let result = '';
     if (!this.startsWith(str)) {
-      result = str + ' ' + this;
-    } else {
-      result = this;
+      return str.concat(this);
     }
-    return result;
+    return this;
   };
 
   String.prototype.ensureEnd = function (str) {
-    let result = '';
     if (!this.endsWith(str)) {
-      result = this + ' ' + str;
-    } else {
-      result = this;
+      return this.concat(str);
     }
-    return result;
+    return this;
   };
 
   String.prototype.isEmpty = function () {
-    return this == '' ? true : false;
+    return this.length === 0 ? true : false;
   };
 
   String.prototype.truncate = function (n) {
@@ -50,7 +44,22 @@
       }
     }
   };
+
+  String.format = function (string, ...params) {
+    for (let i = 0; i < params.length; i++) {
+      string = string.replace(`{${i}}`, params[i]);
+    }
+    return string;
+  };
 })();
 
-let test = 'smartphone is good';
-console.log(test.truncate(16));
+let str = 'quick brown fox jumps over the lazy dog';
+console.log((str = str.ensureStart('The ')));
+str = str.ensureStart('hello ');
+str = str.truncate(16);
+str = str.truncate(14);
+str = str.truncate(8);
+str = str.truncate(4);
+str = str.truncate(2);
+console.log(String.format('The {0} {1} fox', 'quick', 'brown'));
+str = String.format('jumps {0} {1}', 'dog');

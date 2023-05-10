@@ -27,18 +27,18 @@ class RefurbishedSmartphones {
   }
 
   sellSmartphone(model, desiredStorage) {
-    let indexOfPhone = null;
-    let price = null;
-    let isSold = false;
+    let indexOfPhone;
+    let price;
+    let isFound = false;
 
     this.availableSmartphones.forEach((smartphone, index) => {
       if (smartphone.model === model) {
         indexOfPhone = index;
-        isSold = true;
+        isFound = true;
       }
     });
 
-    if (!isSold) {
+    if (!isFound) {
       throw new Error(`${model} was not found!`);
     } else {
       if (this.availableSmartphones[indexOfPhone].storage >= desiredStorage) {
@@ -55,18 +55,16 @@ class RefurbishedSmartphones {
         price = this.availableSmartphones[indexOfPhone].price * 0.8;
       }
 
-      let soldSmartphone = this.availableSmartphones.splice(indexOfPhone, 1);
-      let modelSold = soldSmartphone[0].model;
-      let storageSold = soldSmartphone[0].storage;
+      let [soldSmartphone] = this.availableSmartphones.splice(indexOfPhone, 1);
 
       this.soldSmartphones.push({
-        model: modelSold,
-        storage: storageSold,
-        soldPrice: price,
+        model: soldSmartphone.model,
+        storage: soldSmartphone.storage,
+        soldPrice: price.toFixed(2),
       });
 
       this.revenue += price;
-      return `${model} was sold for ${price.toFixed(2)}$`;
+      return `${soldSmartphone.model} was sold for ${price.toFixed(2)}$`;
     }
   }
 
@@ -92,28 +90,30 @@ class RefurbishedSmartphones {
   }
 
   salesJournal(criteria) {
+    let sorted;
     if (criteria !== 'model' && criteria !== 'storage') {
       throw new Error('Invalid criteria!');
     }
 
     if (criteria === 'model') {
-      this.soldSmartphones.sort((a, b) => a.model.localeCompare(b.model));
+      sorted = this.soldSmartphones.sort((a, b) =>
+        a.model.localeCompare(b.model)
+      );
     }
 
     if (criteria === 'storage') {
-      this.soldSmartphones.sort((a, b) => b.storage - a.storage);
+      sorted = this.soldSmartphones.sort((a, b) => b.storage - a.storage);
     }
 
     let sortedSoldSmartphones = [
-      `${this.retailer} has a total income of ${this.revenue.toFixed(2)}$\n${
-        this.soldSmartphones.length
-      } smartphones sold:`,
+      `${this.retailer} has a total income of ${this.revenue.toFixed(2)}$`,
     ];
-    for (let smartphone of this.soldSmartphones) {
+    sortedSoldSmartphones.push(
+      `${this.soldSmartphones.length} smartphones sold:`
+    );
+    for (let smartphone of sorted) {
       sortedSoldSmartphones.push(
-        `${smartphone.model} / ${
-          smartphone.storage
-        } GB / ${smartphone.soldPrice.toFixed(2)}$`
+        `${smartphone.model} / ${smartphone.storage} GB / ${smartphone.soldPrice}$`
       );
     }
 
