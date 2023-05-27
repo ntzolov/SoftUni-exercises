@@ -4,27 +4,26 @@ const { expect } = require('chai');
 const host = 'http://localhost:3000'; // Application host (NOT service host - that can be anything)
 
 const DEBUG = true;
-const slowMo = 5000;
+const slowMo = 1000;
 
 const mockData = {
-  catalog: [
+  list: [
     {
-      author: 'Author1',
-      title: 'Book1',
+      person: 'Maya',
+      phone: '+1-555-7653',
       _id: '1001',
     },
     {
-      author: 'Author2',
-      title: 'Book2',
+      person: 'Peter',
+      phone: '+1-545-7353',
       _id: '1002',
     },
   ],
 };
 
 const endpoints = {
-  catalog: '/jsonstore/collections/books',
-  details: (id) => `/jsonstore/collections/books/${id}`,
-  delete: (id) => `/jsonstore/collections/books/${id}`,
+  catalog: '/jsonstore/phonebook',
+  delete: (id) => `jsonstore/phonebook/${id}`,
 };
 
 let browser;
@@ -36,9 +35,9 @@ describe('E2E tests', function () {
   this.timeout(DEBUG ? 120000 : 7000);
   before(
     async () =>
-    (browser = await chromium.launch(
-      DEBUG ? { headless: false, slowMo } : {}
-    ))
+      (browser = await chromium.launch(
+        DEBUG ? { headless: false, slowMo } : {}
+      ))
   );
   after(async () => await browser.close());
   beforeEach(async () => {
@@ -52,95 +51,95 @@ describe('E2E tests', function () {
   });
 
   // Test proper
-  describe('Book Library', () => {
-    it('Load Books', async () => {
-      const data = mockData.catalog;
+  describe('Messenger Info', () => {
+    it('Load Message', async () => {
+      const data = mockData.list;
       const { get } = await handle(endpoints.catalog);
       get(data);
 
       await page.goto(host);
-      await page.waitForSelector('#loadBooks');
+      await page.waitForSelector('#btnLoad');
 
-      await page.click('#loadBooks');
+      await page.click('#btnLoad');
 
-      const books = await page.$$eval(`tbody tr`, (t) =>
+      const phone = await page.$$eval(`#phonebook li`, (t) =>
         t.map((s) => s.textContent)
       );
 
-      expect(books.length).to.equal(data.length);
+      expect(phone[0]).to.equal(`${data[0].person}: ${data[0].phone}Delete`);
+      expect(phone[1]).to.equal(`${data[1].person}: ${data[1].phone}Delete`);
     });
 
-    it('Check books info', async () => {
-      const data = mockData.catalog;
+    it('Length Message', async () => {
+      const data = mockData.list;
       const { get } = await handle(endpoints.catalog);
       get(data);
 
       await page.goto(host);
-      await page.waitForSelector('#loadBooks');
+      await page.waitForSelector('#btnLoad');
 
-      await page.click('#loadBooks');
+      await page.click('#btnLoad');
 
-      const books = await page.$$eval(`tbody tr td`, (t) =>
+      const phone = await page.$$eval(`#phonebook li`, (t) =>
         t.map((s) => s.textContent)
       );
-
-      expect(books[0]).to.equal(data[0].title);
-      expect(books[1]).to.equal(data[0].author);
+      await page.waitForTimeout(500);
+      expect(phone.length).to.equal(data.length);
     });
 
-    it('Create Book', async () => {
-      const data = mockData.catalog[0];
+    it('Send Message API call', async () => {
+      const data = mockData.list[0];
       await page.goto(host);
 
       const { post } = await handle(endpoints.catalog);
       const { onRequest } = post();
 
-      await page.waitForSelector('form');
+      await page.waitForSelector('#person');
+      await page.waitForSelector('#phone');
 
-      await page.fill('input[name="title"]', data.title + '1');
-      await page.fill('input[name="author"]', data.author + '1');
+      await page.fill('input[id="person"]', data.person + '1');
+      await page.fill('input[id="phone"]', data.phone + '1');
 
       const [request] = await Promise.all([
         onRequest(),
-        page.click('text=Submit'),
+        page.click('#btnCreate'),
       ]);
 
       const postData = JSON.parse(request.postData());
 
-      expect(postData.title).to.equal(data.title + '1');
-      expect(postData.author).to.equal(data.author + '1');
+      expect(postData.person).to.equal(data.person + '1');
+      expect(postData.phone).to.equal(data.phone + '1');
     });
 
-    it('Edit should populate form with correct data', async () => {
-      const info = mockData.catalog;
-      const data = mockData.catalog[0];
+    it('Delete makes correct API call', async () => {
+      const data = mockData.list[0];
       await page.goto(host);
+      const { del } = await handle(endpoints.delete(data._id));
+      const { onResponse, isHandled } = del({ id: data._id });
 
-      const { get } = await handle(endpoints.catalog);
-      get(info);
+      await page.click('#btnLoad');
 
-      await page.click('#loadBooks');
+      await page.waitForSelector('#phonebook>li');
 
-      const { get2 } = await handle(endpoints.details(data._id));
-      get2(data);
+      await Promise.all([
+        onResponse(),
+        page.click(
+          `#phonebook li:has-text("${data.person}: ${data.phone}") >> text=Delete`
+        ),
+      ]);
 
-      await page.click(`tr:has-text("${data.title}") >> text=Edit`);
-
-      await page.waitForSelector('form');
-
-      const inputs = await page.$$eval('form input', t => t.map(i => i.value));
-
-      expect(inputs[0]).to.equal(data.title);
-      expect(inputs[1]).to.equal(data.author);
+      expect(isHandled()).to.be.true;
     });
   });
 });
 
 async function setupContext(context) {
   // Catalog and Details
-  await handleContext(context, endpoints.catalog, { get: mockData.catalog });
-  await handleContext(context, endpoints.details('1001'), {
-    get: mockData.catalog[0],
+  await handleContext(context, endpoints.catalog, { get: mockData.list });
+  await handleContext(context, endpoints.catalog, { post: mockData.list[0] });
+
+  await handleContext(context, endpoints.delete('1001'), {
+    get: mockData.list[0],
   });
 
   // Block external calls
