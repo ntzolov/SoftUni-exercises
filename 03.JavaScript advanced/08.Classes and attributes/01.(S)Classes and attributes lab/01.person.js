@@ -12,4 +12,4 @@ class Person {
 }
 
 let person = new Person('Nikolay', 'Tzolov', 34, 'ntzolov@gmail.com');
-console.log(person.toString());
+console.log(Object.getPrototypeOf(person));

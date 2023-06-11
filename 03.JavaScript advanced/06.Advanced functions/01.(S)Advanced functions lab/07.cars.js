@@ -1,21 +1,28 @@
 function solve(input) {
   function create(name, inherit) {
-    let obj = {};
-    obj.name = name;
-
     if (inherit) {
       const inheritFrom = arr.find((el) => el.name === inherit);
-      obj = Object.create(inheritFrom, {
+      return Object.create(inheritFrom, {
         name: {
           value: name,
-          enumerable: true,
+          enumerable: false,
           writable: true,
           configurable: true,
         },
       });
     }
 
-    return obj;
+    return Object.create(
+      {},
+      {
+        name: {
+          value: name,
+          enumerable: false,
+          writable: true,
+          configurable: true,
+        },
+      }
+    );
   }
 
   const arr = [];
@@ -42,9 +49,7 @@ function solve(input) {
       const objToPrint = arr.find((el) => el.name === name);
       const toPrint = [];
       for (const key in objToPrint) {
-        if (key !== 'name') {
-          toPrint.push(`${key}:${objToPrint[key]}`);
-        }
+        toPrint.push(`${key}:${objToPrint[key]}`);
       }
       console.log(toPrint.join(','));
     }
@@ -59,5 +64,3 @@ solve([
   'print c1',
   'print c2',
 ]);
-
-
