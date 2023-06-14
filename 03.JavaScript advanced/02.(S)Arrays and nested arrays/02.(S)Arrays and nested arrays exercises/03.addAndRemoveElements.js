@@ -8,11 +8,12 @@ function addAndRemoveElements(arr) {
         result.push(number);
         break;
       case 'remove':
-        number++
-        result.pop()
+        number++;
+        result.pop();
+        break;
     }
   }
-  return result.length > 0 ?  result.join('\n') : 'Empty' 
+  return result.length > 0 ? result.join('\n') : 'Empty';
 }
 
 console.log(addAndRemoveElements(['add', 'add', 'remove', 'add', 'add']));
