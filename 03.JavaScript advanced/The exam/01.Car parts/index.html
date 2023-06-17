@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <title>Car Parts</title>
+</head>
+
+<body>
+
+    <section id="header">
+        <h1>Car Parts</h1>
+        <div class="heading-container">
+            <div class="info">
+                <h1>Ordering System</h1>
+            </div>
+        </div>
+    </section>
+
+    <div id="wrapper">
+
+        <section id="append-part">
+            <div class="container">              
+                <h1>Search Part</h1>
+                
+                <div class="container-text">
+                    <form action="">
+                        <label for="car-model">Car Model:</label>
+                        <input type="text" id="car-model" name="car-model">
+
+                        <label for="car-year">Car Year:</label>
+                        <input type="number" id="car-year" name="car-year" pattern="\d{4}">
+
+                        <label for="part-name">Part Name:</label>
+                        <input type="text" id="part-name" name="part-name">
+
+                        <label for="part-number">Part Number:</label>
+                        <input type="number" id="part-number" name="part-number" >
+
+                        <label for="condition">Condition:</label>
+                        <select name="condition" id="condition">
+                            <option value=""></option>
+                            <option value="New">New</option>
+                            <option value="Used">Used</option>
+                        </select>
+                        <button id="next-btn" type="submit">Next</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="part-info">
+            <div class="info-container">
+                <div class="container"> 
+                <h1>Part info</h1>
+                <ul class="info-list"></ul>
+            </div>
+            </div>
+        </section>
+
+        <section id="confirm-order">
+            <div class="confirm-container">
+                <div class="container"> 
+                <h1>Confirm Order</h1>
+                <ul class="confirm-list"></ul>
+            </div>
+            </div>
+        </section>
+    </div>
+    <section id="complete-order">
+        <img id="complete-img" src="./static/img/done.png" alt="img">
+        <p id="complete-text"></p>
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>

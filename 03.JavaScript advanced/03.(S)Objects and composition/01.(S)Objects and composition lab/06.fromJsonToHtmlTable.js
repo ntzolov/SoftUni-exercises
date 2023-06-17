@@ -1,40 +1,51 @@
-function fromJSONToHTMLTable(json) {
-  let jsonToArray = JSON.parse(json);
-  let result = [];
+function fromJsonToHtmlTable(input) {
 
-  result.push('<table>');
-  let row = [];
-  row.push('  <tr>');
-  for (let key in jsonToArray[0]) {
-    row.push(`<th>${escapeString(key)}</th>`);
-  }
-  row.push('</tr>');
-  result.push(row.join(''));
+  let parsed = JSON.parse(input);
 
-  row = [];
-  for (let obj of jsonToArray) {
-    row.push('  <tr>');
-    for (let key in obj) {
-      row.push(`<td>${escapeString(obj[key])}</td>`);
-    }
-    row.push('</tr>');
-    result.push(row.join(''));
-    row = [];
-  }
-  result.push('</table>');
+  let output = [];
+  let firstLine = [];
 
-  function escapeString(key) {
-    let entityMap = {
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#39;',
-    };
-    return key.toString().replace(/[&<>"']/g, (key) => entityMap[key]);
+  output.push('<table>');
+
+  let keys = Object.keys(parsed[0]);
+  if (keys.length > 0) {
+      for (let key of keys) {
+          firstLine.push(`<th>${escapeHtml(key)}</th>`);
+      }
+
+      output.push(`  <tr>${firstLine.join('')}</tr>`);
   }
 
-  return result.join('\n');
+  for (let obj of parsed) {
+      let secondLine = [];
+      for (let key of keys) {
+          let currentKey = obj[key];
+          secondLine.push(`<td>${escapeHtml(currentKey)}</td>`);
+      }
+
+      output.push(`  <tr>${secondLine.join('')}</tr>`);
+
+  }
+
+  output.push('</table>');
+
+  return output.join('\n');
+
+  function escapeHtml(input) {
+      let inputStr = input.toString();
+      let pattern = /[&<>" ]/g;
+
+      let escapes = {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          ' ': '&nbsp;',
+
+      };
+
+      return inputStr.replace(pattern, a => escapes[a]);
+  }
 }
 
 fromJSONToHTMLTable(`[{"Name":"Pesho",
