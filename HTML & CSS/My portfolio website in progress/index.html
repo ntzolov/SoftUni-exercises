@@ -11,35 +11,35 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" type="image/x-icon" href="./favicon.png" />
-  <title>Nikolay Tzolov</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+  <title>Nikolay Tzolov Portfolio</title>
 </head>
 
-<body onload="countdown()">
+<body>
   <div class="outside">
     <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMin slice" viewBox="24 105 156 95">
-      <rect x="0" y="0" width="300" height="300" fill="#082032" />
+      <rect x="0" y="0" width="300" height="300" fill="#0f0c27" />
       AB8A7F
-      <path class="top-outer" fill="#2D4059" stroke="#556985" stroke-width="0.5"
+      <path class="top-outer" fill="#524aa2" stroke="#6d68a1" stroke-width="0.5"
         d="M68 1c23,0 67,17 69,39 4,38 5,52 -5,69 -20,36 -68,46 -120,-9 -27,-28 -7,-101 56,-99z" />
-      <path class="top-inner" fill="#0C2233" stroke="#556985" stroke-width="0.5"
+      <path class="top-inner" fill="#0f0c27" stroke="#556985" stroke-width="0.5"
         d="M69 22c33,-7 52,21 54,37 3,26 -1,28 -8,40 -15,25 -48,25 -85,-14 -19,-20 -4,-53 39,-63z" />
-      <path class="bottom-outer" fill="#2D4059" stroke="#556985" stroke-width="0.5"
+      <path class="bottom-outer" fill="#524aa2" stroke="#6d68a1" stroke-width="0.5"
         d="M158 158c30,13 56,50 44,75 -9,18 -22,46 -42,55 -20,10 -48,2 -73,-19 -29,-25 -27,-55 -9,-79 17,-22 43,-48 80,-32z" />
-      <path class="bottom-inner" fill="#0C2233" stroke="#556985" stroke-width="0.5"
+      <path class="bottom-inner" fill="#0f0c27" stroke="#556985" stroke-width="0.5"
         d="M136 180c32,-9 45,13 46,29 3,27 8,29 0,42 -14,25 -52,24 -79,0 -21,-18 -2,-61 33,-71z" />
     </svg>
     <div class="container-flex" id="main-container">
       <div class="container-flex-top">
         <div class="flex-top-item-1">
-          <img src="Home_white.png" alt="Home icon" class="image-logo" id="home" onclick="home()" />
+          <img src="./images/links/Home_white.png" alt="Home icon" class="image-logo" id="home" onclick="home()" />
         </div>
         <div class="flex-top-item-2 clickable" id="projects-buttton" onclick="projects()">
           <span class="menu-text" id="projects">PROJECTS</span>
         </div>
         <div class="flex-top-item-3">
           <a href="https://www.github.com/ntzolov" target="_blank">
-            <img src="Github_white.png" alt="Github icon" class="image-logo" id="github" />
+            <img src="./images/links/Github_white.png" alt="Github icon" class="image-logo" id="github" />
           </a>
         </div>
       </div>
@@ -54,10 +54,9 @@
               <div id="clock">
                 <span id="seconds"></span>
                 <div class="skip">
-                  <a href=""><button>skip</button></a>
+                  <a href=""><button id="skip">Skip animation</button></a>
                 </div>
               </div>
-
               <span class="flex-middle-item-2-0-inner-top-text-1">
                 <span>Hello!</span>
               </span>
@@ -149,9 +148,6 @@
               </span>
 
             </div>
-            <span class="flex-middle-item-2-0-inner-bottom-text-6">
-              For best mobile experience, toggle <button onclick="testFullscreen()">FULLSCREEN</button>
-            </span>
           </div>
         </div>
         <div class="flex-middle-item-2-1" id="one">
@@ -273,7 +269,7 @@
             <span>
               <section class="education">
                 <article class="education-card">
-                  <img src="SoftUni header img.png" alt="SoftUni Certificate" />
+                  <img src="./images/headers/SoftUni header img.png" alt="SoftUni Certificate" />
 
                   <div class="certificate-title">
                     <h3>JavaScript Basics</h3>
@@ -295,11 +291,12 @@
                       Basic Nesting
                     </li>
                   </ul>
-                  <div class="certificate-link"><a href="JS Basics.png" target="_blank">View certificate</a></div>
+                  <div class="certificate-link"><a href="./images/certificates/JS Basics.png" target="_blank">View
+                      certificate</a></div>
 
                 </article>
                 <article class="education-card">
-                  <img src="SoftUni header img.png" alt="SoftUni Certificate" />
+                  <img src="./images/headers/SoftUni header img.png" alt="SoftUni Certificate" />
 
                   <div class="certificate-title">
                     <h3>JavaScript Fundamentals</h3>
@@ -334,20 +331,101 @@
                       CSS, Bitwise, Database
                     </li>
                   </ul>
-                  <div class="certificate-link"><a href="" target="_blank">View certificate</a></div>
+                  <div class="certificate-link"><a href="./images/certificates/JS Fundamentals.png" target="_blank">View
+                      certificate</a></div>
                 </article>
                 <article class="education-card">
-                  <img src="Udemy header img.png" alt="Udemy Certificate" />
+                  <img src="./images/headers/SoftUni header img.png" alt="SoftUni Certificate" />
 
                   <div class="certificate-title">
-                    <h3>TEST</h3>
+                    <h3>JavaScript Advanced</h3>
                   </div>
                   <ul class="certificate-list">
                     <li>
-                      TEST
+                      HTTP and REST Services
+                    </li>
+                    <li>
+                      Asynchronous Programming
+                    </li>
+                    <li>
+                      Remote Data and Authentication
+                    </li>
+                    <li>
+                      Single Page Applications
+                    </li>
+                    <li>
+                      Architecture and Testing
+                    </li>
+                    <li>
+                      Client Side Rendering
+                    </li>
+                    <li>
+                      Routing
+                    </li>
+                    <li>
+                      Modular Applications
                     </li>
                   </ul>
-                  <div class="certificate-link"><a href="" target="_blank">View certificate</a></div>
+                  <div class="certificate-link"><a href="./images/certificates/JS Advanced.png" target="_blank">View
+                      certificate</a></div>
+
+                </article>
+                <article class="education-card">
+                  <img src="./images/headers/SoftUni header img.png" alt="SoftUni Certificate" />
+
+                  <div class="certificate-title">
+                    <h3>Agile Essentials with Scrum</h3>
+                  </div>
+                  <ul class="certificate-list">
+                    <li>
+                      Introduction to Agile
+                    </li>
+                    <li>
+                      Agile Project Management
+                    </li>
+                    <li>
+                      Introduction to Scrum
+                    </li>
+                    <li>
+                      Scrum Events and Artifacts
+                    </li>
+                    <li>
+                      Measuring and Leadership
+                    </li>
+                  </ul>
+                  <div class="certificate-link"><a href="./images/certificates/Agile Essentials with Scrum.png"
+                      target="_blank">View
+                      certificate</a></div>
+
+                </article>
+                <article class="education-card">
+                  <img src="./images/headers/Udemy header img.png" alt="Udemy Certificate" />
+
+                  <div class="certificate-title">
+                    <h3>jQuery Course</h3>
+                  </div>
+                  <ul class="certificate-list">
+                    <li>
+                      Selectors
+                    </li>
+                    <li>
+                      CSS Selector Methods
+                    </li>
+                    <li>
+                      DOM Manipulations
+                    </li>
+                    <li>
+                      Events
+                    </li>
+                    <li>
+                      Transitions and Animations
+                    </li>
+                    <li>
+                      AJAX
+                    </li>
+                  </ul>
+                  <div class="certificate-link"><a href="./images/certificates/Udemy jQuery.jpg" target="_blank">View
+                      certificate</a></div>
                 </article>
               </section>
             </span>
@@ -356,29 +434,43 @@
         <div class="flex-middle-item-2-3" id="three">
           <div class="flex-middle-item-2-3-inner">
             <div class="skills">
-              <h2>Technologies I have skilled the most</h2>
+              <h2>Technologies I have skilled</h2>
               <div class="divider"></div>
               <div class="skills-logos">
-                <img src="js-logo.png" alt="" title="JavaScript" />
-                <img src="html-logo.png" alt="" title="HTML" />
-                <img src="css-logo.png" alt="" title="CSS" />
-                <img src="vscode-logo.png" alt="" title="VSCode" />
-                <img src="react-logo.png" alt="" title="React.js" />
-                <img src="mongo-logo.png" alt="" title="MongoDB" />
-                <img src="node-logo.png" alt="" title="Node.js" />
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><img
+                    src="./images/logos/js-logo.png" alt="JavaScript image" title="JavaScript" /></a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"><img
+                    src="./images/logos/html-logo.png" alt="HTML image" title="HTML" /></a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"><img
+                    src="./images/logos/css-logo.png" alt="CSS image" title="CSS" /></a>
+                <a href="https://code.visualstudio.com/" target="_blank"><img src="./images/logos/vscode-logo.png"
+                    alt="VSCode image" title="VSCode" /></a>
+                <a href="https://react.dev/" target="_blank"><img src="./images/logos/react-logo.png"
+                    alt="React.js image" title="React.js" /></a>
+
+
               </div>
             </div>
-            <div class="javascript">JavaScript</div>
-            <div class="html">HTML</div>
-            <div class="css">CSS</div>
-            <div class="mongodb">MongoDB</div>
-            <div class="react">React</div>
-            <div class="vscode">VSCode</div>
-            <div class="nodejs">Node.js</div>
-            <div class="sass">SASS</div>
-            <div class="wordpress">WordPress</div>
-            <div class="docker">Docker</div>
-            <div class="aws">AWS</div>
+            <div class="skills">
+              <h2>Technologies I have some knowledge in</h2>
+              <div class="divider"></div>
+              <div class="skills-logos">
+                <a href="https://www.typescriptlang.org/" target="_blank"><img src="./images/logos/typescript-logo.png"
+                    alt="Typescript image" title="Typescript" /></a>
+                <a href="https://nodejs.org/en" target="_blank"><img src="./images/logos/node-logo.png"
+                    alt="Node.js image" title="Node.js" /></a>
+                <a href="https://www.mongodb.com/" target="_blank"><img src="./images/logos/mongo-logo.png"
+                    alt="MongoDB image" title="MongoDB" /></a>
+                <a href="https://jquery.com/" target="_blank"><img src="./images/logos/jQuery-logo.png"
+                    alt="jQuery image" title="jQuery" /></a>
+                <a href="https://mochajs.org/" target="_blank"><img src="./images/logos/mocha-logo.png"
+                    alt="Mocha.js image" title="Mocha.js" /></a>
+                <a href="https://www.chaijs.com/" target="_blank"><img src="./images/logos/chai-logo.png"
+                    alt="Chai.js image" title="Chai.js" /></a>
+                <a href="https://sass-lang.com/" target="_blank"><img src="./images/logos/sass-logo.png"
+                    alt="Sass.js image" title="Sass.js" /></a>
+              </div>
+            </div>
           </div>
         </div>
         <div class="flex-middle-item-2-4" id="four">
@@ -458,7 +550,7 @@
       <div class="container-flex-bottom">
         <div class="flex-bottom-item-1">
           <a href="https://www.linkedin.com/in/ntzolov/" target="_blank">
-            <img src="LinkedIN_white.png" alt="LinkedIN icon" class="image-logo" id="linkedin" />
+            <img src="./images/links/LinkedIN_white.png" alt="LinkedIN icon" class="image-logo" id="linkedin" />
           </a>
         </div>
         <div class="flex-bottom-item-2 clickable" id="contact-me-button" onclick="contactMe()">
@@ -466,7 +558,7 @@
         </div>
         <div class="flex-bottom-item-3">
           <a href="https://t.me/ntzolov" target="_blank">
-            <img src="Telegram_white.png" alt="Telegram icon" class="image-logo" id="telegram" />
+            <img src="./images/links/Telegram_white.png" alt="Telegram icon" class="image-logo" id="telegram" />
           </a>
         </div>
       </div>
