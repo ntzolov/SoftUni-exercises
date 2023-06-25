@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import { lottery } from './03.lottery.js';
 
+// Tests
 describe('Main tests', function () {
   describe('buyLotteryTicket', () => {
     it('throws', () => {

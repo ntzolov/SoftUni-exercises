@@ -3,9 +3,7 @@ window.addEventListener('load', myFunc);
 function myFunc() {
   let timeLeft = 20;
   (function countdown() {
-    document.getElementById('seconds').textContent = String(
-      `Content in ${timeLeft}s`
-    );
+    document.getElementById('seconds').textContent = String(`Content in ${timeLeft}s`);
     if (timeLeft > 0) {
       setTimeout(countdown, 1000);
       setTimeout(hideTimer, 20000);
@@ -21,105 +19,69 @@ function myFunc() {
   }
 
   function colorButtons() {
-    document
-      .getElementById('projects-buttton')
-      .classList.add('projects-coloring');
-    document
-      .querySelector('.flex-top-item-1')
-      .classList.add('projects-coloring');
+    document.getElementById('projects-buttton').classList.add('projects-coloring');
+    document.querySelector('.flex-top-item-1').classList.add('projects-coloring');
 
-    document
-      .getElementById('education-button')
-      .classList.add('education-coloring');
-    document
-      .querySelector('.flex-bottom-item-1')
-      .classList.add('education-coloring');
+    document.getElementById('education-button').classList.add('education-coloring');
+    document.querySelector('.flex-bottom-item-1').classList.add('education-coloring');
 
     document.getElementById('skills-button').classList.add('skills-coloring');
     document.querySelector('.flex-top-item-3').classList.add('skills-coloring');
 
-    document
-      .getElementById('contact-me-button')
-      .classList.add('contact-me-coloring');
-    document
-      .querySelector('.flex-bottom-item-3')
-      .classList.add('contact-me-coloring');
+    document.getElementById('contact-me-button').classList.add('contact-me-coloring');
+    document.querySelector('.flex-bottom-item-3').classList.add('contact-me-coloring');
   }
 
   function showButtons() {
     document.getElementById('projects-buttton').style.pointerEvents = 'initial';
     document.getElementById('education-button').style.pointerEvents = 'initial';
     document.getElementById('skills-button').style.pointerEvents = 'initial';
-    document.getElementById('contact-me-button').style.pointerEvents =
-      'initial';
+    document.getElementById('contact-me-button').style.pointerEvents = 'initial';
   }
 
   document.getElementById('skip').addEventListener('click', (e) => {
     e.preventDefault();
 
-    const text1 = document.querySelector(
-      '.flex-middle-item-2-0-inner-top-text-1'
-    );
+    const text1 = document.querySelector('.flex-middle-item-2-0-inner-top-text-1');
     Array.from(text1.children).forEach((el) => {
       el.style.animationDelay = '0s';
     });
 
-    const text2 = document.querySelector(
-      '.flex-middle-item-2-0-inner-top-text-2'
-    );
+    const text2 = document.querySelector('.flex-middle-item-2-0-inner-top-text-2');
     Array.from(text2.children).forEach((el) => {
       el.style.animationDelay = '0s';
     });
 
-    const text3 = document.querySelector(
-      '.flex-middle-item-2-0-inner-top-text-3'
-    );
+    const text3 = document.querySelector('.flex-middle-item-2-0-inner-top-text-3');
     Array.from(text3.children).forEach((el) => {
       el.style.animationDelay = '0s';
     });
 
-    const text4 = document.querySelector(
-      '.flex-middle-item-2-0-inner-top-text-4'
-    );
+    const text4 = document.querySelector('.flex-middle-item-2-0-inner-top-text-4');
     Array.from(text4.children).forEach((el) => {
       el.style.animationDelay = '0s';
     });
 
     document.getElementById('projects-buttton').style.pointerEvents = 'initial';
-    document
-      .getElementById('projects-buttton')
-      .classList.add('projects-coloring');
-    document
-      .querySelector('.flex-top-item-1')
-      .classList.add('projects-coloring');
+    document.getElementById('projects-buttton').classList.add('projects-coloring');
+    document.querySelector('.flex-top-item-1').classList.add('projects-coloring');
 
     document.getElementById('education-button').style.pointerEvents = 'initial';
-    document
-      .getElementById('education-button')
-      .classList.add('education-coloring');
-    document
-      .querySelector('.flex-bottom-item-1')
-      .classList.add('education-coloring');
+    document.getElementById('education-button').classList.add('education-coloring');
+    document.querySelector('.flex-bottom-item-1').classList.add('education-coloring');
 
     document.getElementById('skills-button').style.pointerEvents = 'initial';
     document.getElementById('skills-button').classList.add('skills-coloring');
     document.querySelector('.flex-top-item-3').classList.add('skills-coloring');
 
-    document.getElementById('contact-me-button').style.pointerEvents =
-      'initial';
-    document
-      .getElementById('contact-me-button')
-      .classList.add('contact-me-coloring');
-    document
-      .querySelector('.flex-bottom-item-3')
-      .classList.add('contact-me-coloring');
+    document.getElementById('contact-me-button').style.pointerEvents = 'initial';
+    document.getElementById('contact-me-button').classList.add('contact-me-coloring');
+    document.querySelector('.flex-bottom-item-3').classList.add('contact-me-coloring');
 
     hideTimer();
   });
 
-  const descriptions = Array.from(
-    document.querySelectorAll('.project-description')
-  );
+  const descriptions = Array.from(document.querySelectorAll('.project-description'));
   descriptions.forEach((el) => {
     el.addEventListener('mouseover', addOpacity);
     el.addEventListener('mouseout', removeOpacity);
@@ -135,36 +97,27 @@ function myFunc() {
 }
 
 function colorHome() {
-  document.getElementById('container-flex-middle').style.backgroundColor =
-    '#54616d00';
+  document.getElementById('container-flex-middle').style.backgroundColor = '#54616d00';
 }
 
 function colorProjects() {
-  document.getElementById('container-flex-middle').style.backgroundImage =
-    'none';
-  document.getElementById('container-flex-middle').style.backgroundColor =
-    '#8A9A5B';
+  document.getElementById('container-flex-middle').style.backgroundImage = 'none';
+  document.getElementById('container-flex-middle').style.backgroundColor = '#8A9A5B';
 }
 
 function colorEducation() {
-  document.getElementById('container-flex-middle').style.backgroundImage =
-    'none';
-  document.getElementById('container-flex-middle').style.backgroundColor =
-    '#78a5a3';
+  document.getElementById('container-flex-middle').style.backgroundImage = 'none';
+  document.getElementById('container-flex-middle').style.backgroundColor = '#78a5a3';
 }
 
 function colorSkills() {
-  document.getElementById('container-flex-middle').style.backgroundImage =
-    'none';
-  document.getElementById('container-flex-middle').style.backgroundColor =
-    '#db6b67';
+  document.getElementById('container-flex-middle').style.backgroundImage = 'none';
+  document.getElementById('container-flex-middle').style.backgroundColor = '#db6b67';
 }
 
 function colorContactMe() {
-  document.getElementById('container-flex-middle').style.backgroundImage =
-    'none';
-  document.getElementById('container-flex-middle').style.backgroundColor =
-    '#e1b16a';
+  document.getElementById('container-flex-middle').style.backgroundImage = 'none';
+  document.getElementById('container-flex-middle').style.backgroundColor = '#e1b16a';
 }
 
 function home() {

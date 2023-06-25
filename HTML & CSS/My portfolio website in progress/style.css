@@ -1207,11 +1207,20 @@ svg {
 
 .aws {
   width: fit-content;
-  /* margin-bottom: 5px; */
+  margin-bottom: 5px;
   font-size: small;
   border: 1px solid black;
   padding: 0 2px;
   box-shadow: 2px 2px 0 #ff9900;
+}
+
+.typescript {
+  width: fit-content;
+  margin-bottom: 5px;
+  font-size: small;
+  border: 1px solid black;
+  padding: 0 2px;
+  box-shadow: 2px 2px 0 #2d79c7;
 }
 
 .javascript:hover {
@@ -1277,6 +1286,12 @@ svg {
 .aws:hover {
   background-color: #ff9900;
   color: #000000;
+  box-shadow: none;
+}
+
+.typescript:hover {
+  background-color: #2d79c7;
+  color: #ffffff;
   box-shadow: none;
 }
 
