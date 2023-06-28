@@ -10,9 +10,7 @@ class JobOffers {
     const toPrint = [];
 
     candidates.forEach((el) => {
-      let [name, education, yearExperience] = el
-        .split('-')
-        .filter((el) => el.length > 0);
+      let [name, education, yearExperience] = el.split('-').filter((el) => el.length > 0);
       yearExperience = Number(yearExperience);
 
       const currCandidate = this.jobCandidates.find((el) => el.name === name);
@@ -81,24 +79,21 @@ class JobOffers {
     const toPrint = [];
     toPrint.push('Candidates list:');
 
-    const sortedNames = this.jobCandidates.sort((a, b) =>
-      a.name.localeCompare(b.name)
-    );
+    const sortedNames = this.jobCandidates.sort((a, b) => a.name.localeCompare(b.name));
 
-    sortedNames.forEach((el) =>
-      toPrint.push(`${el.name}-${el.yearExperience}`)
-    );
+    sortedNames.forEach((el) => toPrint.push(`${el.name}-${el.yearExperience}`));
 
     return toPrint.join('\n');
   }
 }
 
-let Jobs = new JobOffers ("Google", "Strategy Analyst");
- console.log(Jobs.jobApplication(["John Doe-Bachelor-10", "Peter Parker-Master-5","Jordan Cole-High School-5", "Daniel Jones- Bachelor-18"]));
- console.log(Jobs.jobOffer("John Doe-8"));
- console.log(Jobs.jobOffer("Peter Parker-4"));
- console.log(Jobs.jobOffer("Jordan Cole-4"));
- console.log(Jobs.salaryBonus("Jordan Cole"));
- console.log(Jobs.salaryBonus("John Doe"));
- console.log(Jobs.candidatesDatabase());
-
+let Jobs = new JobOffers('Google', 'Strategy Analyst');
+console.log(
+  Jobs.jobApplication(['John Doe-Bachelor-10', 'Peter Parker-Master-5', 'Jordan Cole-High School-5', 'Daniel Jones- Bachelor-18'])
+);
+console.log(Jobs.jobOffer('John Doe-8'));
+console.log(Jobs.jobOffer('Peter Parker-4'));
+console.log(Jobs.jobOffer('Jordan Cole-4'));
+console.log(Jobs.salaryBonus('Jordan Cole'));
+console.log(Jobs.salaryBonus('John Doe'));
+console.log(Jobs.candidatesDatabase());

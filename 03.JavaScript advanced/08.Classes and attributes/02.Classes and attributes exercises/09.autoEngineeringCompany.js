@@ -12,7 +12,7 @@ function autoEngineeringCompany(input) {
       collection[brand][model] = 0;
     }
 
-    collection[brand][model] += quantity
+    collection[brand][model] += quantity;
   }
 
   for (const brand in collection) {
