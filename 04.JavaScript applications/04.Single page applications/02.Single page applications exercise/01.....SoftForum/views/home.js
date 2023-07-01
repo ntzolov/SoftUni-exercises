@@ -1,6 +1,8 @@
+import { request } from '../data.js';
+
 export async function renderHome() {
-  const response = await fetch('http://localhost:3030/jsonstore/collections/myboard/posts');
-  const posts = await response.json();
+  const posts = await request('GET', 'http://localhost:3030/jsonstore/collections/myboard/posts');
+
   const divPosts = document.getElementsByClassName('topic-title')[0];
   divPosts.innerHTML = '';
 
