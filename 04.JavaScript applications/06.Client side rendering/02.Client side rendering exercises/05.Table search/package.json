@@ -1,8 +1,11 @@
 {
-  "name": "04.javascript-applications",
+  "name": "05.table-search",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "solution.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
