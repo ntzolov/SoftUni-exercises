@@ -29,10 +29,10 @@ export function initializer(links) {
     }
   }
 
-  function goTo(path, ...params) {
+  function goTo(path, id) {
     const handler = links[path];
     if (typeof handler === 'function') {
-      handler(ctx, params);
+      handler(ctx, id);
     }
   }
 
