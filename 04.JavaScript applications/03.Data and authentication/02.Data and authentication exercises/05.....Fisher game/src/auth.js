@@ -32,7 +32,7 @@ export async function register(e) {
 }
 
 export async function logout() {
-  get('/users/logout');
+  await get('/users/logout');
 
   localStorage.clear();
   renderHome();
@@ -45,6 +45,10 @@ export async function login(e) {
   const formData = new FormData(form);
   const email = formData.get('email');
   const password = formData.get('password');
+
+  if (!email || !password) {
+    return alert('Empty fields!')
+  }
 
   const user = await post('/users/login', {
     email,

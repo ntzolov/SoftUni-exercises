@@ -4,6 +4,8 @@ import { renderRegister } from './src/views/register.js';
 
 renderHome();
 
+const btnHome = document.getElementById('home');
+btnHome.addEventListener('click', renderHome);
 const btnRegister = document.getElementById('register');
 btnRegister.addEventListener('click', renderRegister);
 const btnLogin = document.getElementById('login');

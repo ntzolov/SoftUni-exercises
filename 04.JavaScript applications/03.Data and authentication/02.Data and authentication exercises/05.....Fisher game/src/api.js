@@ -10,13 +10,8 @@ async function request(method, url, data) {
     body: JSON.stringify(data),
   };
 
-  // if (method !== 'get') {
-  //   options.headers['Content-Type'] = 'application/json';
-  // }
-
   if (userData) {
     userData = JSON.parse(userData);
-    options.headers['Content-Type'] = 'application/json';
     options.headers['X-Authorization'] = userData.accessToken;
   }
 
@@ -36,6 +31,7 @@ async function request(method, url, data) {
 
     return result;
   } catch (error) {
+    alert(error.message);
     throw new Error(error.message);
   }
 }
