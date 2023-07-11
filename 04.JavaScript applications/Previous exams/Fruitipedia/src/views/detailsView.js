@@ -45,7 +45,7 @@ export async function detailsView(ctx) {
   ctx.render(detailsTemplate(fruit, isOwner, deleteFruit, editFruit));
 
   async function deleteFruit(e) {
-    debugger
+
     const id = ctx.params.id;
     await deleteFruitById(id);
     ctx.page.redirect('/dashboard');
