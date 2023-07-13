@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+
+body { 
+  background:  rgb(234, 248, 255);
+  margin: auto;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 50px;
+  margin-top: -15px;
+  background-color: #ccccfb;
+
+}
+
+#home{
+  position: relative;
+  overflow: hidden;
+  padding: 50px
+ 
+}
+.home-intro{
+ margin-left: 9rem;
+  width: 40%;
+display: inline-block;
+}
+#home:after {
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ccccfb;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  clip-path: polygon(100% 0%,100% 97%,88% 87%,70% 84%,65% 69%,45% 60%,39% 44%,24% 35%,22% 14%,0% 0%);
+}
+
+.party-img{
+margin-bottom: 200px;
+margin-left: 150px;
+ width: 350px;
+ display: inline-block;
+}
+
+nav {
+  height: 0px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  
+  
+}
+#home-img{
+  position: relative;
+  z-index: 0;
+}
+
+#logo-img {
+  height: 50px;
+  margin-top: 15px;
+
+}
+.event-btn {
+  padding: 10px 40px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #a687e4;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 800;
+  color: #eef4f4;
+  text-shadow: 2px 2px #080808;
+  text-decoration: none;
+}
+
+.event-btn:hover{
+background-color: #ccccfb;
+color: #0b0b0b;
+text-shadow: 1px 1px #fcfcfc;
+
+}
+
+nav a {
+  font-size: 1.6rem;
+  color: #5ce1e6;
+  text-shadow: 2px 2px #8c52ff;
+  margin-left: 10px;
+}
+
+header a {
+  padding: 0 10px;
+  text-decoration: none;
+}
+nav a:hover {
+  color: rgb(255, 0, 200);
+  text-shadow: 2px 2px #5500ff;
+
+  border-bottom: 2px solid rgb(207, 18, 207);
+
+}
+
+footer {
+  background-color: #e0ecf1;
+  color: #a687e4;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+footer p {
+  margin-top:-1px;
+}
+
+#home h2,
+#home h3 {
+  font-style: italic;
+  font-size: 27px;
+  color: rgb(240, 14, 52);;
+  text-align: center;
+}
+
+.fancy {
+    background-image: 
+      url("../images/concert-2527495_1280.jpg");
+    background-size: 140% auto;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 2.4rem;
+   font-weight: 100;
+}

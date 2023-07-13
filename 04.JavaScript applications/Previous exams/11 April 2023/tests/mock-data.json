@@ -1,0 +1,62 @@
+{
+  "users": [
+    {
+      "_id": "0001",
+      "email": "peter@abv.bg",
+      "password": "123456",
+      "accessToken": "AAAA"
+    },
+    {
+      "_id": "0002",
+      "email": "john@abv.bg",
+      "password": "123456",
+      "accessToken": "BBBB"
+    }
+  ],
+  "catalog": [
+    {
+      "_id": "1001",
+      "_ownerId": "0001",
+      "name": "Robert De Niro Themed Party",
+      "imageUrl": "/images/large_deniroparty_marquee.jpg",
+      "category": "Fun",
+      "description": "Welcome to the ultimate Robert De Niro themed party! If you're a fan of this legendary actor's films and characters, then this is the party for you.Entertainment can include a De Niro movie trivia game, a dance-off to classic songs from his films, and even an impression contest where guests can try their best De Niro impressions.End the night with a screening of one of De Niro's greatest films, followed by a toast to the man himself. Your guests will be talking about this unforgettable party for years to come!",
+      "date": "15.04.2023 from 17:00"
+    },
+    {
+      "_id": "1002",
+      "_ownerId": "0001",
+      "name": "Fun Run",
+      "imageUrl": "/images/pexels-run-ffwpu-2530130 (1).jpg",
+      "category": "Sport",
+      "description": "A fun run is a non-competitive running event that's usually designed for recreational purposes rather than for competition or achievement. Participants often dress up in fun costumes and run, walk or jog through a designated course that can range from a few hundred meters to several kilometers. The event is usually open to people of all ages and fitness levels, and is a great way to promote fitness, socialize, and raise money for charity.",
+      "date": "19.04.2023 from 13:00"
+    },
+    {
+      "_id": "1003",
+      "_ownerId": "0002",
+      "name": "Art & Wine",
+      "imageUrl": "/images/pexels-victoria-akvarel-4873622.jpg",
+      "category": "Art",
+      "description": "An art and wine event is a social gathering that combines two enjoyable experiences: appreciating art and enjoying wine. At these events, attendees can explore different types of artwork while sipping on a selection of fine wines.",
+      "date": "17.04.2023 from 18:00"
+    }
+  ],
+  "going": [
+    {
+      "_ownerId": "0001",
+      "productId": "1002",
+      "_id": "e2d43547-5f76-451c-93df-14a83cb042e7"
+    },
+    {
+      "_ownerId": "0002",
+      "productId": "1001",
+      "_id": "9d709077-9bbb-417a-988e-87a0677b73d2"
+    },
+    {
+      "_ownerId": "0001",
+      "productId": "1003",
+      "_id": "16fb2a96-29bd-46b0-82b6-125a962b03ef"
+    }
+  ]
+}

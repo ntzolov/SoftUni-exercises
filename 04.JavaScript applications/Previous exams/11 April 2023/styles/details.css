@@ -1,0 +1,84 @@
+#details-wrapper {
+  background-color: #dadafc;
+  margin: 50px auto;
+  height: 71%;
+  width: 90%;
+  border: 2px ridge rgb(210, 208, 208);
+  border-radius: 12px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
+  scale: 0.85;
+}
+
+#details-wrapper img {
+  display: block;
+  margin: 20px auto;
+  height: 250px;
+  width: 300px;
+  border-radius: 12px;
+  border: 1px solid black;
+  box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.85);
+-webkit-box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.85);
+-moz-box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.85);
+}
+
+#details-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#details-category {
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#details-price {
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+
+#details-description {
+  width: 85%;
+  margin: 30px auto;
+  height: auto;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+h4 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+}
+
+span {
+  font-size: 17px;
+}
+
+#action-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  
+}
+
+#action-buttons a {
+  text-decoration: none;
+  margin: auto 50px;
+  font-size: 21px;
+  width: 130px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px black;
+  background: rgb(125, 11, 246);
+  border-radius: 5px;
+}
