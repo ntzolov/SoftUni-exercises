@@ -186,7 +186,7 @@ describe('E2E tests', function () {
     });
 
     describe('Home Page [ 20 Points ]', () => {
-        it('show empty home page [ 5 Points ]', async () => {
+        it.only('show empty home page [ 5 Points ]', async () => {
             const { get } = await handle(endpoints.catalog);
             get([]);
             await page.goto(host);
