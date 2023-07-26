@@ -284,7 +284,7 @@ describe('E2E tests', function () {
     });
   });
 
-  describe('CRUD [ 50 Points ]', () => {
+  describe.only('CRUD [ 50 Points ]', () => {
     // Login user
     const loginUser = async () => {
       const data = mockData.users[0];
