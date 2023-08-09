@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>Fun Facts</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- <header> -->
+        <!-- Navigation -->
+        <!-- <a id="logo" href="/"
+          ><img id="logo-img" src="./images/logo.png" alt=""
+        /></a>
+
+        <nav>
+          <div>
+            <a href="#">Fun Facts</a>
+          </div> -->
+
+          <!-- Logged-in users -->
+          <!-- <div class="user">
+            <a href="#">Add Fact</a>
+            <a href="#">Logout</a>
+          </div> -->
+
+          <!-- Guest users -->
+          <!-- <div class="guest">
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+            
+          </div>
+        </nav>
+      </header> -->
+
+      <main>
+        <!-- Home page -->
+        <!-- <section id="home">
+          <h1>Welcome to our website, where curiosity meets enjoyment!
+             Discover fascinating fun facts that engage and entertain everyone,
+              inviting you to participate in the joy of learning something new together.</h1>
+              <img id="logo-img" src="./images/logo.png" alt=""/>
+        </section> -->
+
+        <!-- Dashboard page -->
+        <!-- <h2>Fun Facts</h2>
+        <section id="dashboard"> -->
+          <!-- Display a div with information about every post (if any)-->
+          <!-- <div class="fact">
+            <img src="./images/fact 1.png" alt="example1" />
+            <h3 class="category">History</h3>
+            <p class="description">Uncover the intriguing tale of the shortest war in history!
+               The Anglo-Zanzibar War of 1896 lasted a mere 38 minutes,
+                making it an astonishingly brief conflict that's sure to leave
+                 you amazed by the brevity of battle.</p>
+            <a class="details-btn" href="">More Info</a>
+          </div>
+          <div class="fact">
+            <img src="./images/fact 2.jpg" alt="example2" />
+            <h3 class="category">Science</h3>
+            <p class="description">Did you know that the Earth's oceans contain enough salt to cover
+               all the continents in a layer 500 feet thick?
+                Dive into the depths of this salty fact and explore the wonders
+                 of our planet's aquatic wonders.</p>
+            <a class="details-btn" href="">More Info</a>
+          </div><div class="fact">
+            <img src="./images/fact 3.jpg" alt="example3" />
+            <h3 class="category">Nature</h3>
+            <p class="description">Prepare to be astounded by the power of hummingbirds!
+              These tiny marvels can flap their wings up to 80 times per second,
+               enabling them to hover, fly backward, and even upside down.
+                Discover more about these delightful creatures and their
+                 extraordinary abilities.</p>
+            <a class="details-btn" href="">More Info</a>
+          </div>
+          
+        </section> -->
+         <!-- Display an h2 if there are no posts -->
+         <!-- <h2>No Fun Facts yet.</h2> -->
+
+        <!-- Register Page (Only for Guest users) -->
+        <!-- <section id="register">
+          <div class="form">
+            <h2>Register</h2>
+            <form class="register-form">
+              <input
+                type="text"
+                name="email"
+                id="register-email"
+                placeholder="email"
+              />
+              <input
+                type="password"
+                name="password"
+                id="register-password"
+                placeholder="password"
+              />
+              <input
+                type="password"
+                name="re-password"
+                id="repeat-password"
+                placeholder="repeat password"
+              />
+              <button type="submit">register</button>
+              <p class="message">Already registered? <a href="#">Login</a></p>
+            </form>
+          </div>
+        </section> -->
+
+        <!-- Login Page (Only for Guest users) -->
+        <!-- <section id="login">
+          <div class="form">
+            <h2>Login</h2>
+            <form class="login-form">
+              <input type="text" name="email" id="email" placeholder="email" />
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="password"
+              />
+              <button type="submit">login</button>
+              <p class="message">
+                Not registered? <a href="#">Create an account</a>
+              </p>
+            </form>
+          </div>
+        </section> -->
+
+        <!-- Create Page (Only for logged-in users) -->
+        <section id="create">
+          <div class="form">
+            <h2>Add Fact</h2>
+            <form class="create-form">
+              <input
+                type="text"
+                name="category"
+                id="category"
+                placeholder="Category"
+              />
+              <input
+                type="text"
+                name="image-url"
+                id="image-url"
+                placeholder="Image URL"
+              />
+              <textarea
+              id="description"
+              name="description"
+              placeholder="Description"
+              rows="10"
+              cols="50"
+            ></textarea>
+            <textarea
+              id="additional-info"
+              name="additional-info"
+              placeholder="Additional Info"
+              rows="10"
+              cols="50"
+            ></textarea>
+              <button type="submit">Add Fact</button>
+            </form>
+          </div>
+        </section>
+        <!-- Edit Page (Only for logged-in users) -->
+        <section id="edit">
+          <div class="form">
+            <h2>Edit Fact</h2>
+            <form class="edit-form">
+              <input
+              type="text"
+              name="category"
+              id="category"
+              placeholder="Category"
+            />
+            <input
+              type="text"
+              name="image-url"
+              id="image-url"
+              placeholder="Image URL"
+            />
+            <textarea
+            id="description"
+            name="description"
+            placeholder="Description"
+            rows="10"
+            cols="50"
+          ></textarea>
+          <textarea
+            id="additional-info"
+            name="additional-info"
+            placeholder="Additional Info"
+            rows="10"
+            cols="50"
+          ></textarea>
+              <button type="submit">Post</button>
+            </form>
+          </div>
+        </section>
+        
+        <!-- Details page -->
+        <!-- <section id="details">
+          <div id="details-wrapper">
+            <img id="details-img" src="./images/fact 1.png" alt="example1" />
+            <p id="details-category">History</p>
+            <div id="info-wrapper">
+              <div id="details-description">
+                <p id="description">
+                  Uncover the intriguing tale of the shortest war in history!
+                   The Anglo-Zanzibar War of 1896 lasted a mere 38 minutes,
+                    making it an astonishingly brief conflict that's sure to
+                     leave you amazed by the brevity of battle.
+                  </p>
+                   <p id ="more-info">
+                    The Anglo-Zanzibar War, which occurred on
+                     August 27, 1896, goes down in history as
+                      the shortest recorded war. It lasted a mere 38 minutes!
+                       The conflict erupted when Sultan Khalid bin Barghash of 
+                       Zanzibar refused to step down after the death of his predecessor.
+                        British warships bombarded the palace, quickly overwhelming
+                         the sultan's forces and forcing his surrender. This incredible
+                          piece of history serves as a reminder of how swiftly events
+                           can unfold, leaving a lasting impact in the annals of time.
+                        </p>
+              </div>
+
+              <h3>Likes:<span id="likes">0</span></h3> -->
+
+               <!--Edit and Delete are only for creator-->
+          <!-- <div id="action-buttons">
+            <a href="" id="edit-btn">Edit</a>
+            <a href="" id="delete-btn">Delete</a> -->
+
+             <!--Bonus - Only for logged-in users ( not authors )-->
+            <!-- <a href="" id="like-btn">Like</a>
+
+          </div>
+            </div>
+        </div>
+      </section> -->
+      </main>
+    </div>
+    <footer>
+      <p>@Fun Facts</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+#dashboard {
+  margin:0px 50px;
+  display: flex;
+  align-items: center;
+  justify-content:center ;
+  flex-wrap: wrap;
+
+}
+ h2 {
+  text-align: center;
+  font-size: 50px;
+  color: rgb(241, 10, 10);
+  text-shadow: 1px 1px black;
+  margin-top: -20px;
+}
+
+.fact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 25vw;
+  height: 50vh;
+  padding-bottom: 1rem;
+  margin: 20px auto;
+  background-color: rgb(244, 230, 230);
+  border-radius: 5px;
+  border: 2px solid rgb(253, 10, 10);
+  box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.55);
+-webkit-box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.55);
+-moz-box-shadow: -4px 3px 25px 1px rgba(0,0,0,0.55);
+ 
+}
+
+.fact img {
+  height:22vh;
+  width: 16vw;
+  margin-top: 20px;
+  border-radius: 5px; 
+}
+
+.fact .category {
+  margin: 0;
+  letter-spacing: 2px;
+  color: rgb(95, 94, 94);
+  text-decoration: underline;
+}
+
+.details-btn {
+  margin-top: 4px;
+  text-decoration: none;
+  font-size: 21px;
+  width: 160px;
+  border-radius: 3px;
+  text-align: center;
+  color: white;
+  background: rgb(240, 47, 47);
+  text-shadow: 1px 1px black;
+}
+.details-btn:hover {
+  background: #bd2c2c;
+}
+.fact p {
+  margin: auto;
+  font-size: 0.8rem;
+  font-weight: 500;
+  width: 90%;
+  text-align: center;
+  color: rgb(24, 23, 23);
+  font-family: 'Roboto', sans-serif;
+}
+
