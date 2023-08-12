@@ -1,1 +1,11 @@
-[{"id":1,"name":"Sami","description":"Sami is a lovely vat","breed":"Siamese","image":"Sami.jpg"},{"id":2,"name":"Pepsi","description":"Pepsi is crayyyyzeee","breed":"Persian","image":"Pepsi.jpg"}]
+[
+  {
+    "id": 1691863648063,
+    "name": "Reggae",
+    "description": "Reggae is a sleepy cat!!!",
+    "breed": "Ragdoll",
+    "image": "Reggae.jpg"
+  },
+  { "id": 1691865163092, "name": "Sami", "description": "Sami is a lovely cat!!!", "breed": "Siamese", "image": "Sami.jpg" },
+  { "id": 1691865198791, "name": "Pepsi", "description": "Pepsi is in the jazz!!!", "breed": "Persian", "image": "Pepsi.jpg" }
+]

@@ -1,0 +1,48 @@
+let form = new formidable.IncomingForm();
+
+    form.parse(req, (err, fields, files) => {
+      if (err) {
+        throw err;
+      }
+
+      const searchText = fields.search[0];
+
+      fs.readFile('./data/cats.json', 'utf-8', (err, data) => {
+        if (err) {
+          throw err;
+        }
+
+        let allCats = JSON.parse(data);
+        allCats = allCats.filter((cat) => cat.name.includes(searchText));
+
+        let modifiedCats;
+        if (allCats.length === 0) {
+          modifiedCats = '<h3>There is no cats with that name</h3>';
+        } else {
+          allCats.map(
+            (cat) => `<li>
+          <img src="${path.join('./content/images/' + cat.image)}"
+              alt="${cat.name}">
+          <h3>${cat.name}</h3>
+          <p><span>Breed: </span>${cat.breed}</p>
+          <p><span>Description: </span>${cat.description}</p>
+          <ul class="buttons">
+              <li class="btn edit"><a href="/cats-edit/${cat.id}">Change Info</a></li>
+              <li class="btn delete"><a href="/cats-find-new-home/${cat.id}">New Home</a></li>
+          </ul>
+      </li>`
+          );
+        }
+      });
+    });
+
+
+    
+    const modifiedHTML = htmlData.toString().replace('{{cats}}', modifiedCats);
+
+    res.writeHead(200, {
+      'Content-Type': 'text/html',
+    });
+
+    res.write(modifiedHTML);
+    res.end();
