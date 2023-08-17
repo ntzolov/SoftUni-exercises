@@ -1,4 +1,7 @@
+// TODO: Close DB in the end
+
 const mongoose = require('mongoose');
+const Movie = require('./models/Movie');
 const dbName = 'movies';
 main().catch((err) => console.log(err));
 
@@ -6,15 +9,6 @@ async function main() {
   await mongoose.connect(`mongodb://127.0.0.1:27017/${dbName}`);
   console.log(`Connected to '${dbName}' database!`);
 }
-
-const movieSchema = new mongoose.Schema({
-  title: String,
-  length: String,
-  postImage: String,
-  ageRestriction: Number,
-});
-
-const Movie = new mongoose.model('Movie', movieSchema);
 
 async function createMovie(title, length, postImage, ageRestriction) {
   const movie = new Movie({ title, length, postImage, ageRestriction });
@@ -40,7 +34,8 @@ async function logMoviesByAgeRestriction(age) {
 }
 
 async function executor() {
-  await logAllMovies();
+  const movie = await Movie.find({ title: 'Gladiator' });
+  console.log(movie[0].movieLengthInMinutes());
 }
 
 executor();
