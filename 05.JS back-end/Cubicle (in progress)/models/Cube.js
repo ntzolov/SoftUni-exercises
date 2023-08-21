@@ -1,22 +1,36 @@
-const database = require('../config/database');
-const fs = require('fs');
-const path = require('path');
-const uniqid = require('uniqid');
+const mongoose = require('mongoose');
 
-class Cube {
-  constructor(object) {
-    this.id = uniqid();
-    this.name = object.name;
-    this.description = object.description;
-    this.difficultyLevel = object.difficultyLevel;
-    this.imageUrl = object.imageUrl;
-  }
+const cubeSchema = new mongoose.Schema({
+  id: {
+    type: mongoose.Types.ObjectId,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+    maxLength: 150,
+  },
+  imageUrl: {
+    type: String,
+    required: true,
+    match: [/^https?:\/\//, 'URL is not valid!'],
+  },
+  difficultyLevel: {
+    type: Number,
+    required: true,
+    min: 1,
+    max: 6,
+  },
+  accessories: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: 'Accessory',
+    },
+  ],
+});
 
-  save() {
-    database.push(this);
-    const json = JSON.stringify(database, null, 2);
-    fs.writeFileSync(path.resolve(__dirname, '../config/database.json'), json);
-  }
-}
-
+const Cube = mongoose.model('Cube', cubeSchema);
 module.exports = Cube;

@@ -1,19 +1,20 @@
 const Cube = require('../models/Cube');
-const database = require('../config/database');
+
 function getCreateCube(req, res) {
-  res.render('create');
+  res.render('cubes/create');
 }
 
-function postCreateCube(req, res) {
-  const cube = new Cube(req.body);
-  cube.save();
+async function postCreateCube(req, res) {
+  const { name, description, imageUrl, difficultyLevel } = req.body;
+  const cube = new Cube({ name, description, imageUrl, difficultyLevel });
+  await cube.save();
   res.redirect('/');
 }
 
-function getDetailsCube(req, res) {
+async function getDetailsCube(req, res) {
   const cubeId = req.params.cubeId;
-  let currCube = database.find((cube) => cube.id === cubeId);
-  res.render('details', currCube);
+  let cube = await Cube.findById(cubeId).populate('accessories').lean();
+  res.render('cubes/details', cube);
 }
 
 module.exports = {

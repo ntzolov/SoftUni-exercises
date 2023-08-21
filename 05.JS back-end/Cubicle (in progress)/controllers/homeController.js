@@ -1,21 +1,23 @@
-let database = require('../config/database');
+let Cube = require('../models/Cube');
 
-function getHomePage(req, res) {
+async function getHomePage(req, res) {
   let { search, from, to } = req.query;
 
-  if (search) {
-    database = database.filter((cube) => cube.name.toLowerCase().includes(search.toLowerCase()));
-  }
-
+  const regex = new RegExp(search, 'i');
+  
+  let options = {
+    name: { $regex: regex },
+    difficultyLevel: {},
+  };
   if (from) {
-    database = database.filter((cube) => Number(cube.difficultyLevel) >= Number(from));
+    options.difficultyLevel.$gte = Number(from);
   }
-
   if (to) {
-    database = database.filter((cube) => Number(cube.difficultyLevel) <= Number(to));
+    options.difficultyLevel.$lte = Number(to);
   }
+  let cubes = await Cube.find(options).lean();
 
-  res.render('index', { database, search, from, to });
+  res.render('index', { cubes, search, from, to });
 }
 
 function getAboutPage(req, res) {
