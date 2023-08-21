@@ -4,17 +4,20 @@ async function getHomePage(req, res) {
   let { search, from, to } = req.query;
 
   const regex = new RegExp(search, 'i');
-  
+
   let options = {
     name: { $regex: regex },
     difficultyLevel: {},
   };
+
   if (from) {
     options.difficultyLevel.$gte = Number(from);
   }
+
   if (to) {
     options.difficultyLevel.$lte = Number(to);
   }
+
   let cubes = await Cube.find(options).lean();
 
   res.render('index', { cubes, search, from, to });
