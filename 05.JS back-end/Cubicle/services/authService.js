@@ -2,17 +2,21 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const secret = 'JWTSECRET';
 
-function getUsernameByUsername(username) {
-  return User.findOne({ username });
+async function getUsernameByUsername(username) {
+  return await User.findOne({ username });
 }
 
 async function login(password, username) {
   const user = await this.getUsernameByUsername(username);
 
+  if (!user) {
+    throw 'Invalid username!';
+  }
+
   const isPasswordMatched = await user.comparePassword(password);
 
-  if (!user || !isPasswordMatched) {
-    throw new Error("Username or password doesn't match!");
+  if (!isPasswordMatched) {
+    throw 'Invalid password!';
   }
 
   const payload = { username: user.username, _id: user._id };

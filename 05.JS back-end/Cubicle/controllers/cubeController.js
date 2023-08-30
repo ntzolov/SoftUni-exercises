@@ -1,15 +1,22 @@
 const Cube = require('../models/Cube');
 const { generateCubeOptions } = require('../utils/cubeUtils');
+const parseMongooseError = require('../utils/mongooseErrors');
 
 function getCreateCube(req, res) {
   res.render('cubes/create');
 }
 
-async function postCreateCube(req, res) {
-  const { name, description, imageUrl, difficultyLevel } = req.body;
-  const creatorId = req.user._id;
-  const cube = new Cube({ name, description, imageUrl, difficultyLevel, creatorId });
-  await cube.save();
+async function postCreateCube(req, res, next) {
+  try {
+    const { name, description, imageUrl, difficultyLevel } = req.body;
+    const creatorId = req.user._id;
+    const cube = new Cube({ name, description, imageUrl, difficultyLevel, creatorId });
+    await cube.save();
+  } catch (error) {
+    const errorMessage = parseMongooseError(error)[0];
+    return res.render('cubes/create', { error: errorMessage });
+  }
+
   res.redirect('/');
 }
 
@@ -32,6 +39,12 @@ async function getEditCube(req, res) {
   const cube = await Cube.findById(req.params.cubeId).lean();
   const difficultyLevel = Number(cube.difficultyLevel);
   const options = generateCubeOptions(difficultyLevel);
+  const cubeOwner = cube.creatorId;
+  const userId = req.user._id;
+
+  if (cubeOwner !== userId) {
+    return res.render('404', { error: 'You are not the owner of the cube!' });
+  }
 
   res.render('cubes/edit', { cube, options });
 }

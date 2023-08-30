@@ -1,25 +1,31 @@
 const User = require('../models/User');
 const authService = require('../services/authService');
+const parseMongooseError = require('../utils/mongooseErrors');
 
 function getRegisterPage(req, res) {
   res.render('register');
 }
 
-function postRegisterPage(req, res) {
+async function postRegisterPage(req, res, next) {
   const { username, password, repeatPassword } = req.body;
 
   if (password !== repeatPassword) {
-    return res.redirect('/404');
+    return res.render('register', { error: "Password doesn't match!" });
   }
 
-  const isRegistered = authService.getUsernameByUsername(username);
+  const isRegistered = await authService.getUsernameByUsername(username);
 
   if (isRegistered) {
-    return res.redirect('/404');
+    return res.render('register', { error: 'User already exist!' });
   }
 
-  const user = new User({ username, password });
-  user.save();
+  try {
+    const user = new User({ username, password });
+    await user.save();
+  } catch (error) {
+    const errorMessage = parseMongooseError(error)[0];
+    return res.render('register', { error: errorMessage });
+  }
 
   res.redirect('/login');
 }
@@ -28,17 +34,16 @@ function getLoginPage(req, res) {
   res.render('login');
 }
 
-async function postLoginPage(req, res) {
+async function postLoginPage(req, res, next) {
   const { username, password } = req.body;
 
   try {
     const token = await authService.login(password, username);
-
     res.cookie('auth', token, { httpOnly: true });
-    res.redirect('/');
   } catch (error) {
-    res.redirect('/404');
+    return res.render('login', { error });
   }
+  res.redirect('/');
 }
 
 function getLogoutPage(req, res) {

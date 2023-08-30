@@ -8,10 +8,25 @@ const userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
+    minLength: 5,
+    unique: true,
+    validate: {
+      validator: function (value) {
+        return /^[a-zA-Z0-9]+$/.test(value);
+      },
+      message: 'Username must be only in latin letters and numbers!',
+    },
   },
   password: {
     type: String,
     required: true,
+    minLength: [8, 'Username should be at least 8 characters!'],
+    validate: {
+      validator: function (value) {
+        return /^[a-zA-Z0-9]+$/.test(value);
+      },
+      message: 'Password must be only in latin letters and numbers!',
+    },
   },
 });
 

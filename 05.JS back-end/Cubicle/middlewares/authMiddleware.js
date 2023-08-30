@@ -14,8 +14,6 @@ function authConfirmation(req, res, next) {
       res.locals.username = decodedToken.username;
       res.locals.isAuthenticated = true;
     } catch (error) {
-      console.log(error.message);
-
       res.clearCookie('auth');
       res.redirect('/404');
     }

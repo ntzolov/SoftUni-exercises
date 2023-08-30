@@ -1,14 +1,21 @@
 const Accessory = require('../models/Accessory');
 const Cube = require('../models/Cube');
+const parseMongooseError = require('../utils/mongooseErrors');
 
 function getAccessoryPage(req, res) {
   res.render('accessories/create');
 }
 
-async function postAccessoryPage(req, res) {
-  const { name, description, imageUrl } = req.body;
-  const accessory = new Accessory({ name, description, imageUrl });
-  await accessory.save();
+async function postAccessoryPage(req, res, next) {
+  try {
+    const { name, description, imageUrl } = req.body;
+    const accessory = new Accessory({ name, description, imageUrl });
+    await accessory.save();
+  } catch (error) {
+    const errorMessage = parseMongooseError(error)[0];
+    return res.render('accessories/create', { error: errorMessage });
+  }
+
   res.redirect('/');
 }
 
