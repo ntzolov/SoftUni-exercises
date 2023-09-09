@@ -2,12 +2,16 @@ import { useState } from 'react';
 import TableUser from './TableUser';
 import UserCreate from './UserCreate';
 import Loading from './Loading';
-import NoUsersError from './NoUsersError';
 import UserDelete from './UserDelete';
+import UserInfo from './UserInfo';
+import UserEdit from './UserEdit';
 
-export default function Table({ users, onUserCreateAdd, loading, onUserDelete }) {
+export default function Table({ users, onUserCreateAdd, loading, onUserDelete, getUserInfo, onUserEdit }) {
   const [showAddUser, setShowAddUser] = useState(false);
   const [showDeleteUser, setShowDeleteUser] = useState(false);
+  const [showInfoUser, setShowInfoUser] = useState(false);
+  const [showEditUser, setShowEditUser] = useState(false);
+  const [user, setUser] = useState(null);
 
   function onAddUserCLick() {
     setShowAddUser(true);
@@ -17,9 +21,26 @@ export default function Table({ users, onUserCreateAdd, loading, onUserDelete })
     setShowDeleteUser((oldState) => id);
   }
 
+  async function onInfoUserClick(id) {
+    const user = await getUserInfo(id);
+    setUser(user.user);
+    setShowInfoUser(true);
+  }
+
+  async function onEditUserClick(id) {
+    const user = await getUserInfo(id);
+    setUser(user.user);
+    setShowEditUser(true);
+  }
+
   async function onAddUserHandler(e) {
     await onUserCreateAdd(e);
     setShowAddUser(false);
+  }
+
+  async function onEditUserHandler(e, id) {
+    await onUserEdit(e, id);
+    setShowEditUser(false);
   }
 
   async function onDeleteUserHandler(id) {
@@ -30,12 +51,16 @@ export default function Table({ users, onUserCreateAdd, loading, onUserDelete })
   function onClose() {
     setShowAddUser(false);
     setShowDeleteUser(false);
+    setShowInfoUser(false);
+    setShowEditUser(false);
   }
 
   return (
     <>
       {showAddUser && <UserCreate onClose={onClose} onAddUserHandler={onAddUserHandler} />}
       {showDeleteUser && <UserDelete onClose={onClose} onDeleteUserHandler={onDeleteUserHandler} id={showDeleteUser} />}
+      {showInfoUser && <UserInfo onClose={onClose} user={user} />}
+      {showEditUser && <UserEdit onClose={onClose} user={user} onEditUserHandler={onEditUserHandler} />}
 
       <table className="table">
         <thead>
@@ -125,11 +150,17 @@ export default function Table({ users, onUserCreateAdd, loading, onUserDelete })
           </tr>
         </thead>
         <tbody>
-          {!loading && !users.length ? (
-            <NoUsersError />
-          ) : !loading ? (
+          {!loading ? (
             users.map((user) => {
-              return <TableUser key={user._id} user={user} onDeleteUserClick={onDeleteUserClick} />;
+              return (
+                <TableUser
+                  key={user._id}
+                  user={user}
+                  onDeleteUserClick={onDeleteUserClick}
+                  onInfoUserClick={onInfoUserClick}
+                  onEditUserClick={onEditUserClick}
+                />
+              );
             })
           ) : (
             <Loading />
