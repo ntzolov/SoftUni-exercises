@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Search from './components/Search';
 import Table from './components/Table';
-import { createUser, deleteUser, editUser, getUser } from './services/fetchServices';
+import { createUser, deleteUser, editUser, getUser, searchUser } from './services/fetchServices';
 import Error from './components/Error';
 
 function App() {
@@ -89,13 +89,41 @@ function App() {
     return user;
   }
 
+  async function onSearchClick(e) {
+    e.preventDefault();
+
+    const searchText = Object.fromEntries(new FormData(e.currentTarget)).search;
+    const criteria = document.getElementById('criteria').value;
+
+    try {
+      const users = await searchUser(searchText, criteria);
+      setUsers(users);
+    } catch (error) {
+      console.log('Error' + error);
+    }
+  }
+
+  async function onSearchCloseClick(e) {
+    e.preventDefault();
+
+    const form = document.getElementById('searchForm');
+    form.reset();
+
+    try {
+      const users = await searchUser('', '');
+      setUsers(users);
+    } catch (error) {
+      console.log('Error' + error);
+    }
+  }
+
   return (
     <>
       <Header />
 
       <main className="main">
         <section className="card users-container">
-          <Search />
+          <Search onSearchClick={onSearchClick} onSearchCloseClick={onSearchCloseClick} />
 
           <div className="table-wrapper">
             <Table
@@ -106,7 +134,7 @@ function App() {
               getUserInfo={getUserInfo}
               onUserEdit={onUserEdit}
             />
-          {!loading && !users.length ? <Error /> : null}
+            {!loading && !users.length ? <Error /> : null}
           </div>
         </section>
         <Footer />

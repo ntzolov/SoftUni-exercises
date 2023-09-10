@@ -41,3 +41,10 @@ export async function getUser(id) {
 
   return user;
 }
+
+export async function searchUser(searchText, criteria) {
+  const res = await fetch(`${baseUrl}/?search=${searchText}&criteria=${criteria}`);
+  const result = await res.json();
+
+  return result.users;
+}

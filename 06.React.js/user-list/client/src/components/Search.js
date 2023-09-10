@@ -1,6 +1,6 @@
-export default function Search() {
+export default function Search({ onSearchClick,onSearchCloseClick }) {
   return (
-    <form className="search-form">
+    <form id="searchForm" onSubmit={onSearchClick} className="search-form">
       <h2>
         <svg
           aria-hidden="true"
@@ -19,7 +19,7 @@ export default function Search() {
       </h2>
       <div className="search-input-container">
         <input type="text" placeholder="Please, select the search criteria" name="search" />
-        <button className="btn close-btn">
+        <button onClick={onSearchCloseClick} type="button" className="btn close-btn">
           <i className="fa-solid fa-xmark"></i>
         </button>
 
@@ -30,12 +30,12 @@ export default function Search() {
 
       <div className="filter">
         <span>Search Criteria:</span>
-        <select name="criteria" className="criteria" defaultValue="">
+        <select id="criteria" name="criteria" className="criteria" defaultValue="">
           <option value="">Not selected</option>
-          <option value="">First Name</option>
-          <option value="">Last Name</option>
-          <option value="">Email</option>
-          <option value="">Phone</option>F
+          <option value="firstName">First Name</option>
+          <option value="lastName">Last Name</option>
+          <option value="email">Email</option>
+          <option value="phoneNumber">Phone</option>F
         </select>
       </div>
     </form>
