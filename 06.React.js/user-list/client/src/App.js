@@ -22,11 +22,11 @@ function App() {
       });
   }, []);
 
-  async function onUserCreateAdd(e) {
+  async function onUserCreateAdd(e, user) {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
-    const user = Object.fromEntries(formData);
+    // const formData = new FormData(e.currentTarget);
+    // const user = Object.fromEntries(formData);
 
     try {
       const userObj = {
@@ -50,11 +50,11 @@ function App() {
     }
   }
 
-  async function onUserEdit(e, id) {
+  async function onUserEdit(e, id, user) {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
-    const user = Object.fromEntries(formData);
+    // const formData = new FormData(e.currentTarget);
+    // const user = Object.fromEntries(formData);
 
     try {
       const userObj = {
@@ -89,14 +89,14 @@ function App() {
     return user;
   }
 
-  async function onSearchClick(e) {
+  async function onSearchClick(e, search, criteria) {
     e.preventDefault();
 
-    const searchText = Object.fromEntries(new FormData(e.currentTarget)).search;
-    const criteria = document.getElementById('criteria').value;
+    // const searchText = Object.fromEntries(new FormData(e.currentTarget)).search;
+    // const criteria = document.getElementById('criteria').value;
 
     try {
-      const users = await searchUser(searchText, criteria);
+      const users = await searchUser(search, criteria);
       setUsers(users);
     } catch (error) {
       console.log('Error' + error);

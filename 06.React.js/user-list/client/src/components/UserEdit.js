@@ -1,4 +1,22 @@
+import { useState } from 'react';
+
 export default function UserEdit({ onClose, user, onEditUserHandler }) {
+  const [userControlled, setUserControlled] = useState({
+    firstName: user.firstName,
+    lastName: user.lastName,
+    email: user.email,
+    imageUrl: user.imageUrl,
+    phoneNumber: user.phoneNumber,
+    country: user.address.country,
+    city: user.address.city,
+    street: user.address.street,
+    streetNumber: user.address.streetNumber,
+  });
+
+  function onChangeHandler(e) {
+    setUserControlled((oldState) => ({ ...oldState, [e.target.name]: e.target.value }));
+  }
+
   return (
     <div className="overlay">
       <div className="backdrop"></div>
@@ -22,7 +40,7 @@ export default function UserEdit({ onClose, user, onEditUserHandler }) {
               </svg>
             </button>
           </header>
-          <form onSubmit={(e) => onEditUserHandler(e, user._id)}>
+          <form onSubmit={(e) => onEditUserHandler(e, user._id, userControlled)}>
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="firstName">First name</label>
@@ -30,7 +48,13 @@ export default function UserEdit({ onClose, user, onEditUserHandler }) {
                   <span>
                     <i className="fa-solid fa-user"></i>
                   </span>
-                  <input defaultValue={user.firstName} id="firstName" name="firstName" type="text" />
+                  <input
+                    onChange={onChangeHandler}
+                    defaultValue={userControlled.firstName}
+                    id="firstName"
+                    name="firstName"
+                    type="text"
+                  />
                 </div>
                 <p className="form-error">First name should be at least 3 characters long!</p>
               </div>
@@ -40,7 +64,13 @@ export default function UserEdit({ onClose, user, onEditUserHandler }) {
                   <span>
                     <i className="fa-solid fa-user"></i>
                   </span>
-                  <input defaultValue={user.lastName} id="lastName" name="lastName" type="text" />
+                  <input
+                    onChange={onChangeHandler}
+                    defaultValue={userControlled.lastName}
+                    id="lastName"
+                    name="lastName"
+                    type="text"
+                  />
                 </div>
                 <p className="form-error">Last name should be at least 3 characters long!</p>
               </div>
@@ -53,7 +83,7 @@ export default function UserEdit({ onClose, user, onEditUserHandler }) {
                   <span>
                     <i className="fa-solid fa-envelope"></i>
                   </span>
-                  <input defaultValue={user.email} id="email" name="email" type="text" />
+                  <input onChange={onChangeHandler} defaultValue={userControlled.email} id="email" name="email" type="text" />
                 </div>
                 <p className="form-error">Email is not valid!</p>
               </div>
@@ -63,7 +93,13 @@ export default function UserEdit({ onClose, user, onEditUserHandler }) {
                   <span>
                     <i className="fa-solid fa-phone"></i>
                   </span>
-                  <input defaultValue={user.phoneNumber} id="phoneNumber" name="phoneNumber" type="text" />
+                  <input
+                    onChange={onChangeHandler}
+                    defaultValue={userControlled.phoneNumber}
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    type="text"
+                  />
                 </div>
                 <p className="form-error">Phone number is not valid!</p>
               </div>
@@ -75,7 +111,13 @@ export default function UserEdit({ onClose, user, onEditUserHandler }) {
                 <span>
                   <i className="fa-solid fa-image"></i>
                 </span>
-                <input defaultValue={user.imageUrl} id="imageUrl" name="imageUrl" type="text" />
+                <input
+                  onChange={onChangeHandler}
+                  defaultValue={userControlled.imageUrl}
+                  id="imageUrl"
+                  name="imageUrl"
+                  type="text"
+                />
               </div>
               <p className="form-error">ImageUrl is not valid!</p>
             </div>
@@ -87,7 +129,13 @@ export default function UserEdit({ onClose, user, onEditUserHandler }) {
                   <span>
                     <i className="fa-solid fa-map"></i>
                   </span>
-                  <input defaultValue={user.address.country} id="country" name="country" type="text" />
+                  <input
+                    onChange={onChangeHandler}
+                    defaultValue={userControlled.country}
+                    id="country"
+                    name="country"
+                    type="text"
+                  />
                 </div>
                 <p className="form-error">Country should be at least 2 characters long!</p>
               </div>
@@ -97,7 +145,7 @@ export default function UserEdit({ onClose, user, onEditUserHandler }) {
                   <span>
                     <i className="fa-solid fa-city"></i>
                   </span>
-                  <input defaultValue={user.address.city} id="city" name="city" type="text" />
+                  <input onChange={onChangeHandler} defaultValue={userControlled.city} id="city" name="city" type="text" />
                 </div>
                 <p className="form-error">City should be at least 3 characters long!</p>
               </div>
@@ -110,7 +158,7 @@ export default function UserEdit({ onClose, user, onEditUserHandler }) {
                   <span>
                     <i className="fa-solid fa-map"></i>
                   </span>
-                  <input defaultValue={user.address.street} id="street" name="street" type="text" />
+                  <input onChange={onChangeHandler} defaultValue={userControlled.street} id="street" name="street" type="text" />
                 </div>
                 <p className="form-error">Street should be at least 3 characters long!</p>
               </div>
@@ -120,7 +168,13 @@ export default function UserEdit({ onClose, user, onEditUserHandler }) {
                   <span>
                     <i className="fa-solid fa-house-chimney"></i>
                   </span>
-                  <input defaultValue={user.address.streetNumber} id="streetNumber" name="streetNumber" type="text" />
+                  <input
+                    onChange={onChangeHandler}
+                    defaultValue={userControlled.streetNumber}
+                    id="streetNumber"
+                    name="streetNumber"
+                    type="text"
+                  />
                 </div>
                 <p className="form-error">Street number should be a positive number!</p>
               </div>

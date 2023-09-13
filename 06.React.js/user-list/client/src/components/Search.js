@@ -1,6 +1,17 @@
-export default function Search({ onSearchClick,onSearchCloseClick }) {
+import { useState } from 'react';
+
+export default function Search({ onSearchClick, onSearchCloseClick }) {
+  const [values, setValues] = useState({
+    search: '',
+    criteria: '',
+  });
+
+  function onChangeHandler(e) {
+    setValues((oldValues) => ({ ...oldValues, [e.target.name]: e.target.value }));
+  }
+
   return (
-    <form id="searchForm" onSubmit={onSearchClick} className="search-form">
+    <form id="searchForm" onSubmit={(e) => onSearchClick(e, values.search, values.criteria)} className="search-form">
       <h2>
         <svg
           aria-hidden="true"
@@ -18,7 +29,13 @@ export default function Search({ onSearchClick,onSearchCloseClick }) {
         <span>Users</span>
       </h2>
       <div className="search-input-container">
-        <input type="text" placeholder="Please, select the search criteria" name="search" />
+        <input
+          onChange={onChangeHandler}
+          defaultValue={''}
+          type="text"
+          placeholder="Please, select the search criteria"
+          name="search"
+        />
         <button onClick={onSearchCloseClick} type="button" className="btn close-btn">
           <i className="fa-solid fa-xmark"></i>
         </button>
@@ -30,7 +47,7 @@ export default function Search({ onSearchClick,onSearchCloseClick }) {
 
       <div className="filter">
         <span>Search Criteria:</span>
-        <select id="criteria" name="criteria" className="criteria" defaultValue="">
+        <select onChange={onChangeHandler} defaultValue={''} id="criteria" name="criteria" className="criteria">
           <option value="">Not selected</option>
           <option value="firstName">First Name</option>
           <option value="lastName">Last Name</option>

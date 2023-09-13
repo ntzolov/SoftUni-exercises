@@ -33,13 +33,13 @@ export default function Table({ users, onUserCreateAdd, loading, onUserDelete, g
     setShowEditUser(true);
   }
 
-  async function onAddUserHandler(e) {
-    await onUserCreateAdd(e);
+  async function onAddUserHandler(e, user) {
+    await onUserCreateAdd(e, user);
     setShowAddUser(false);
   }
 
-  async function onEditUserHandler(e, id) {
-    await onUserEdit(e, id);
+  async function onEditUserHandler(e, id, user) {
+    await onUserEdit(e, id, user);
     setShowEditUser(false);
   }
 

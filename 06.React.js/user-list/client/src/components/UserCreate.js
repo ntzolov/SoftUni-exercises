@@ -1,4 +1,22 @@
+import { useState } from 'react';
+
 export default function UserCreate({ onClose, onAddUserHandler }) {
+  const [user, setUser] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    imageUrl: '',
+    phoneNumber: '',
+    country: '',
+    city: '',
+    street: '',
+    streetNumber: '',
+  });
+
+  function onChangeHandler(e) {
+    setUser((oldState) => ({ ...oldState, [e.target.name]: e.target.value }));
+  }
+
   return (
     <div className="overlay">
       <div className="backdrop"></div>
@@ -22,7 +40,10 @@ export default function UserCreate({ onClose, onAddUserHandler }) {
               </svg>
             </button>
           </header>
-          <form onSubmit={onAddUserHandler}>
+          <form
+            onSubmit={(e) => {
+              onAddUserHandler(e, user);
+            }}>
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="firstName">First name</label>
@@ -30,7 +51,7 @@ export default function UserCreate({ onClose, onAddUserHandler }) {
                   <span>
                     <i className="fa-solid fa-user"></i>
                   </span>
-                  <input id="firstName" name="firstName" type="text" />
+                  <input onChange={onChangeHandler} value={user.firstName} id="firstName" name="firstName" type="text" />
                 </div>
                 <p className="form-error">First name should be at least 3 characters long!</p>
               </div>
@@ -40,7 +61,7 @@ export default function UserCreate({ onClose, onAddUserHandler }) {
                   <span>
                     <i className="fa-solid fa-user"></i>
                   </span>
-                  <input id="lastName" name="lastName" type="text" />
+                  <input onChange={onChangeHandler} value={user.lastName} id="lastName" name="lastName" type="text" />
                 </div>
                 <p className="form-error">Last name should be at least 3 characters long!</p>
               </div>
@@ -53,7 +74,7 @@ export default function UserCreate({ onClose, onAddUserHandler }) {
                   <span>
                     <i className="fa-solid fa-envelope"></i>
                   </span>
-                  <input id="email" name="email" type="text" />
+                  <input onChange={onChangeHandler} value={user.email} id="email" name="email" type="text" />
                 </div>
                 <p className="form-error">Email is not valid!</p>
               </div>
@@ -63,7 +84,7 @@ export default function UserCreate({ onClose, onAddUserHandler }) {
                   <span>
                     <i className="fa-solid fa-phone"></i>
                   </span>
-                  <input id="phoneNumber" name="phoneNumber" type="text" />
+                  <input onChange={onChangeHandler} value={user.phoneNumber} id="phoneNumber" name="phoneNumber" type="text" />
                 </div>
                 <p className="form-error">Phone number is not valid!</p>
               </div>
@@ -75,7 +96,7 @@ export default function UserCreate({ onClose, onAddUserHandler }) {
                 <span>
                   <i className="fa-solid fa-image"></i>
                 </span>
-                <input id="imageUrl" name="imageUrl" type="text" />
+                <input onChange={onChangeHandler} value={user.imageUrl} id="imageUrl" name="imageUrl" type="text" />
               </div>
               <p className="form-error">ImageUrl is not valid!</p>
             </div>
@@ -87,7 +108,7 @@ export default function UserCreate({ onClose, onAddUserHandler }) {
                   <span>
                     <i className="fa-solid fa-map"></i>
                   </span>
-                  <input id="country" name="country" type="text" />
+                  <input onChange={onChangeHandler} value={user.country} id="country" name="country" type="text" />
                 </div>
                 <p className="form-error">Country should be at least 2 characters long!</p>
               </div>
@@ -97,7 +118,7 @@ export default function UserCreate({ onClose, onAddUserHandler }) {
                   <span>
                     <i className="fa-solid fa-city"></i>
                   </span>
-                  <input id="city" name="city" type="text" />
+                  <input onChange={onChangeHandler} value={user.city} id="city" name="city" type="text" />
                 </div>
                 <p className="form-error">City should be at least 3 characters long!</p>
               </div>
@@ -110,7 +131,7 @@ export default function UserCreate({ onClose, onAddUserHandler }) {
                   <span>
                     <i className="fa-solid fa-map"></i>
                   </span>
-                  <input id="street" name="street" type="text" />
+                  <input onChange={onChangeHandler} value={user.street} id="street" name="street" type="text" />
                 </div>
                 <p className="form-error">Street should be at least 3 characters long!</p>
               </div>
@@ -120,7 +141,7 @@ export default function UserCreate({ onClose, onAddUserHandler }) {
                   <span>
                     <i className="fa-solid fa-house-chimney"></i>
                   </span>
-                  <input id="streetNumber" name="streetNumber" type="text" />
+                  <input onChange={onChangeHandler} value={user.streetNumber} id="streetNumber" name="streetNumber" type="text" />
                 </div>
                 <p className="form-error">Street number should be a positive number!</p>
               </div>
