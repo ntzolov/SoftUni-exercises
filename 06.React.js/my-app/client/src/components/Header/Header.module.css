@@ -1,0 +1,34 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  background-color: rosybrown;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+nav span {
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+.nav-list li {
+  padding: 10px;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  font-size: larger;
+  color:rgb(0, 253, 127);
+  font-weight: 900;
+  text-shadow: 1px 1px 1px rgb(56, 56, 56);
+}
+
+.nav-list li a:hover {
+  text-decoration: underline;
+}
