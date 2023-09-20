@@ -1,4 +1,4 @@
-@import './App.css';
+@import './App.scss';
 
 /*
   1. Use a more-intuitive box-sizing model.
@@ -22,7 +22,6 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: antiquewhite;
 }
 /*
   5. Improve media defaults

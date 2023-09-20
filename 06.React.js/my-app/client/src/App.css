@@ -1,7 +1,0 @@
-@import './components/Header/Header.module.css';
-@import './components/Footer/Footer.module.css';
-@import './components/Home/Home.module.css';
-
-.App {
-  text-align: center;
-}
