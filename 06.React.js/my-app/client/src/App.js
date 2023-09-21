@@ -10,6 +10,7 @@ import { Footer } from './components/Footer/Footer';
 import { Catalog } from './components/Catalog/Catalog';
 import { Create } from './components/Create/Create';
 import { MyList } from './components/MyList/MyList';
+import { Search } from './components/Search/Search';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/create" element={<Create />} />
           <Route path="/my-list" element={<MyList />} />
+          <Route path="/search" element={<Search />} />
           <Route path="/auth" element={<LoginRegister />} />
           <Route path="/logout" element={<Logout />} />
         </Routes>

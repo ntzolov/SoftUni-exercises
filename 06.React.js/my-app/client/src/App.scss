@@ -2,23 +2,26 @@
 @import './components/Footer/Footer.module.scss';
 @import './components/Home/Home.module.scss';
 @import './components/LoginRegister/LoginRegister.module.scss';
+@import './components/Catalog/Catalog.module.scss';
 
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/movie-posters.jpg');
-  background-size: cover;
-  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/movie-posters.jpg');
+  background-size:cover;
 }
 
 .app {
-  height: 100vh;
-  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
 }
 
 #main {
+  flex: 1;
+  height: 100%;
+  margin-top: 53.5px;
+  margin-bottom: 30px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   color: antiquewhite;
-  height: 100%;
 }

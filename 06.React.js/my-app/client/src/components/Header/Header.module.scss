@@ -1,18 +1,18 @@
-@import '../../../public/styles/partials/colors.module';
-
 nav {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
+  height: 53.5px;
+  z-index: 999;
 }
 
 .topnav {
   overflow: hidden;
-  background-color: $background-color-header;
+  background-color: #353643;
   display: flex;
   flex-direction: row;
   justify-content: right;
-  height: 10%;
 
   a {
     float: left;
@@ -25,7 +25,7 @@ nav {
     transition: all 0.2s;
 
     &:hover {
-      background-color: salmon;
+      background-color: #FF8F62;
       color: white;
     }
   }
@@ -38,7 +38,7 @@ nav {
 }
 
 .active {
-  background-color: salmon;
+  background-color: #FF8F62;
   color: white;
 }
 

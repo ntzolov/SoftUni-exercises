@@ -13,15 +13,20 @@
 */
 * {
   margin: 0;
+  padding: 0;
 }
 /*
   Typographic tweaks!
   3. Add accessible line-height
   4. Improve text rendering
 */
+html {
+  min-height: 100%;
+}
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  height: 100vh;
 }
 /*
   5. Improve media defaults

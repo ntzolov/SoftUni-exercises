@@ -1,18 +1,27 @@
 footer {
   position: fixed;
   bottom: 0;
+  right: 0;
   width: 100%;
-  height: 5%;
+  height: 30px;
   text-align: center;
   color: bisque;
-  background-color: #434a52;
+  background-color: #353643;
 }
 
 .footer {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content:space-between;
   align-items: center;
+
+  span {
+    padding: 0 15px;
+
+    a {
+      all: unset;
+      cursor: pointer;
+      color: #FF8F62;
+    }
+  }
 }

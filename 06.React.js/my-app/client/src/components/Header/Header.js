@@ -38,6 +38,10 @@ export const Header = () => {
           My list
         </NavLink>
 
+        <NavLink to="/search" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
+          Search
+        </NavLink>
+
         <NavLink to="/auth" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
           Login / Register
         </NavLink>

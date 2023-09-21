@@ -4,13 +4,13 @@ import { useState } from 'react';
 
 export const LoginRegister = () => {
   const [loginValues, setloginValues] = useState({
-    loginUsername: '',
-    loginPassword: '',
+    username: '',
+    password: '',
   });
   const [registerValues, setRegisterValues] = useState({
-    registerUsername: '',
-    registerPassword: '',
-    registerRePassword: '',
+    username: '',
+    password: '',
+    rePassword: '',
   });
 
   const onLoginChange = (e) => {
@@ -70,9 +70,9 @@ export const LoginRegister = () => {
                   <i className="fas fa-envelope"></i>
                   <input
                     onChange={onLoginChange}
-                    value={loginValues.loginUsername}
+                    value={loginValues.username}
                     type="text"
-                    name="loginUsername"
+                    name="username"
                     placeholder="Enter your username"
                     required
                   />
@@ -81,14 +81,14 @@ export const LoginRegister = () => {
                   <i className="fas fa-lock"></i>
                   <input
                     onChange={onLoginChange}
-                    value={loginValues.loginPassword}
+                    value={loginValues.password}
                     type="password"
-                    name="loginPassword"
+                    name="password"
                     placeholder="Enter your password"
                     required
                   />
                 </div>
-                <div class="warning">Something went wrong!</div>
+                <div className="warning">Something went wrong!</div>
                 <div className="button input-box">
                   <input type="submit" value="Submit" />
                 </div>
@@ -106,9 +106,9 @@ export const LoginRegister = () => {
                   <i className="fas fa-user"></i>
                   <input
                     onChange={onRegisterChange}
-                    value={registerValues.registerUsername}
+                    value={registerValues.username}
                     type="text"
-                    name="registerUsername"
+                    name="username"
                     placeholder="Enter your username"
                     required
                   />
@@ -117,9 +117,9 @@ export const LoginRegister = () => {
                   <i className="fas fa-envelope"></i>
                   <input
                     onChange={onRegisterChange}
-                    value={registerValues.registerPassword}
+                    value={registerValues.password}
                     type="password"
-                    name="registerPassword"
+                    name="password"
                     placeholder="Enter your password"
                     required
                   />
@@ -128,14 +128,14 @@ export const LoginRegister = () => {
                   <i className="fas fa-lock"></i>
                   <input
                     onChange={onRegisterChange}
-                    value={registerValues.registerRePassword}
+                    value={registerValues.rePassword}
                     type="password"
-                    name="registerRePassword"
+                    name="rePassword"
                     placeholder="Confirm your password"
                     required
                   />
                 </div>
-                <div class="warning">Something went wrong!</div>
+                <div className="warning">Something went wrong!</div>
                 <div className="button input-box">
                   <input type="submit" value="Submit" />
                 </div>
