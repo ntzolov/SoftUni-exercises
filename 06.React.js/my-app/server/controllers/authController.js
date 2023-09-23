@@ -1,9 +1,31 @@
+const User = require('../models/User');
+const { mongoErrorHandler } = require('../utils/mongoErrorHandler');
+
 const router = require('express').Router();
 
-router.post('/register', (req, res) => {
-  const {username, password, rePassword} = req.body
+router.post('/register', async (req, res) => {
+  try {
+    const { username, password, rePassword } = req.body;
 
-  console.log(username, password, rePassword);
+    if (!username || !password || !rePassword) {
+      return res.status(406).json({ message: 'All fields are required!' });
+    }
+
+    if (password !== rePassword) {
+      return res.status(406).json({ message: "Password doesn't match!" });
+    }
+
+    const isDuplicateUser = await User.findOne({ username }).lean();
+
+    if (isDuplicateUser) {
+      return res.status(406).json({ message: 'User already exist!' });
+    }
+
+    const user = await User.create({ username, password });
+    return res.status(200).json(user);
+  } catch (error) {
+    res.status(406).json({ message: mongoErrorHandler(error) });
+  }
 });
 
 router.post('/login', (req, res) => {});

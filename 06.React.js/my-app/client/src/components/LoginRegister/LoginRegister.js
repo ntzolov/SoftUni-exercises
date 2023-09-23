@@ -2,6 +2,7 @@ import ironman from '../../images/register-ironman.jpg';
 import joker from '../../images/login-joker.jpg';
 import { useState } from 'react';
 import { register } from '../../services/authServices';
+import { useNavigate } from 'react-router-dom';
 
 export const LoginRegister = () => {
   const [loginValues, setloginValues] = useState({
@@ -15,6 +16,8 @@ export const LoginRegister = () => {
   });
 
   const [error, setError] = useState('');
+
+  const navigate = useNavigate();
 
   const onLoginChange = (e) => {
     setloginValues((state) => ({ ...state, [e.target.name]: e.target.value }));
@@ -33,13 +36,13 @@ export const LoginRegister = () => {
   const onRegisterSubmit = async (e) => {
     e.preventDefault();
 
-    if (registerValues.password !== registerValues.rePassword) {
-      return setError("Password doesn't match!");
+    try {
+      const user = await register(registerValues);
+
+      navigate('/');
+    } catch (error) {
+      setError(error.message);
     }
-
-    // const result = await register(registerValues);
-
-    // console.log(result);
   };
 
   return (

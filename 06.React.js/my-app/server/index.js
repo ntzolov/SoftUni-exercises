@@ -1,11 +1,14 @@
 const express = require('express');
+const databaseConnect = require('./config/database');
 const serverConnect = require('./config/express');
 const routes = require('./config/routes');
 
 const app = express();
 
+try {
+  serverConnect(app).then(() => databaseConnect());
+} catch (error) {
+  console.log(error);
+}
 
-serverConnect(app);
 routes(app);
-
-app.listen(3030, () => console.log('Server is listening on port 3030...'));

@@ -1,6 +1,6 @@
 export const Create = () => {
   return (
-    <div class="container-create">
+    <div className="container-create">
       <form>
         <div className="label-input">
           <label htmlFor="name">Name:</label>

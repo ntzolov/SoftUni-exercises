@@ -14,7 +14,6 @@ const requester = async (method, url, data) => {
     }
 
     const response = await fetch(host + url, options);
-    console.log(response);
     const result = await response.json();
 
     if (response.ok !== true) {
@@ -23,7 +22,7 @@ const requester = async (method, url, data) => {
 
     return result;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 

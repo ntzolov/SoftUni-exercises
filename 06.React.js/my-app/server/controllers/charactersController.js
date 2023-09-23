@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-router.get('/test', (req, res) => {
+router.get('/', (req, res) => {
 
 });
 
