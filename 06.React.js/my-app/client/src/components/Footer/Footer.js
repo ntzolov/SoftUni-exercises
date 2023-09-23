@@ -5,9 +5,8 @@ export const Footer = () => {
     <footer>
       <div className="footer">
         <span>
-          This APP was made with React.js - <Link to={'https://github.com/ntzolov'}>My Github</Link>
-        </span>{' '}
-        <span>All rights reserved &#169;</span>
+          All rights reserved &#169; <Link to={'https://github.com/ntzolov'}>My Github</Link>
+        </span>
       </div>
     </footer>
   );

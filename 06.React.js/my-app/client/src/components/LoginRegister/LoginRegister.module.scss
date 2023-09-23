@@ -1,7 +1,7 @@
 /* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-.container {
+.container-auth {
   font-family: 'Poppins', sans-serif;
   position: relative;
   max-width: 850px;
@@ -12,8 +12,9 @@
   perspective: 2700px;
   border: 1px solid white;
   color: #dfdfdf;
+  margin: 5px 5px;
 }
-.container .cover {
+.container-auth .cover {
   position: absolute;
   top: 0;
   left: 50%;
@@ -24,11 +25,11 @@
   transform-origin: left;
   transform-style: preserve-3d;
 }
-.container #flip:checked ~ .cover {
+.container-auth #flip:checked ~ .cover {
   transform: rotateY(-180deg);
 }
-.container .cover .front,
-.container .cover .back {
+.container-auth .cover .front,
+.container-auth .cover .back {
   position: absolute;
   top: 0;
   left: 0;
@@ -43,29 +44,29 @@
   transform: rotateY(180deg);
   backface-visibility: hidden;
 }
-.container .cover::before,
-.container .cover::after {
+.container-auth .cover::before,
+.container-auth .cover::after {
   content: '';
   position: absolute;
   height: 100%;
   width: 100%;
-  background: #a0a0a0;
+  // background: #4646468e;
   opacity: 0.2;
   z-index: 12;
 }
-.container .cover::after {
+.container-auth .cover::after {
   opacity: 0.3;
   transform: rotateY(180deg);
   backface-visibility: hidden;
 }
-.container .cover img {
+.container-auth .cover img {
   position: absolute;
   height: 100%;
   width: 100%;
   object-fit: cover;
   z-index: 10;
 }
-.container .cover .text {
+.container-auth .cover .text {
   position: absolute;
   z-index: 130;
   height: 100%;
@@ -96,12 +97,12 @@
   text-align: center;
   font-weight: 900;
 }
-.container .forms {
+.container-auth .forms {
   height: 100%;
   width: 100%;
   background: #fff;
 }
-.container .form-content {
+.container-auth .form-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -197,11 +198,11 @@
   text-align: center;
   margin-top: 25px;
 }
-.container #flip {
+.container-auth #flip {
   display: none;
 }
 @media (max-width: 730px) {
-  .container .cover {
+  .container-auth .cover {
     display: none;
   }
   .form-content .login-form,
@@ -211,10 +212,10 @@
   .form-content .signup-form {
     display: none;
   }
-  .container #flip:checked ~ .forms .signup-form {
+  .container-auth #flip:checked ~ .forms .signup-form {
     display: block;
   }
-  .container #flip:checked ~ .forms .login-form {
+  .container-auth #flip:checked ~ .forms .login-form {
     display: none;
   }
 }

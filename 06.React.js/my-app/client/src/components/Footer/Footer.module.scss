@@ -11,17 +11,16 @@ footer {
 
 .footer {
   display: flex;
-  flex-direction: row;
-  justify-content:space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   span {
-    padding: 0 15px;
 
     a {
       all: unset;
       cursor: pointer;
-      color: #FF8F62;
+      color: #ff8f62;
     }
   }
 }

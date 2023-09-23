@@ -7,11 +7,10 @@ export const Catalog = () => {
         </div>
         <div className="content">
           <h1>Bugs Bunny</h1>
-          <p className="title">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolores aut ad consequatur iusto eaque alias deserunt
-            labore repellendus quibusdam voluptate nam, exercitationem est porro ullam id sint perspiciatis repudiandae. Fugit
-            rerum ab magnam et expedita exercitationem perferendis atque odit. Iusto delectus enim velit vitae ea soluta mollitia
-            asperiores neque repudiandae eveniet officia tempore, illum autem eum? Necessitatibus, tempora iste.
+          <p className="card-description">
+            Bugs is shrewd, irreverent, quick-witted, and outspoken, and he likes carrots and practical jokes. His catchphrases
+            include “What's up, Doc?” “Of course, you know, this means war!” and “What a maroon!” Bugs Bunny was conceived at the
+            animation unit at Warner Brothers studios.
           </p>
           <p className="info">Click for more information</p>
         </div>
@@ -22,7 +21,7 @@ export const Catalog = () => {
         </div>
         <div className="content">
           <h1>Gollum/Smeagol</h1>
-          <p className="title">
+          <p className="card-description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolores aut ad consequatur iusto eaque alias deserunt
             labore repellendus quibusdam voluptate nam, exercitationem est porro ullam id sint perspiciatis repudiandae. Fugit
             rerum ab magnam et expedita exercitationem perferendis atque odit. Iusto delectus enim velit vitae ea soluta mollitia
@@ -37,7 +36,7 @@ export const Catalog = () => {
         </div>
         <div className="content">
           <h1>Ironman</h1>
-          <p className="title">
+          <p className="card-description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolores aut ad consequatur iusto eaque alias deserunt
             labore repellendus quibusdam voluptate nam, exercitationem est porro ullam id sint perspiciatis repudiandae. Fugit
             rerum ab magnam et expedita exercitationem perferendis atque odit. Iusto delectus enim velit vitae ea soluta mollitia

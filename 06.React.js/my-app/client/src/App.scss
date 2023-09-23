@@ -3,10 +3,16 @@
 @import './components/Home/Home.module.scss';
 @import './components/LoginRegister/LoginRegister.module.scss';
 @import './components/Catalog/Catalog.module.scss';
+@import './components/Create/Create.module.scss';
+@import './components/MyList/MyList.module.scss';
+
+::selection {
+  background: #a863a8;
+}
 
 body {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/movie-posters.jpg');
-  background-size:cover;
+  background-size: cover;
 }
 
 .app {

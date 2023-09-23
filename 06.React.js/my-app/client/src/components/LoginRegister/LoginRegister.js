@@ -1,6 +1,7 @@
 import ironman from '../../images/register-ironman.jpg';
 import joker from '../../images/login-joker.jpg';
 import { useState } from 'react';
+import { register } from '../../services/authServices';
 
 export const LoginRegister = () => {
   const [loginValues, setloginValues] = useState({
@@ -12,6 +13,8 @@ export const LoginRegister = () => {
     password: '',
     rePassword: '',
   });
+
+  const [error, setError] = useState('');
 
   const onLoginChange = (e) => {
     setloginValues((state) => ({ ...state, [e.target.name]: e.target.value }));
@@ -27,35 +30,41 @@ export const LoginRegister = () => {
     setRegisterValues((state) => ({ ...state, [e.target.name]: e.target.value }));
   };
 
-  const onRegisterSubmit = (e) => {
+  const onRegisterSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(registerValues);
+    if (registerValues.password !== registerValues.rePassword) {
+      return setError("Password doesn't match!");
+    }
+
+    // const result = await register(registerValues);
+
+    // console.log(result);
   };
 
   return (
-    <div className="container">
+    <div className="container-auth">
       <input type="checkbox" id="flip" />
       <div className="cover">
         <div className="front">
-          <img className="rtl" src={joker} alt=""></img>
+          <img className="rtl" src={ironman} alt=""></img>
           <div className="text">
             {/* <span className="text-1">
               SOME TEXT HERE
             </span> */}
-            <span className="text-2 rtl" style={{ color: '#dfdfdf' }}>
-              "It's not about money...it's about sending a message!"
+            <span className="text-2 rtl" style={{ color: 'rgb(213, 213, 213)' }}>
+              “The Avengers. That's what we call ourselves; we're sort of like a team. 'Earth's Mightiest Heroes'-type thing.”
             </span>
           </div>
         </div>
         <div className="back">
-          <img src={ironman} alt=""></img>
+          <img src={joker} alt=""></img>
           <div className="text">
             {/* <span className="text-1">
              SOME TEXT HERE
             </span> */}
-            <span className="text-2" style={{ color: 'white' }}>
-              “The Avengers. That's what we call ourselves; we're sort of like a team. 'Earth's Mightiest Heroes'-type thing.”
+            <span className="text-2" style={{ color: 'rgb(213, 213, 213)' }}>
+              "It's not about money...it's about sending a message!"
             </span>
           </div>
         </div>
@@ -135,7 +144,8 @@ export const LoginRegister = () => {
                     required
                   />
                 </div>
-                <div className="warning">Something went wrong!</div>
+                {error && <div className="warning">{error}</div>}
+
                 <div className="button input-box">
                   <input type="submit" value="Submit" />
                 </div>

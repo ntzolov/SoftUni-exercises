@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
+
+.container-details {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 600px;
+  background-color: #ffebb3;
+  border: 1px solid #ffebb3;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  margin: 10px;
+  overflow-y: auto;
+
+  .image-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 10px 25px 10px;
+
+    .image {
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-family: 'Gloock';
+      color: #3e63df;
+      font-size: 25px;
+      align-self: center;
+      margin-left: 10px;
+    }
+  }
+
+  .content {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    .title-text {
+      margin: 0px 10px 25px 10px;
+      font-size:medium;
+
+      .section-title {
+        color: #23446d;
+        text-align: center;
+        text-decoration: underline;
+      }
+      .section-text {
+        color: black;
+        text-align: center;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    margin-bottom: 25px;
+
+    .button-edit {
+      display: block;
+      margin: 0 auto;
+      line-height: 28pt;
+      padding: 0 20px;
+      background: #f8f4e5;
+      letter-spacing: 2px;
+      transition: 0.2s all ease-in-out;
+      outline: none;
+      border: 1px solid black;
+      box-shadow: 3px 3px 1px 1px #61c966, 3px 3px 1px 2px black;
+
+      &:hover {
+        box-shadow: none;
+        cursor: pointer;
+        background: #61c966;
+        border: 1px solid black;
+      }
+    }
+
+    .button-delete {
+      display: block;
+      margin: 0 auto;
+      line-height: 28pt;
+      padding: 0 20px;
+      background: #f8f4e5;
+      letter-spacing: 2px;
+      transition: 0.2s all ease-in-out;
+      outline: none;
+      border: 1px solid black;
+      box-shadow: 3px 3px 1px 1px #be6246, 3px 3px 1px 2px black;
+
+      &:hover {
+        box-shadow: none;
+        cursor: pointer;
+        background: #be6246;
+        border: 1px solid black;
+      }
+    }
+  }
+
+  // .card {
+
+  //   box-shadow: 0 0 5rem rgba(0, 0, 0, 0.3);
+  //   transition: 0.4s;
+  //   cursor: pointer;
+  //   overflow: hidden;
+  //   display: flex;
+  //   flex-direction: column;
+  //   margin: 25px 20px;
+
+  //   &:hover {
+  //     background-color: #ffd86b;
+  //     transform: scale(1.1);
+  //     box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+  //     .info {
+  //       font-weight: bold;
+  //     }
+  //   }
+
+  //   .content {
+  //     text-align: center;
+  //     padding: 5px 10px 10px 10px;
+  //     color: #000;
+  //     height: 100%;
+  //     display: flex;
+  //     flex-direction: column;
+  //     justify-content: space-between;
+
+  //     h1 {
+  //       font-family: 'Gloock';
+  //       color: #7339be;
+  //       font-size: 25px;
+  //     }
+
+  //     .card-description {
+  //       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  //       padding-left: 25px;
+  //       display: -webkit-box;
+  //       max-width: 200px;
+  //       -webkit-line-clamp: 4;
+  //       -webkit-box-orient: vertical;
+  //       overflow: hidden;
+  //     }
+
+  //     .info {
+  //       text-align: center;
+  //     }
+  //   }
+
+  //   .image {
+  //     height: 150px;
+  //     display: flex;
+  //     justify-content: center;
+  //     background-color: #ffebb3;
+  //     border-bottom: 1px solid black;
+  //     object-fit: cover;
+
+  //     img {
+  //       width: 100%;
+  //       height: auto;
+  //       object-fit: contain;
+  //     }
+  //   }
+  // }
+}
+
+@media only screen and (max-width: 500px) {
+  .container-details {
+    .image-title {
+      flex-direction: column;
+    }
+  }
+}
