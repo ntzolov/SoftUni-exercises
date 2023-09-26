@@ -1,6 +1,10 @@
 import { NavLink } from 'react-router-dom';
+import { globalContext } from '../../contexts/globalContext';
+import { useContext } from 'react';
 
 export const Header = () => {
+  const { user } = useContext(globalContext);
+
   function toggleDropdown() {
     const element = document.getElementById('myTopnav');
 
@@ -29,26 +33,29 @@ export const Header = () => {
         <NavLink to="/catalog" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
           Catalog
         </NavLink>
+        {user ? (
+          <>
+            <NavLink to="/create" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
+              Create
+            </NavLink>
 
-        <NavLink to="/create" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
-          Create
-        </NavLink>
+            <NavLink to="/my-list" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
+              My list
+            </NavLink>
 
-        <NavLink to="/my-list" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
-          My list
-        </NavLink>
+            <NavLink to="/search" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
+              Search
+            </NavLink>
 
-        <NavLink to="/search" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
-          Search
-        </NavLink>
-
-        <NavLink to="/auth" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
-          Login / Register
-        </NavLink>
-
-        <NavLink to="/logout" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
-          Logout
-        </NavLink>
+            <NavLink to="/logout" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
+              Logout
+            </NavLink>
+          </>
+        ) : (
+          <NavLink to="/auth" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
+            Login / Register
+          </NavLink>
+        )}
 
         <NavLink style={{ fontSize: '15px' }} className="icon" onClick={toggleDropdown}>
           &#9776;

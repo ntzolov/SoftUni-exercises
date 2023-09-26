@@ -1,3 +1,5 @@
+const bcrypt = require('bcrypt');
+
 const {
   Schema,
   Types: { ObjectId },
@@ -22,6 +24,18 @@ const userSchema = new Schema({
     type: Boolean,
     default: false,
   },
+});
+
+userSchema.pre('save', function (next) {
+  bcrypt.hash(this.password, 10).then((hash) => {
+    this.password = hash;
+
+    next();
+  });
+});
+
+userSchema.method('comparePassword', function (password) {
+  return bcrypt.compare(password, this.password);
 });
 
 const User = model('User', userSchema);

@@ -1,10 +1,12 @@
 import ironman from '../../images/register-ironman.jpg';
 import joker from '../../images/login-joker.jpg';
-import { useState } from 'react';
-import { register } from '../../services/authServices';
+import { useContext, useState } from 'react';
+import { login, register } from '../../services/authServices';
 import { useNavigate } from 'react-router-dom';
+import { globalContext } from '../../contexts/globalContext';
 
 export const LoginRegister = () => {
+  const { setUser } = useContext(globalContext);
   const [loginValues, setloginValues] = useState({
     username: '',
     password: '',
@@ -14,19 +16,25 @@ export const LoginRegister = () => {
     password: '',
     rePassword: '',
   });
-
-  const [error, setError] = useState('');
-
+  const [loginError, setLoginError] = useState('');
+  const [registerError, setRegisterError] = useState('');
   const navigate = useNavigate();
 
   const onLoginChange = (e) => {
     setloginValues((state) => ({ ...state, [e.target.name]: e.target.value }));
   };
 
-  const onLoginSubmit = (e) => {
+  const onLoginSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(loginValues);
+    try {
+      const user = await login(loginValues);
+      setUser(user);
+
+      navigate('/');
+    } catch (error) {
+      setLoginError(error.message);
+    }
   };
 
   const onRegisterChange = (e) => {
@@ -38,10 +46,11 @@ export const LoginRegister = () => {
 
     try {
       const user = await register(registerValues);
+      setUser(user);
 
       navigate('/');
     } catch (error) {
-      setError(error.message);
+      setRegisterError(error.message);
     }
   };
 
@@ -79,7 +88,7 @@ export const LoginRegister = () => {
             <form onSubmit={onLoginSubmit}>
               <div className="input-boxes">
                 <div className="input-box">
-                  <i className="fas fa-envelope"></i>
+                  <i className="fa-solid fa-user-large"></i>
                   <input
                     onChange={onLoginChange}
                     value={loginValues.username}
@@ -100,7 +109,8 @@ export const LoginRegister = () => {
                     required
                   />
                 </div>
-                <div className="warning">Something went wrong!</div>
+                {loginError && <div className="warning">{loginError}</div>}
+
                 <div className="button input-box">
                   <input type="submit" value="Submit" />
                 </div>
@@ -115,39 +125,36 @@ export const LoginRegister = () => {
             <form onSubmit={onRegisterSubmit}>
               <div className="input-boxes">
                 <div className="input-box">
-                  <i className="fas fa-user"></i>
+                  <i className="fa-solid fa-user-large"></i>
                   <input
                     onChange={onRegisterChange}
                     value={registerValues.username}
                     type="text"
                     name="username"
                     placeholder="Enter your username"
-                    required
                   />
                 </div>
                 <div className="input-box">
-                  <i className="fas fa-envelope"></i>
+                  <i className="fa-solid fa-lock"></i>
                   <input
                     onChange={onRegisterChange}
                     value={registerValues.password}
                     type="password"
                     name="password"
                     placeholder="Enter your password"
-                    required
                   />
                 </div>
                 <div className="input-box">
-                  <i className="fas fa-lock"></i>
+                  <i className="fa-solid fa-repeat"></i>
                   <input
                     onChange={onRegisterChange}
                     value={registerValues.rePassword}
                     type="password"
                     name="rePassword"
                     placeholder="Confirm your password"
-                    required
                   />
                 </div>
-                {error && <div className="warning">{error}</div>}
+                {registerError && <div className="warning">{registerError}</div>}
 
                 <div className="button input-box">
                   <input type="submit" value="Submit" />

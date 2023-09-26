@@ -23,14 +23,18 @@
     .image {
       border-radius: 20px;
       overflow: hidden;
+      width: 70%;
+      border: 2px solid black;
     }
 
     h1 {
+      width: 30%;
       font-family: 'Gloock';
       color: #3e63df;
       font-size: 25px;
       align-self: center;
       margin-left: 10px;
+      text-align: center;
     }
   }
 
@@ -39,10 +43,10 @@
 
     .title-text {
       margin: 0px 10px 25px 10px;
-      font-size:medium;
+      font-size: medium;
 
       .section-title {
-        color: #23446d;
+        color: #395b85;
         text-align: center;
         text-decoration: underline;
       }
@@ -56,7 +60,7 @@
   .buttons {
     display: flex;
     flex-direction: row;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     margin-bottom: 25px;
 
     .button-edit {
@@ -170,6 +174,23 @@
   .container-details {
     .image-title {
       flex-direction: column;
+
+      .image {
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        width: 100%;
+        font-family: 'Gloock';
+        color: #3e63df;
+        font-size: 25px;
+        align-self: center;
+        margin-left: 10px;
+        text-align: center;
+      }
     }
   }
 }

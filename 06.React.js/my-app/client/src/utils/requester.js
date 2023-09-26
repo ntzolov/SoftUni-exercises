@@ -16,8 +16,12 @@ const requester = async (method, url, data) => {
     const response = await fetch(host + url, options);
     const result = await response.json();
 
-    if (response.ok !== true) {
+    if (!response.ok) {
       throw result;
+    }
+
+    if (response.status === 204) {
+      console.log('204');
     }
 
     return result;

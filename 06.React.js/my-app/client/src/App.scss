@@ -4,7 +4,8 @@
 @import './components/LoginRegister/LoginRegister.module.scss';
 @import './components/Catalog/Catalog.module.scss';
 @import './components/Create/Create.module.scss';
-@import './components/MyList/MyList.module.scss';
+@import './components/Details/Details.module.scss';
+@import './components/NotFoundError/NotFoundError.module.scss';
 
 ::selection {
   background: #a863a8;
@@ -31,3 +32,25 @@ body {
   align-items: center;
   color: antiquewhite;
 }
+
+// Spinner ===
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px dotted salmon;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+// === Spinner

@@ -2,17 +2,22 @@
 
 .container-create {
   background: #f8f4e5;
-  padding: 20px 20px;
+  padding: 0 20px 20px 20px;
   margin: 5px 22px 22px 5px;
   border: 2px solid black;
   box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px black;
   flex: 1;
   max-width: 500px;
 
+  h1 {
+    text-align: center;
+    color: #2a293e;
+  }
+
   .label-input {
     display: flex;
     flex-direction: row;
-    margin-bottom: 20px;
+    margin-top: 20px;
 
     label {
       color: #2a293e;
@@ -21,15 +26,23 @@
       font-weight: 500;
       padding: 5px 10px 0 0;
       font-size: 16px;
-      width:fit-content;
+      width: fit-content;
     }
   }
+}
+
+.error {
+  text-align: center;
+  color: salmon;
+  font-size: larger;
+  font-weight: 900;
+  margin-bottom: 10px;
 }
 
 input {
   flex: 1;
   display: block;
-  width:100%;
+  width: 100%;
   font-size: 16px;
   line-height: 35px;
   font-family: 'Fjalla One';
