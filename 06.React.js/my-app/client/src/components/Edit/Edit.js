@@ -3,11 +3,14 @@ import { getCharacterById } from '../../services/characterServices';
 import { useParams } from 'react-router-dom';
 import { globalContext } from '../../contexts/globalContext';
 import { Spinner } from '../Spinner/Spinner';
+import { ForbiddenError } from '../ForbiddenError/ForbiddenError';
 
 export const Edit = () => {
   const { characterId } = useParams();
   const [isComplete, setIsComplete] = useState(false);
   const { editError, onEditSubmit } = useContext(globalContext);
+  const { user } = useContext(globalContext);
+  const [isAuthorized, setIsAuthorized] = useState(false);
   const [editValues, setEditValues] = useState({
     name: '',
     imageUrl: '',
@@ -31,9 +34,12 @@ export const Edit = () => {
           famousLine: character.famousLine,
         });
         setIsComplete(true);
+        if ((user && user.isAdmin) || (user && character._ownerId === user._id)) {
+          setIsAuthorized(true);
+        }
       })
       .catch((error) => console.log(error));
-  }, [characterId]);
+  }, [characterId, user]);
 
   const onEditChange = (e) => {
     setEditValues((state) => ({ ...state, [e.target.name]: e.target.value }));
@@ -41,7 +47,7 @@ export const Edit = () => {
 
   return (
     <>
-      {isComplete ? (
+      {isComplete && isAuthorized ? (
         <div className="container-create">
           <h1>Edit character</h1>
           <form onSubmit={(e) => onEditSubmit(e, characterId, editValues)}>
@@ -128,6 +134,8 @@ export const Edit = () => {
             </button>
           </form>
         </div>
+      ) : isComplete ? (
+        <ForbiddenError />
       ) : (
         <Spinner />
       )}

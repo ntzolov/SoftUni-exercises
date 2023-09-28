@@ -22,10 +22,10 @@ nav {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    transition: 0.2s all ease-in-out;
+    transition: 0.2s all ease-out;
 
     &:hover {
-      background-color: #FF8F62;
+      background-color: #ff8f62;
       color: white;
     }
   }
@@ -38,7 +38,7 @@ nav {
 }
 
 .active {
-  background-color: #FF8F62;
+  background-color: #ff8f62;
   color: white;
 }
 

@@ -3,7 +3,7 @@ import { globalContext } from '../../contexts/globalContext';
 import { useContext } from 'react';
 
 export const Header = () => {
-  const { user } = useContext(globalContext);
+  const { user, onLogoutSubmit } = useContext(globalContext);
 
   function toggleDropdown() {
     const element = document.getElementById('myTopnav');
@@ -21,6 +21,11 @@ export const Header = () => {
     if (element.className !== 'topnav') {
       element.className = 'topnav';
     }
+  }
+
+  function onLogoutHandler() {
+    onResponsiveMenuClick();
+    onLogoutSubmit();
   }
 
   return (
@@ -43,11 +48,11 @@ export const Header = () => {
               My list
             </NavLink>
 
-            <NavLink to="/search" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
-              Search
+            <NavLink to="/favorites" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
+              Favorites
             </NavLink>
 
-            <NavLink to="/logout" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
+            <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onLogoutHandler}>
               Logout
             </NavLink>
           </>
@@ -61,7 +66,7 @@ export const Header = () => {
           &#9776;
         </NavLink>
 
-        {/* Dropdown if i need... */}
+        {/* Dropdown if i need it... */}
         {/* <div className="dropdown">
           <button className="dropbtn">
             Dropdown

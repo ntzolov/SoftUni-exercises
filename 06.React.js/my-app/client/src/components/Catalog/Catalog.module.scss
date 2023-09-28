@@ -6,6 +6,9 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   position: relative;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  background-color: rgba(240, 255, 255, 0.20);
 
   .card {
     background-color: #ffebb3;

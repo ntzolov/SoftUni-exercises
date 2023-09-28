@@ -26,7 +26,7 @@ router.put('/:characterId', async (req, res) => {
     const characterBody = { ...req.body };
 
     Object.entries(characterBody).forEach((x) => {
-      if (!x[1]) {
+      if (x[1] === undefined || x[1] === null || x[1] === '') {
         throw 'All fields required!';
       }
     });
@@ -56,7 +56,6 @@ router.delete('/:characterId', async (req, res) => {
     const { characterId } = req.params;
 
     const character = await Character.findByIdAndDelete(characterId);
-    console.log(character);
     return res.status(200).json(character);
   } catch (error) {
     return res.status(406).json({ message: mongoErrorHandler(error) });

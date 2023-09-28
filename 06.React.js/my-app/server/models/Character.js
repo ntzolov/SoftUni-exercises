@@ -41,6 +41,22 @@ const characterSchema = new Schema({
     trim: true,
     required: [true, 'All fields required!'],
   },
+  likes: {
+    type: Number,
+    default: 0,
+  },
+  usersLiked: [
+    {
+      type: ObjectId,
+      ref: 'User',
+    },
+  ],
+  usersFavorited: [
+    {
+      type: ObjectId,
+      ref: 'User',
+    },
+  ],
   _ownerId: {
     type: ObjectId,
   },
