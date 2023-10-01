@@ -1,6 +1,6 @@
 import './App.scss';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import useUser from './hooks/useUser';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
@@ -26,12 +26,26 @@ function App() {
   const [createError, setCreateError] = useState('');
   const [editError, setEditError] = useState('');
   const navigate = useNavigate();
+  const initialQuery = new URLSearchParams(window.location.search);
+  const [searchParams, setSearchParams] = useState({
+    search: initialQuery.get('search') || '',
+    category: initialQuery.get('category') ?? '',
+    page: initialQuery.get('page') || 1,
+  });
+  const [page, setPage] = useState(searchParams.page);
+  const [searchValue, setSearchValue] = useState(searchParams.search);
+  const [categoryValue, setCategoryValue] = useState('all');
 
-  useState(() => {
-    getAllCharacters().then((characters) => {
+  useEffect(() => {
+    navigate(`/catalog?search=${searchParams.search}&page=${page}`);
+  }, []);
+
+  useEffect(() => {
+    const querySend = `?search=${searchParams.search}&page=${page}&category=${categoryValue}&userId=${user ? user._id : ''}`;
+    getAllCharacters(querySend).then((characters) => {
       setCharacters(characters);
     });
-  }, []);
+  }, [searchParams, categoryValue, page]);
 
   const onCreateSubmit = async (e, createValues) => {
     try {
@@ -77,7 +91,23 @@ function App() {
 
   const onLogoutSubmit = () => {
     setUser(true, true);
+    setCategoryValue('all');
+    setSearchValue('');
+    setPage(1);
     navigate('/');
+  };
+
+  const onSearchSubmit = async (e) => {
+    e.preventDefault();
+    navigate(`/catalog?search=${searchValue}&page=${page}`);
+
+    setPage(1);
+    setSearchParams((state) => ({ ...state, search: searchValue }));
+  };
+
+  const resetCharacters = async () => {
+    const characters = await getAllCharacters();
+    setCharacters(characters);
   };
 
   const contextObject = {
@@ -90,6 +120,14 @@ function App() {
     onEditSubmit,
     onCreateSubmit,
     onLogoutSubmit,
+    onSearchSubmit,
+    resetCharacters,
+    setPage,
+    page,
+    setSearchValue,
+    searchValue,
+    setCategoryValue,
+    categoryValue,
   };
 
   return (

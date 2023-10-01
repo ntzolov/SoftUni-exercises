@@ -4,7 +4,27 @@ const router = require('express').Router();
 
 router.get('/', async (req, res) => {
   try {
-    const characters = await Character.find();
+    const search = req.query.search || '';
+    const page = req.query.page || '';
+    const category = req.query.category;
+    let userId = req.query.userId;
+
+    let characters;
+
+    if (category === 'liked') {
+      characters = await Character.find({ usersLiked: userId, name: { $regex: search, $options: 'i' } });
+    } else if (category === 'favorites') {
+      characters = await Character.find({ usersFavorited: userId, name: { $regex: search, $options: 'i' } });
+    } else if (category === 'my characters') {
+      characters = await Character.find({ _ownerId: userId, name: { $regex: search, $options: 'i' } });
+    } else {
+      characters = await Character.find({ name: { $regex: search, $options: 'i' } });
+    }
+
+    if (!characters.length) {
+      characters.push({ error: 'Not characters found!' });
+    }
+
     return res.status(200).json(characters);
   } catch (error) {
     return res.status(406).json({ message: mongoErrorHandler(error) });

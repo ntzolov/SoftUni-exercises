@@ -1,8 +1,12 @@
 import * as request from '../utils/requester';
 
-export const getAllCharacters = async () => {
+export const getAllCharacters = async (query) => {
   try {
-    const result = await request.get('/characters');
+    if (!query) {
+      query = '';
+    }
+
+    const result = await request.get('/characters' + query);
 
     return result;
   } catch (error) {

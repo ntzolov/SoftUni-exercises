@@ -15,7 +15,7 @@ export const CatalogItem = ({ character }) => {
       <div className="content">
         <h1>{character.name}</h1>
         <p className="card-description">{character.description}</p>
-        <p className="info">Click for more information</p>
+        <p className="info">Click for more</p>
       </div>
     </div>
   );

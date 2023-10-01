@@ -3,7 +3,7 @@ import { globalContext } from '../../contexts/globalContext';
 import { useContext } from 'react';
 
 export const Header = () => {
-  const { user, onLogoutSubmit } = useContext(globalContext);
+  const { user, onLogoutSubmit, resetCharacters } = useContext(globalContext);
 
   function toggleDropdown() {
     const element = document.getElementById('myTopnav');
@@ -28,6 +28,11 @@ export const Header = () => {
     onLogoutSubmit();
   }
 
+  async function onCatalogClickHandler() {
+    onResponsiveMenuClick();
+    await resetCharacters();
+  }
+
   return (
     <nav>
       <div className="topnav" id="myTopnav">
@@ -35,7 +40,10 @@ export const Header = () => {
           Home
         </NavLink>
 
-        <NavLink to="/catalog" className={({ isActive }) => (isActive ? 'active' : '')} onClick={onResponsiveMenuClick}>
+        <NavLink
+          to="/catalog?search=&page=1"
+          className={({ isActive }) => (isActive ? 'active' : '')}
+          onClick={onCatalogClickHandler}>
           Catalog
         </NavLink>
         {user ? (
