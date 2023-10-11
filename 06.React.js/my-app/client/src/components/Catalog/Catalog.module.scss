@@ -50,8 +50,10 @@
 
   .card-container {
     width: 100%;
+    min-height: 352px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
     position: relative;
     border-top: 1px solid white;
