@@ -13,7 +13,7 @@ router.post('/register', async (req, res) => {
   try {
     await authService.register(username, email, password, rePassword);
 
-    res.redirect('/auth/login');
+    res.redirect('/');
   } catch (error) {
     res.status(404).render('auth/register', { error: errorHandler(error) });
   }
@@ -26,6 +26,7 @@ router.get('/login', (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
+    console.log(email, password);
 
     const token = await authService.login(email, password);
 

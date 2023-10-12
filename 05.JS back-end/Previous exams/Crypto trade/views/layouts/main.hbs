@@ -16,8 +16,8 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/catalog">All Crypto</a></li>
-        <li><a href="#">Search</a></li>
         {{#if isAuthenticated}}
+        <li><a href="/catalog/search">Search</a></li>
         <li><a href="/catalog/create">Create Offer</a></li>
         <li><a href="/auth/logout">Logout</a></li>
         {{else}}

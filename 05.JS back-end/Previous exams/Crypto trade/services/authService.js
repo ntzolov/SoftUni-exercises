@@ -16,13 +16,7 @@ exports.register = async (username, email, password, rePassword) => {
     throw new Error('User already exist!');
   }
 
-  if (!password) {
-    throw new Error('Password is required!');
-  }
-
-  const hashedPassword = await bcrypt.hash(password, 10);
-
-  await User.create({ username, email, password: hashedPassword });
+  await User.create({ username, email, password });
 };
 
 exports.login = async (email, password) => {
@@ -32,7 +26,8 @@ exports.login = async (email, password) => {
     throw new Error('Invalid username or password!');
   }
 
-  const isValid = await bcrypt.compare(password, user.password);
+  const isValid = await user.comparePassword(password);
+  console.log(isValid);
   if (!isValid) {
     throw new Error('Invalid username or password!');
   }
