@@ -26,7 +26,6 @@ exports.updateCryptoById = async (cryptoId, cryptoObject) => {
   await Crypto.findByIdAndUpdate(cryptoId, cryptoObject);
 };
 
-// add the paymentMethod
 exports.searchCryptos = async (search, paymentMethod) => {
-  return await Crypto.find({ name: { $regex: search, $options: 'i' } }).lean();
+  return await Crypto.find({ name: { $regex: search, $options: 'i' }, paymentMethod: { $regex: paymentMethod } }).lean();
 };

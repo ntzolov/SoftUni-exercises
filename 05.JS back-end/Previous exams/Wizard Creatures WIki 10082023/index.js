@@ -5,6 +5,3 @@ const app = express();
 
 serverConnect(app);
 databaseConnect();
-
-// CHANGE databaseName
-// CHANGE (IF LOGIC) IN main.hbs

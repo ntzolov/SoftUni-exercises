@@ -3,7 +3,7 @@ const handlebars = require('express-handlebars');
 const cookieParser = require('cookie-parser');
 const routes = require('./routes');
 const { authMiddleware } = require('../middlewares/authMiddleware');
-const port = 5000;
+const port = 3000;
 
 module.exports = (app) => {
   app.engine(

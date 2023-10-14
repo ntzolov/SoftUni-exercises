@@ -16,13 +16,16 @@ exports.register = async (username, email, password, rePassword) => {
     throw new Error('User already exist!');
   }
 
-  if (!password) {
-    throw new Error('Password is required!');
-  }
+  const user = await User.create({ firstName, lastName, email, password });
 
-  const hashedPassword = await bcrypt.hash(password, 10);
+  const payload = {
+    _id: user._id,
+    username: user.username,
+    email: user.email,
+  };
 
-  await User.create({ username, email, password: hashedPassword });
+  const token = await jwt.sign(payload, SECRET);
+  return token;
 };
 
 exports.login = async (email, password) => {

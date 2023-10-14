@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+
+  <!-- Do not forget to change the path to the css file -->
+  <link href="/static/css/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <div id="box">
+
+    <!-- In case of error, you should display div with class "error-container" -->
+    <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+    <!--
+        <div class="error-container">
+            <p>Error</p>
+        </div>-->
+
+
+    <nav>
+      <!-- Do not forget to change the path to the image -->
+      <img src="/static/img/logo.png" alt="logo">
+
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/catalog">All Posts</a></li>
+        <!-- Logged users -->
+        {{#if isAuthenticated}}
+        <li><a href="/catalog/create">Create Post</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/auth/logout">Logout</a></li>
+        <!-- Guest users -->
+        {{else}}
+        <li><a href="/auth/register">Register</a></li>
+        <li><a href="/auth/login">Login</a></li>
+        {{/if}}
+      </ul>
+    </nav>
+
+    {{#if error}}
+    <div class="error-container">
+      <p>{{error}}</p>
+    </div>
+    {{/if}}
+
+    {{{body}}}
+
+    <footer>
+      © JS Back-End Exam 2023
+    </footer>
+  </div>
+
+</body>
+
+</html>

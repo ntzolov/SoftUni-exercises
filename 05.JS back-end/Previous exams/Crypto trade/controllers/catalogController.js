@@ -85,7 +85,7 @@ router.get('/search', isAuth, async (req, res) => {
 
 router.post('/search', isAuth, async (req, res) => {
   const { search, paymentMethod } = req.body;
-  const cryptos = await cryptoService.searchCryptos(search);
+  const cryptos = await cryptoService.searchCryptos(search, paymentMethod);
   res.render('search', { cryptos });
 });
 
