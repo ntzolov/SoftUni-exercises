@@ -13,3 +13,4 @@ databaseConnect();
 // 1. Do models.
 // 2. Do homepage and register/login/logout
 // 3. Do create page
+// 4. Do the rest :)
