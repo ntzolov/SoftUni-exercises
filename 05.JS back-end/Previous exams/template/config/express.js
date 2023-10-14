@@ -5,8 +5,6 @@ const routes = require('./routes');
 const { authMiddleware } = require('../middlewares/authMiddleware');
 const { PORT } = require('../virtualEnv');
 
-const port = PORT;
-
 module.exports = (app) => {
   app.engine(
     'hbs',
@@ -22,5 +20,5 @@ module.exports = (app) => {
   app.use(authMiddleware);
   app.use(routes);
 
-  app.listen(port, () => console.log(`Server is listening on port ${port}...`));
+  app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));
 };
