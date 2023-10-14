@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const databaseName = 'crypto';
+const { DATABASE_NAME } = require('../virtualEnv');
+
+const databaseName = DATABASE_NAME;
 
 module.exports = async () => {
   try {

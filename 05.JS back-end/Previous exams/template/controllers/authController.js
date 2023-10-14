@@ -5,7 +5,7 @@ const { errorHandler } = require('../utils/errorHandler');
 const router = require('express').Router();
 
 router.get('/register', (req, res) => {
-  res.render('auth/register');
+  res.render('auth/register', { title: 'Register' });
 });
 
 router.post('/register', async (req, res) => {
@@ -21,7 +21,7 @@ router.post('/register', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  res.render('auth/login');
+  res.render('auth/login', { title: 'Login' });
 });
 
 router.post('/login', async (req, res) => {

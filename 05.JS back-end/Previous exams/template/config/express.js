@@ -3,7 +3,9 @@ const handlebars = require('express-handlebars');
 const cookieParser = require('cookie-parser');
 const routes = require('./routes');
 const { authMiddleware } = require('../middlewares/authMiddleware');
-const port = 3000;
+const { PORT } = require('../virtualEnv');
+
+const port = PORT;
 
 module.exports = (app) => {
   app.engine(
