@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Details Page</title>
+
+    <!-- Do not forget to change the path to the css file -->
+    <link href="./static/css/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="box">
+
+        <!-- In case of error, you should display div with class "error-container" -->
+        <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+        <!--
+        <div class="error-container">
+            <p>Error</p>
+        </div>-->
+
+
+        <nav>
+            <!-- Do not forget to change the path to the image -->
+            <img src="./static/img/logo.png" alt="logo">
+
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">All Posts</a></li>
+                <!-- Logged users -->
+                <li><a href="#">Create Post</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Logout</a></li>
+                <!-- Guest users -->
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+
+        </nav>
+
+
+        <main>
+
+            <section id="details-page">
+
+                <div class="main_card">
+                    <div class="card_left">
+                        <div class="card_datails">
+
+                            <h1>Name: Thestral</h1>
+                            <h3>Created by an author: Alex Smith</h3>
+                            <div class="card_character">
+                                <p class="card-species">Species: Beast</p>
+                                <p class="card-skin">Skin colour: Black</p>
+                                <p class="card-eye">Eye Colour: White</p>
+                            </div>
+
+                            <p class="disc">Description: Thestrals are an elusive, carnivorous species of winged horse, visible only to those who have witnessed and embraced a death, and described as having "blank, white, shining eyes," a "dragonish face," "long, black manes," "great leathery wings," and the "skeletal body of a great, black, winged horse"; also described by Hagrid as "dead clever an' useful", and also by Harry as "reptilian".</p>
+
+                            <!-- If there is no registered user, do not display buttons-->
+                            <div class="social-btn">
+                                <!-- Only for registered user and author of the post -->
+                                <a href="#" class="edit-btn">Edit</a>
+                                <a href="#" class="del-btn">Delete</a>
+                                <!-- logged in users, who have not yet voted-->
+                                <a href="#" class="vote-up">Vote</a>
+
+                                <!-- logged in user who has already voted-->
+                                <p class="thanks-for-vote">Thanks For Voting</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_right">
+                        <img src="./static/img/Thestral.jpeg"
+                            alt="image">
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="votes">
+                <div class="vote-info">
+                    <div class="card_left">
+                        <div class="card_datails">
+                            <h1>Votes</h1>
+                            <div class="card_vote">
+                                <!-- Show the rating of votes, if there are no votes yet, the number must be 0. -->
+                                <p class="PV">Total rating of votes: 0</p>
+                            </div>
+                            <!-- If there are already people who have cast their vote for the post, separate their emails with a comma and a space ", " -->
+                            <!-- <p class="disc">People who voted for the post - alex@gmai.com, petar@gmail.com, petq@gmail.com</p>-->
+
+                            <!-- If not display: -->
+                            <p class="disc">People who voted for the post - No one has voted yet.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+
+        <footer>
+            © JS Back-End Exam 2023
+        </footer>
+    </div>
+
+</body>
+
+</html>

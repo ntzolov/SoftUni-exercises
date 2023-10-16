@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+    <link rel="stylesheet" href="./static/css/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav>
+            <img src="./static/images/logo.jpg" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">All Games Code</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">Create Game Offer</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="details">
+        <section id="details-info">
+            <div class="game-image">
+                <img src="./static/images/disney-dreamlight-valley.jpg">
+            </div>
+
+            <div class="game-info">
+                <div class="game-text">
+                    <h1 id="name">Disney Dreamlight Valley</h1>
+                    <h3 id="platform">Platform: PS5</h3>
+                    <p id="price"><span>Price: $38</span></p>
+                    <p id="genre"><span>Genre: Simulator</span></p>
+                    <p id="description">Disney Dreamlight Valley is a hybrid between a life-sim and an adventure game
+                        rich with quests, exploration, and engaging activities featuring Disney and Pixar friends, both
+                        old and new. Once an idyllic land, Dreamlight Valley was a place where Disney and Pixar
+                        characters lived in harmony—until the Forgetting. Night Thorns grew across the land and severed
+                        the wonderful memories tied to this magical place. With nowhere else to go, the hopeless
+                        inhabitants of Dreamlight Valley retreated behind locked doors in the Dream Castle.</p>
+                </div>
+                <div class="product-btn">
+                    <!--Only for registered user and author of the publication -->
+                    <div class="author">
+                        <a href="#" class="btn-edit">Edit</a>
+                        <a href="#" class="btn-delete">Delete</a>
+                    </div>
+
+                    <!-- Logged in user who has not yet buy this game code-->
+                    <!-- <a href="#" class="btn-buy">Buy</a> -->
+
+                    <!-- Logged in user who has already buy this game code-->
+                    <!-- <p class="buy-message">You have already bought this game</p> -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Back-End 2022</p>
+    </footer>
+</body>
+
+</html>

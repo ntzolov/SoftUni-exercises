@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Page</title>
+
+    <!-- Do not forget to change the path to the css file -->
+    <link href="./static/css/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="box">
+
+        <!-- In case of error, you should display div with class "error-container" -->
+        <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+        <!--
+        <div class="error-container">
+            <p>Error</p>
+        </div>-->
+
+
+        <nav>
+            <!-- Do not forget to change the path to the image -->
+            <img src="./static/img/logo.png" alt="logo">
+
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">All Posts</a></li>
+                <!-- Logged users -->
+                <li><a href="#">Create Post</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Logout</a></li>
+                <!-- Guest users -->
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+
+        </nav>
+
+
+        <main>
+
+            <section id="edit-page">
+                <div class="editSection">
+                    <div class="info">
+                        <h2>"I've Always Wanted To Use That Spell."</h2>
+                    </div>
+
+                    <form action="#" method="" class="editForm">
+                        <h2>Edit Post</h2>
+                        <ul class="noBullet">
+                            <li>
+                                <label for="title">Name:</label>
+                                <input type="text" class="inputFields" id="name" name="" value="" />
+                            </li>
+                            <li>
+                                <label for="key-word">Species:</label>
+                                <input type="text" class="inputFields" id="species" name="" value="" />
+                            </li>
+                            <li>
+                                <label for="location">Skin Colour:</label>
+                                <input type="text" class="inputFields" id="skin" name="" value="" />
+                            </li>
+                            <li>
+                                <label for="date">Eye Colour:</label>
+                                <input type="text" class="inputFields" id="eye" name="" value="" />
+                            </li>
+                            <li>
+                                <label for="image">Creature Image:</label>
+                                <input type="text" class="inputFields" id="image" name="" value="" />
+                            </li>
+                            <li>
+                                <label for="description">Description:</label>
+                                <textarea id="description" class="inputFields" name=""></textarea>
+                            </li>
+                            <li id="center-btn">
+                                <button id="edit-btn">Edit</button>
+                            </li>
+                        </ul>
+                    </form>
+
+                </div>
+            </section>
+
+        </main>
+
+
+        <footer>
+            © JS Back-End Exam 2023
+        </footer>
+    </div>
+
+</body>
+
+</html>

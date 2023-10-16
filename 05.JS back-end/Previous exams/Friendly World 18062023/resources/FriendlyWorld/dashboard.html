@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/styles/styles.css" />
+    <title>Dashboard Page</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <!-- Navigation -->
+            <nav>
+                <div>
+                    <a href="#">Home</a>
+                    <a href="#">Dashboard</a>
+                    <a href="#">Search</a>
+                </div>
+
+                <!-- Logged-in users -->
+                <div class="user">
+                    <a href="#">Add Animal</a>
+                    <a href="#">Logout</a>
+                </div>
+
+                <!-- Guest users -->
+                <div class="guest">
+                    <a href="#">Login</a>
+                    <a href="#">Register</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="dashboard">
+            <section id="dashboard">
+                <h2>Animals in Need</h2>
+                <ul class="card-wrapper">
+                    <!-- Display a li with information about every post (if any)-->
+                    <li class="card">
+                        <img src="./static/images/animal1.jpg"/>
+                        <p>
+                            <strong>Name: </strong><span class="name">Show</span>
+                        </p>
+                        <p>
+                            <strong>Location: </strong><span class="location">San Diego Zoo</span>
+                        </p>
+                        <p><strong>Need of:</strong><span class="need-of">Medicine</span></p>
+                        <a class="details-btn" href="#">Details</a>
+                    </li>
+
+                    <li class="card">
+                        <img src="./static/images/animal2.jpg"/>
+                        <p>
+                            <strong>Name: </strong><span class="name">Poppy</span>
+                        </p>
+                        <p>
+                            <strong>Location: </strong><span class="location">Chester Zoo</span>
+                        </p>
+                        <p><strong>Need of:</strong><span class="need-of">Enrichment Items</span></p>
+                        <a class="details-btn" href="#">Details</a>
+                    </li>
+
+                    <li class="card">
+                        <img src="./static/images/animal3.jpg"/>
+                        <p>
+                            <strong>Name: </strong><span class="name">Mama and Baby Lolly</span>
+                        </p>
+                        <p>
+                            <strong>Location: </strong><span class="location">Toronto Zoo</span>
+                        </p>
+                        <p><strong>Need of:</strong><span class="need-of">Food</span></p>
+                        <a class="details-btn" href="#">Details</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- Display an h2 if there are no posts -->
+                <!-- <div id="no-post">
+                    <h2>There are no animals in need now! </h2>
+                </div> -->
+            </section>
+        </main>
+
+        <footer>
+            <p>@Friendly World</p>
+        </footer>
+    </div>
+</body>
+
+</html>

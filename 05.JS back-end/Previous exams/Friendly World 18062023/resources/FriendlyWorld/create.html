@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/styles/styles.css" />
+    <title>Create Page</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <!-- Navigation -->
+            <nav>
+                <div>
+                    <a href="#">Home</a>
+                    <a href="#">Dashboard</a>
+                    <a href="#">Search</a>
+                </div>
+
+                <!-- Logged-in users -->
+                <div class="user">
+                    <a href="#">Add Animal</a>
+                    <a href="#">Logout</a>
+                </div>
+
+                <!-- Guest users -->
+                <div class="guest">
+                    <a href="#">Login</a>
+                    <a href="#">Register</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="create">
+            <!-- Create Page (Only for logged-in users) -->
+            <section id="create">
+                <div class="form">
+                    <h2>Add item</h2>
+                    <form class="create-form" method="" action="#">
+                        <input type="text" name="" id="name" placeholder="Name" />
+                        <input type="text" name="" id="years" placeholder="Years" />
+                        <input type="text" name="" id="kind" placeholder="Kind" />
+                        <input type="text" name="" id="animal-img" placeholder="Image url" />
+                        <input type="text" name="" id="needs-of" placeholder="Needs of" />
+                        <input type="text" name="" id="location" placeholder="Location" />
+                        <textarea id="description" placeholder="Description..." name=""></textarea>
+
+                        <button type="submit">Post</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>@Friendly World</p>
+    </footer>
+</body>
+
+</html>

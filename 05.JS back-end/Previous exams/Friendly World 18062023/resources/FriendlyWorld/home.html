@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/styles/styles.css" />
+    <title>Home Page</title>
+</head>
+
+<body>
+
+    <div>
+        <div class="errorContainer">
+            <p>Error</p>
+        </div>
+    </div>
+
+    <div id="wrapper">
+        <header>
+            <!-- Navigation -->
+            <nav>
+                <div>
+                    <a href="#">Home</a>
+                    <a href="#">Dashboard</a>
+                    <a href="#">Search</a>
+                </div>
+
+                <!-- Logged-in users -->
+                <div class="user">
+                    <a href="#">Add Animal</a>
+                    <a href="#">Logout</a>
+                </div>
+
+                <!-- Guest users -->
+                <div class="guest">
+                    <a href="#">Login</a>
+                    <a href="#">Register</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="home">
+            <!-- Home page -->
+            <section id="home">
+                <h1>Welcome to Friendly World</h1>
+                <h2>Let's help together</h2>
+                <h3>We are global animal welfare organisation for animals under direct human influence, which reveals
+                    suffering, rescues animals in need and protects them. Our vision is a world where humans treat
+                    animals with respect, empathy and understanding.</h3>
+            </section>
+
+            <section id="last-added">
+                <div>
+                    <img src="./static/images/animal4.jpg">
+                    <p>Name: Blue</p>
+                    <p>Need of: Medicine</p>
+                    <a class="details-btn" href="#">Details</a>
+                </div>
+                <div>
+                    <img src="./static/images/animal5.webp">
+                    <p>Name: Rikky</p>
+                    <p>Need of: Food</p>
+                    <a class="details-btn" href="#">Details</a>
+                </div>
+                <div>
+                    <img src="./static/images/animla6.jpg">
+                    <p>Name: Wenny</p>
+                    <p>Need of: Money for operation</p>
+                    <a class="details-btn" href="#">Details</a>
+                </div>
+
+                <!--  <p class="no-post">There are no animals in need!</p> -->
+
+            </section>
+        </main>
+
+        <footer>
+            <p>@Friendly World</p>
+        </footer>
+    </div>
+</body>
+
+</html>

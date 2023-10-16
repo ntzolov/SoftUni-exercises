@@ -1,0 +1,36 @@
+<main class="search">
+  <!-- Search Page (Only for logged-in users) -->
+  <section id="search">
+    <h2>Search by Location</h2>
+
+    <form class="search-wrapper cf" method="POST">
+      <input id="#search-input" type="text" name="search" placeholder="Search here..." required />
+      <button type="submit">Search</button>
+    </form>
+
+    <div id="search-container">
+      <ul class="card-wrapper">
+        <!-- Display a li with information about every post (if any)-->
+        {{#if animals}}
+        {{#each animals}}
+        <li class="card">
+          <img src="{{image}}" />
+          <p>
+            <strong>Name: </strong><span class="name">{{name}}</span>
+          </p>
+          <p>
+            <strong>Location: </strong><span class="location">{{location}}</span>
+          </p>
+          <p><strong>Need of:</strong><span class="need-of">{{need}}</span></p>
+          <a class="details-btn" href="/catalog/{{_id}}/details">Details</a>
+        </li>
+        {{/each}}
+        {{else}}
+        <div id="no-post">
+          <h2>There are no results found.</h2>
+        </div>
+        {{/if}}
+      </ul>
+    </div>
+  </section>
+</main>

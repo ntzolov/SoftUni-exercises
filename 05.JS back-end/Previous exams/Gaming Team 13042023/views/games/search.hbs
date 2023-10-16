@@ -1,0 +1,49 @@
+<main id="search">
+  <section class="game-search">
+    <h1>Search</h1>
+
+    <form class="search-form" method="POST">
+      <input type="text" class="search-game" name="searchInput" placeholder="Search here...">
+      <select id="platform" name="platformInput">
+        <option value="">-------</option>
+        <option value="PC">PC</option>
+        <option value="Nintendo">Nintendo</option>
+        <option value="PS4">PS4</option>
+        <option value="PS5">PS5</option>
+        <option value="XBOX">XBOX</option>
+      </select>
+      <button type="submit" class="btn-search">Search</button>
+    </form>
+
+    <div class="search-result">
+      <div class="search-list">
+        {{#if games}}
+        {{#each games}}
+        <div class="game">
+          <div class="game-img">
+            <img src="{{image}}">
+          </div>
+          <div class="game-info">
+            <h1>{{name}}</h1>
+            <p><span>Platform: </span>{{platform}}</p>
+            <p><span>Ganre: </span>{{genre}}</p>
+            <p><span>Price: </span>${{price}}</p>
+          </div>
+
+          <a href="/catalog/{{_id}}/details" class="btn-details">Details</a>
+        </div>
+        {{/each}}
+        {{else}}
+        <div class="no-match">
+          <p>No match was found!</p>
+        </div>
+        {{/if}}
+
+      </div>
+    </div>
+
+    <!-- <div class="no-match">
+                <p>No match was found!</p>
+            </div> -->
+  </section>
+</main>

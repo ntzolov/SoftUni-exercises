@@ -1,0 +1,17 @@
+<main class="register">
+  <!-- Register Page (Only for Guest users) -->
+  <section id="register">
+    <div class="form">
+      <h2>Register</h2>
+      <form class="login-form" method="POST">
+        <input type="text" name="email" id="register-email" placeholder="email" value="{{body.email}}" />
+        <input type="password" name="password" id="register-password" placeholder="password"
+          value="{{body.password}}" />
+        <input type="password" name="rePassword" id="repeat-password" placeholder="repeat password"
+          value="{{body.rePassword}}" />
+        <button type="submit">Register</button>
+        <p class="message">Already registered? <a href="/auth/login">Login</a></p>
+      </form>
+    </div>
+  </section>
+</main>

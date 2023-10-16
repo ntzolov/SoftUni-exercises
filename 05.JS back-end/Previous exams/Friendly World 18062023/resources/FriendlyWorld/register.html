@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/styles/styles.css" />
+    <title>Register Page</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <!-- Navigation -->
+            <nav>
+                <div>
+                    <a href="#">Home</a>
+                    <a href="#">Dashboard</a>
+                    <a href="#">Search</a>
+                </div>
+
+                <!-- Logged-in users -->
+                <div class="user">
+                    <a href="#">Add Animal</a>
+                    <a href="#">Logout</a>
+                </div>
+
+                <!-- Guest users -->
+                <div class="guest">
+                    <a href="#">Login</a>
+                    <a href="#">Register</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="register">
+            <!-- Register Page (Only for Guest users) -->
+            <section id="register">
+                <div class="form">
+                    <h2>Register</h2>
+                    <form class="login-form" method="" action="#">
+                        <input type="text" name="" id="register-email" placeholder="email" />
+                        <input type="password" name="" id="register-password" placeholder="password" />
+                        <input type="password" name="" id="repeat-password" placeholder="repeat password" />
+                        <button type="submit">Register</button>
+                        <p class="message">Already registered? <a href="#">Login</a></p>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>@Friendly World</p>
+        </footer>
+    </div>
+</body>
+
+</html>

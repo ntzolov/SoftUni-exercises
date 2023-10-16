@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Page - Gaming Team</title>
+    <link rel="stylesheet" href="./static/css/styles.css" />
+</head>
+
+<body>
+
+    <header class="header">
+        <nav>
+            <img src="./static/images/logo.jpg" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">All Games Code</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">Create Game Offer</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="edit">
+        <!-- In case of error, you should display div with class "errorContainer" -->
+        <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+
+        <!-- <div>
+            <div class="errorContainer">
+                <p>Error</p>
+            </div>
+        </div> -->
+        <section id="edit-container">
+            <div class="edit-container-info">
+                <h1>Edit Game Code Offer</h1>
+                <form action="#" method="">
+                    <label>Platform:</label>
+                    <select id="platform" name="">
+                        <option value="">-------</option>
+                        <option value="PC">PC</option>
+                        <option value="Nintendo">Nintendo</option>
+                        <option value="PS4">PS4</option>
+                        <option value="PS5">PS5</option>
+                        <option value="XBOX" selected>XBOX</option>
+                    </select>
+                    <label>Name:</label>
+                    <input type="text" id="name" name="" value="Hogwarts Legacy">
+                    <label>Image:</label>
+                    <input type="text" id="image" name="" placeholder="https://image.api.playstation.com/vulcan/ap/rnd/202208/0921/dR9KJAKDW2izPbptHQbh3rnj.png">
+                    <label>Price:</label>
+                    <input type="number" id="price" name="" value="55">
+                    <label>Genre:</label>
+                    <input type="text" id="genre" name="" value="Action Role-Playing">
+                    <label>Description:</label>
+                    <textarea id="description" name="">Hogwarts Legacy is an open-world action RPG set in the world first introduced in the Harry Potter books. Embark on a journey through familiar and new locations as you explore and discover magical beasts, customize your character and craft potions, master spell casting, upgrade talents and become the wizard you want to be.
+                    </textarea>
+                    <input type="submit" id="btn" value="EDIT"></input>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Back-End 2023</p>
+    </footer>
+</body>
+
+</html>

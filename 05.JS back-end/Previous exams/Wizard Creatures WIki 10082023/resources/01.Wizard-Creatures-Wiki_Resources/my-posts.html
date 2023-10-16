@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Posts</title>
+
+    <!-- Do not forget to change the path to the css file -->
+    <link href="./static/css/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="box">
+
+        <!-- In case of error, you should display div with class "error-container" -->
+        <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+        <!--
+        <div class="error-container">
+            <p>Error</p>
+        </div>-->
+
+
+
+        <nav>
+            <!-- Do not forget to change the path to the image -->
+            <img src="./static/img/logo.png" alt="logo">
+
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">All Posts</a></li>
+                <!-- Logged users -->
+                <li><a href="#">Create Post</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Logout</a></li>
+                <!-- Guest users -->
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+
+        </nav>
+
+
+        <main>
+            <section id="my-posts">
+                <h1>My post</h1>
+
+                <div class="my-container">
+                    <!-- If there are own posts in the database display each of them -->
+                    <div class="my-card">
+                        <div class="card-header">
+                            <img src="./static/img/Thestral.jpeg"/>
+                        </div>
+                        <div class="card-body">
+                            <span class="tag tag-teal">Species: Beast</span>
+                            <h4>
+                                Name: Thestral
+                            </h4>
+                            <div class="user">
+                                <div class="user-info">
+                                    <h5>Author: Alex Smith</h5>
+                                    <small>Rating of votes: 3</small>
+                                    <a href="#" class="details_btn">Details</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- If there are still no own posts in the database display: -->
+                    <!-- <div class="no-posts">
+                        <p class="no-offer">There are no own posts yet...</p>
+                    </div> -->
+                </div>
+            </section>
+
+        </main>
+
+
+        <footer>
+            © JS Back-End Exam 2023
+        </footer>
+    </div>
+
+</body>
+
+</html>
