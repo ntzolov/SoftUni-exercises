@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Page</title>
+    <link rel="stylesheet" href="./css/style.css" />
+
+</head>
+
+<body>
+
+    <!-- In case of error, you should display div with class "errorContainer" -->
+    <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+    <!-- <div>
+        <div class="errorContainer">
+            <p>Error</p>
+        </div>
+    </div> -->
+
+    <header class="header">
+
+        <div class="header">
+            <nav class="navbar">
+                <a href="#">Home</a>
+                <a href="#">Catalog</a>
+                <!--Only for logged user-->
+                <a href="#">Profile</a>
+                <a href="#">Create Review</a>
+                <a href="#">Logout</a>
+                <!--Only for guest-->
+                <a href="#">Login</a>
+                <a href="#">Register</a>
+            </nav>
+        </div>
+
+    </header>
+
+    <section class="edit-form-container">
+
+        <form action="">
+            <h3>Edit Book Review</h3>
+            <label>Title</label>
+            <input type="text" name="" class="box" value="Harry Potter and the Philosopher's Stone" id="">
+            <label>Author</label>
+            <input type="text" name="" class="box" value="JK Rowling" id="">
+            <label>Genre</label>
+            <input type="text" name="" class="box" value="Fantasy" id="">
+            <label>Stars</label>
+            <input type="number" name="" class="box" value="5" id="">
+            <label>Image</label>
+            <input type="text" name="" class="box" value="http:..." id="">
+            <label>Review</label>
+            <textarea class="box"
+                name="">Harry Potter and the Philosopher's Stone is one of my favourite books in the Harry Potter series. Reading this book has made me crazy about Harry Potter and I wish to be one among the magical community. I can't imagine how thrilled I would be if I get a letter from Dumbledore saying that I am admitted to Hogwarts!!!!!!!</textarea>
+            <input type="submit" value="Edit" class="btn">
+        </form>
+    </section>
+</body>
+
+</html>

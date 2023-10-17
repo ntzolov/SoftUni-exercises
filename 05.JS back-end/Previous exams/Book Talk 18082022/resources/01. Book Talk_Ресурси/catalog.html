@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog Page</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="header">
+            <nav class="navbar">
+                <<a href="#">Home</a>
+                <a href="#">Catalog</a>
+                <!--Only for logged user-->
+                <a href="#">Profile</a>
+                <a href="#">Create Review</a>
+                <a href="#">Logout</a>
+                <!--Only for guest-->
+                <a href="#">Login</a>
+                <a href="#">Register</a>
+            </nav>
+        </div>
+
+    </header>
+
+    <section class="catalog" id="catalog">
+        <h2>Book Reviews</h2>
+        <div class="container">
+            <!--If there are book reviews-->
+            <div class="book">
+                <div class="info-container">
+                    <img src="./image/Game-of-thrones.jpg">
+                    <div class="info">
+                        <h2>A Game Of Thrones</h2>
+                    </div>
+                </div>
+                <div class="details-btn">
+                    <a href="#" class="details">Details</a>
+                </div>
+            </div>
+            <div class="book">
+                <div class="info-container"><img src="./image/The-gunslinger.jpg">
+                    <div class="info">
+                        <h2>The Gunslinger </h2>
+                    </div>
+                </div>
+                <div class="details-btn">
+                    <a href="#" class="details">Details</a>
+                </div>
+            </div>
+            <div class="book">
+                <div class="info-container">
+                    <img src="./image/Unsettled-ground.jpeg">
+                    <div class="info">
+                        <h2>Unsettled Ground</h2>
+                    </div>
+                </div>
+                <div class="details-btn">
+                    <a href="#" class="details">Details</a>
+                </div>
+            </div>
+            <div class="book">
+                <div class="info-container">
+                    <img src="./image/Beautiful-world.jpeg">
+                    <div class="info">
+                        <h2>Beautiful World, Where Are You</h2>
+                    </div>
+                </div>
+                <div class="details-btn">
+                    <a href="#" class="details">Details</a>
+                </div>
+            </div>
+            <!--If there are no book reviews-->
+            <h2 class="no-record">There are no book reviews found yet...</h2>
+        </div>
+    </section>
+</body>
+
+</html>

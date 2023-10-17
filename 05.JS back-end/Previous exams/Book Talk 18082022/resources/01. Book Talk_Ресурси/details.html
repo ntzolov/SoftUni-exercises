@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="header">
+            <nav class="navbar">
+                <a href="#">Home</a>
+                <a href="#">Catalog</a>
+                <!--Only for logged user-->
+                <a href="#">Profile</a>
+                <a href="#">Create Review</a>
+                <a href="#">Logout</a>
+                <!--Only for guest-->
+                <a href="#">Login</a>
+                <a href="#">Register</a>
+            </nav>
+        </div>
+
+    </header>
+
+    <section class="details-page">
+        <h1>Details</h1>
+        <article class="details-card">
+
+            <article class="details-card-text">
+                <h2>Title:<br> A Game Of Thrones</h2>
+                <h3>Author: George R.R Martin</h3>
+                <h3>Stars: 5</h3>
+                <h3>Genre: Fiction</h3>
+                <h3>Review: Okay - I am SO incredibly late to this party but hey, I made it! And the hype was real!
+                    Winter is coming. A totally magnificent start to a seminal epic fantasy series. If you love watching
+                    the first season of Game of Thrones, you're most likely going to love reading A Game of Thrones.
+                </h3>
+
+                <!-- If there is no registered user, do not display buttons-->
+                <div class="buttons">
+                    <!-- Only for registered user and author of the review -->
+                    <a href="#" class="btn-edit">Edit</a>
+                    <a href="#" class="btn-delete">Delete</a>
+                    <!-- logged in user who has not yet wished book-->
+                    <a href="#" class="btn-wish">Wish to read</a>
+                    <!-- logged in user who has already wished book-->
+                    <p class="wish-pub">You already added the book to your wish list</p>
+                </div>
+
+            </article>
+
+            <article class="details-card-image">
+                <img src="./image/Game-of-thrones.jpg">
+            </article>
+
+        </article>
+    </section>
+
+</body>
+
+</html>
