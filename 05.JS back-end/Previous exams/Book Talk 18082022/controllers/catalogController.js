@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { isAuth } = require('../middlewares/authMiddleware');
 const bookService = require('../services/bookService');
 const { errorHandler } = require('../utils/errorHandler');
 
@@ -11,11 +12,11 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/create', (req, res) => {
+router.get('/create', isAuth, (req, res) => {
   res.render('books/create', { title: 'Create' });
 });
 
-router.post('/create', async (req, res) => {
+router.post('/create', isAuth, async (req, res) => {
   const { title, author, genre, stars, image, bookReview } = req.body;
   const userId = req.user._id;
   try {
@@ -42,7 +43,7 @@ router.get('/:bookId/details', async (req, res) => {
   }
 });
 
-router.get('/:bookId/edit', async (req, res) => {
+router.get('/:bookId/edit', isAuth, async (req, res) => {
   const { bookId } = req.params;
   try {
     const book = await bookService.getBookById(bookId);
@@ -52,7 +53,7 @@ router.get('/:bookId/edit', async (req, res) => {
   }
 });
 
-router.post('/:bookId/edit', async (req, res) => {
+router.post('/:bookId/edit', isAuth, async (req, res) => {
   const { bookId } = req.params;
   const { title, author, genre, stars, image, bookReview } = req.body;
   try {
@@ -64,7 +65,7 @@ router.post('/:bookId/edit', async (req, res) => {
   }
 });
 
-router.get('/:bookId/delete', async (req, res) => {
+router.get('/:bookId/delete', isAuth, async (req, res) => {
   const { bookId } = req.params;
   try {
     await bookService.deleteBookById(bookId);
@@ -74,7 +75,7 @@ router.get('/:bookId/delete', async (req, res) => {
   }
 });
 
-router.get('/:bookId/wish', async (req, res) => {
+router.get('/:bookId/wish', isAuth, async (req, res) => {
   const { bookId } = req.params;
   const userId = req.user._id;
   try {

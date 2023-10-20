@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All-Ads Page</title>
+
+    <!-- Do not forget to change the path to the css file -->
+    <link rel="stylesheet" href="./static/css/style.css">
+</head>
+
+<body>
+
+    <div class="box">
+
+        <!-- In case of error, you should display div with class "error-box" -->
+        <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+        <!--<div class="error-box">
+            <p>Error</p>
+        </div>-->
+
+        <header class="header">
+            <article class="header-logo">
+                <!-- Do not forget to change the path to the image -->
+                <img src="./static/img/logo.png">
+            </article>
+            <nav class="header-nav">
+                <ul class="header-nav-list">
+
+                    <li class="header-nav-list-item active">
+                        <a href="#" class="header-nav-list-item-link active">Home Page</a>
+                    </li>
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">All ads</a>
+                    </li>
+                    <!-- Logged users -->
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">Create Ad</a>
+                    </li>
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">Search</a>
+                    </li>
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">Logout</a>
+                    </li>
+
+                    <!-- Guest users -->
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">Register</a>
+                    </li>
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">Login</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+
+            <section id="all-ads-page">
+                <article class="all-ads-title">
+                    <h1>All ads</h1>
+                </article>
+
+                <!--If there are job ads in the database, show each one-->
+                <article class="all-ads-card">
+                    <article class="all-ads-card-image">
+                        <!-- Do not forget to change the path to the image -->
+                        <img src="./static/img/job-icon1.png" alt="job-icon">
+                    </article>
+
+                    <article class="all-ads-card-content">
+                        <!--You must put the headline value in <h2>-->
+                        <h2>UI / UX Designers</h2>
+                        <h3>Company Name: Digital Solutions</h3>
+                        <article class="all-ads-card-content-item">
+                            <!-- Do not forget to change the path to the image -->
+                            <img src="./static/img/map-icon.png">
+                            <p>Location 210-27 Sofia, Market Street, Bulgaria</p>
+                        </article>
+                    </article>
+
+                    <article class="all-ads-card-buttons">
+                        <a href="#" class="btn-details">Details</a>
+                    </article>
+                </article>
+
+                <article class="all-ads-card">
+                    <article class="all-ads-card-image">
+                        <!-- Do not forget to change the path to the image -->
+                        <img src="./static/img/job-icon1.png" alt="job-icon">
+                    </article>
+
+                    <article class="all-ads-card-content">
+                        <!--You must put the headline value in <h2>-->
+                        <h2>Front-End Developer</h2>
+                        <h3>Company Name:search-page-no-result-message</h3>
+                        <article class="all-ads-card-content-item">
+                            <!-- Do not forget to change the path to the image -->
+                            <img src="./static/img/map-icon.png">
+                            <p>Location Ruse, Market Street, Bulgaria</p>
+                        </article>
+                    </article>
+
+                    <article class="all-ads-card-buttons">
+                        <a href="#" class="btn-details">Details</a>
+                    </article>
+                </article>
+
+                <!--If there are still no job ads in the database display:-->
+                <!--<article class="not-available-ads">
+                    <h1>No ads created yet.</h1>
+                    <h2>Join and find your perfect workers.</h2>
+                </article>-->
+
+            </section>
+        </main>
+
+        <footer>
+            <p>©Js Back-End Final Exam 2022</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

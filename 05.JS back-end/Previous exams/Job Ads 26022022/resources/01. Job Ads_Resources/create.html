@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Page</title>
+
+    <!-- Do not forget to change the path to the css file -->
+    <link rel="stylesheet" href="./static/css/style.css">
+</head>
+
+<body>
+
+    <div class="box">
+
+        <!-- In case of error, you should display div with class "error-box" -->
+        <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+        <!--<div class="error-box">
+            <p>Error</p>
+        </div>-->
+
+        <header class="header">
+            <article class="header-logo">
+                <!-- Do not forget to change the path to the image -->
+                <img src="./static/img/logo.png">
+            </article>
+            <nav class="header-nav">
+                <ul class="header-nav-list">
+
+                    <li class="header-nav-list-item active">
+                        <a href="#" class="header-nav-list-item-link active">Home Page</a>
+                    </li>
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">All ads</a>
+                    </li>
+                    <!-- Logged users -->
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">Create Ad</a>
+                    </li>
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">Search</a>
+                    </li>
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">Logout</a>
+                    </li>
+
+                    <!-- Guest users -->
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">Register</a>
+                    </li>
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">Login</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+
+            <section id="create-page">
+
+                <article class="create-page-container">
+                    <form action="#" method="" class="create-page-form">
+                        <h2>Create an ad</h2>
+
+                        <label for="headline">Headline:</label>
+                        <input type="text" id="headline" placeholder="Front-End Developer with React" name="" value="">
+
+                        <label for="location">Location:</label>
+                        <input type="text" id="location" placeholder="Ruse, Bulgaria" name="" value="">
+
+                        <label for="company-name">Company name:</label>
+                        <input type="text" id="company-name" placeholder="Digital Solutions" name="" value="">
+
+                        <label for="company-description">Company description:</label>
+                        <input type="text" id="company-description" placeholder="We are developing a web application" name="" value="">
+
+                        <article class="create-page-button">
+                            <button class="btn-create">Create</button>
+                        </article>
+                    </form>
+
+                    <article class="create-page-image">
+                        <!-- Do not forget to change the path to the image -->
+                        <img src="./static/img/job.png" alt="image">
+                    </article>
+                </article>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>©Js Back-End Final Exam 2022</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

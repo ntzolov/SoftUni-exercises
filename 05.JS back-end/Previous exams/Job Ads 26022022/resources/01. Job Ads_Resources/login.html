@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+
+    <!-- Do not forget to change the path to the css file -->
+    <link rel="stylesheet" href="./static/css/style.css">
+</head>
+
+<body>
+
+    <div class="box">
+
+        <!-- In case of error, you should display div with class "error-box" -->
+        <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+        <!--<div class="error-box">
+            <p>Error</p>
+        </div>-->
+
+        <header class="header">
+            <article class="header-logo">
+                <!-- Do not forget to change the path to the image -->
+                <img src="./static/img/logo.png">
+            </article>
+            <nav class="header-nav">
+                <ul class="header-nav-list">
+
+                    <li class="header-nav-list-item active">
+                        <a href="#" class="header-nav-list-item-link active">Home Page</a>
+                    </li>
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">All ads</a>
+                    </li>
+                    <!-- Logged users -->
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">Create Ad</a>
+                    </li>
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">Search</a>
+                    </li>
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">Logout</a>
+                    </li>
+
+                    <!-- Guest users -->
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">Register</a>
+                    </li>
+                    <li class="header-nav-list-item">
+                        <a href="#" class="header-nav-list-item-link">Login</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+
+            <section id="login-page">
+
+                <article class="login-page-container">
+
+                    <form action="#" method="" class="login-page-form">
+                        <h2>Login</h2>
+                        <p>Welcome, see the new ads!</p>
+
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" placeholder="petar@abv.bg" name="">
+
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" placeholder="******" name="">
+
+                        <article class="login-page-button">
+                            <button class="btn-login">Login</button>
+                        </article>
+
+                        <article class="no-account">
+                            <p>Don't have an account? <a href="#">Sign up</a></p>
+                        </article>
+                    </form>
+
+                    <article class="login-page-image">
+                        <!-- Do not forget to change the path to the image -->
+                        <img src="./static/img/job.png" alt="job-image">
+                    </article>
+                </article>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>©Js Back-End Final Exam 2022</p>
+        </footer>
+    </div>
+</body>
+
+</html>

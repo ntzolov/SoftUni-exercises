@@ -1,7 +1,8 @@
 const router = require('express').Router();
+const { isAuth } = require('../middlewares/authMiddleware');
 const bookService = require('../services/bookService');
 
-router.get('/profile', async (req, res) => {
+router.get('/profile', isAuth, async (req, res) => {
   const userId = req.user._id;
   try {
     const books = await bookService.getAllWishedBooks(userId);

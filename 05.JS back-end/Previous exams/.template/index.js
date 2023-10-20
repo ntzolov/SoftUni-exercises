@@ -1,13 +1,12 @@
-const express = require('express');
+const app = require('express')();
 const serverConnect = require('./config/express');
 const databaseConnect = require('./config/database');
-const app = express();
 
 serverConnect(app);
 databaseConnect();
 
 // CHANGE databaseName
-// ORGANIZE html documents
+// ORGANIZE html documents and 404.hbs and {{{body}}} in layout :)
 // CHANGE (IF LOGIC) IN main.hbs
 // ADD {{title}} to layout
 // ADD OWNER when create the product
