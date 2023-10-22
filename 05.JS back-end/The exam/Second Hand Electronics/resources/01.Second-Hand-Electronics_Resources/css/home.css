@@ -1,0 +1,76 @@
+.introduction {
+    text-align: left;
+    width: 52%;
+    margin-top: 9%;
+    margin-left: 3%;
+}
+
+.introduction h1 {
+    color: white;
+    letter-spacing: 5px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.introduction p {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.errorContainer {
+    margin-top: 2%;
+    position: fixed;
+    right: 100px;
+    min-width: 100px;
+    display: block;
+    z-index: 11111;
+    top: 55px;
+    text-align: center;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+    height: auto;
+    width: 20%;
+    box-shadow: 0 5px 10px black;
+}
+
+.errorContainer>p {
+    background: black;
+    color: white;
+    margin: 0;
+    font-size: 20px;
+    padding: 30px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.errorContainer {
+    -moz-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 2s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cssAnimation {
+    to {
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+    }
+}
+
+@-webkit-keyframes cssAnimation {
+    to {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        padding: 0;
+    }
+}

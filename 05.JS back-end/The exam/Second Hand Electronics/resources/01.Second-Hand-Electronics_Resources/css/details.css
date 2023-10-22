@@ -1,0 +1,77 @@
+.detailsPage {
+  text-align: center;
+  margin-top: 5px;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+#detailsInfo {
+  display: inline-block;
+  margin-top: 1%;
+  background: rgba(0, 0, 0, 0.703);
+  width: 60%;
+  border: 1px solid white;
+  border-radius: 20px;
+  margin-bottom: 5%;
+}
+
+#detailsInfo h1 {
+  color: white;
+  letter-spacing: 2px;
+}
+
+#detailsInfo h2 {
+    font-size: 26px;
+    margin-top: 30px;
+}
+
+#detailsInfo h3 {
+    font-size: 20px;
+    width: 70%;
+    display: inline-block;
+}
+
+.info {
+  color: white;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+.info img {
+  width: 30%;
+  height: inherit;
+}
+
+.buttons {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-weight: bold;
+}
+
+.buttons p {
+  display: inline-block;
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 16px;
+  width: 40%;
+  padding: 10px;
+}
+
+.buttons p span {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 20px;
+}
+
+.buttons a {
+  color: black;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 40%;
+  font-size: 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}

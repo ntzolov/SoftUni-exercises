@@ -1,0 +1,24 @@
+<section id='viewCatalog' class='background-img'>
+  <!--If there are one or more electronics-->
+  {{#if electronics}}
+    <div class='added-electronics'>
+      {{#each electronics}}
+        <a href='/catalog/{{_id}}/details' class='added-electronics-in-market'>
+          <img src='{{image}}' class='picture-added-electronics' />
+          <h3>{{name}}</h3>
+          <span>Price: ${{price}}</span>
+        </a>
+      {{/each}}
+    </div>
+
+  {{else}}
+    <div class='guest'>
+      There are no electronics found...
+    </div>
+  {{/if}}
+
+  <!--If there are no electronics in catalog yet-->
+  <!-- <div class="guest">
+                There are no electronics found...
+            </div> -->
+</section>

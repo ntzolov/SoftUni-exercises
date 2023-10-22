@@ -1,0 +1,155 @@
+@import url('https://fonts.google.com/specimen/Roboto+Condensed');
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: url("../image/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+* {
+    font-family: Roboto, "Condensed", serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    padding-inline-start: 0;
+}
+
+input[type=submit]:hover, ul>li:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+li {
+    list-style-type: none;
+    display: inline-block;
+    border: 2px solid white;
+    padding: 10px;
+    margin: 10px;
+    width: 100px;
+    text-align: center;
+}
+
+nav {
+    background: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+nav > ul {
+    text-align: center;
+    margin: 0 5px;
+    color: white;
+}
+
+img {
+    width: 35px;
+    height: 35px;
+    margin-top: 25px;
+}
+
+h2 {
+    font-size: 50px;
+    margin: 0;
+}
+
+label {
+    color: gray;
+    font-size: 25px;
+}
+
+section {
+    text-align: center;
+    margin-top: 5px;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+form {
+    text-align: center;
+}
+
+input {
+    display: block;
+    margin: 10px auto;
+    width: 200px;
+    border: 2px solid lightsteelblue;
+    padding: 5px;
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    background: black;
+    padding: 10px 0;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#viewCatalog{
+    margin-bottom: 5%;
+    margin-top: 3%;
+}
+
+.added-electronics-in-market {
+    color: white;
+    cursor: pointer;
+    width: 500px;
+    border: 2px solid white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.703);
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    height: 300px;
+}
+
+.picture-added-electronics {
+    width: 300px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.picture-added-electronics:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.added-electronics {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+h3 {
+    font-size: 22px;
+    margin-bottom: 0;
+}
+
+.guest {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10%;
+    color: white;
+    background: rgba(0, 0, 0, 0.703);
+    padding: 40px;
+    width: 30%;
+    font-size: 30px;
+    border: 2px solid white;
+}

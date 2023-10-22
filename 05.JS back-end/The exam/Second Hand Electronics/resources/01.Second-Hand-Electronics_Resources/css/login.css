@@ -1,0 +1,37 @@
+.loginPage {
+  text-align: center;
+  margin-top: 5px;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+#loginForm {
+  padding-top: 1%;
+  display: inline-block;
+  margin-top: 5%;
+  background: rgba(0, 0, 0, 0.703);
+  width: 40%;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+#loginForm label {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+#loginForm input {
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+#loginForm input[type="submit"] {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 40%;
+  font-size: 20px;
+}

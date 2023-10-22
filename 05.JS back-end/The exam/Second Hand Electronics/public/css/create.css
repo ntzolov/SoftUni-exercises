@@ -1,0 +1,43 @@
+#createPage {
+  text-align: center;
+  margin-top: 5px;
+  position: relative;
+}
+
+#createForm {
+  padding-top: 1%;
+  display: inline-block;
+  margin-top: 2%;
+  margin-bottom: 4%;
+  background: rgba(0, 0, 0, 0.703);
+  width: 40%;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+#createForm label {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+#createForm input {
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+#createForm input[type="submit"] {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 40%;
+  font-size: 20px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

@@ -1,0 +1,35 @@
+<section id='createPage'>
+  <form id='createForm' method='POST'>
+    <label for='name'>Name:</label>
+    <input type='text' id='name' name='name' value='{{body.name}}' placeholder='Name...' />
+
+    <label for='type'>Type:</label>
+    <input type='text' id='type' name='type' value='{{body.type}}' placeholder='Type...' />
+
+    <label for='production'>Year of Production:</label>
+    <input type='number' id='production' name='production' value='{{body.production}}' placeholder='Year of Production...' />
+
+    <label for='exploitation'>Years of Exploitation:</label>
+    <input
+      type='number'
+      id='exploitation'
+      name='exploitation'
+      value='{{body.exploitation}}'
+      placeholder='Year of Exploitation...'
+    />
+
+    <label for='damages'>Damages:</label>
+    <input type='text' id='damages' name='damages' value='{{body.damages}}' placeholder='Damages...' />
+
+    <label for='image'>Image:</label>
+    <input type='text' id='image' name='image' value='{{body.image}}' placeholder='Image...' />
+
+    <label for='price'>Price:</label>
+    <input type='number' id='price' name='price' value='{{body.price}}' placeholder='Price...' />
+
+    <label for='description'>Description:</label>
+    <input type='text' id='description' name='description' value='{{body.description}}' placeholder='Description...' />
+
+    <input type='submit' class='create' value='Create Offer' />
+  </form>
+</section>

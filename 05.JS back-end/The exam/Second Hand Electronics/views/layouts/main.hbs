@@ -1,0 +1,55 @@
+<html lang='en'>
+
+  <head>
+    <meta charset='UTF-8' />
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/css/styles.css' />
+  </head>
+
+  <body>
+    <!-- In case of error, you should display div with class "errorContainer" -->
+    <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+
+    <!-- <div>
+        <div class="errorContainer">
+            <p>Error</p>
+        </div>
+    </div> -->
+
+    {{#if error}}
+      <div>
+        <div class='errorContainer'>
+          <p>{{error}}</p>
+        </div>
+      </div>
+    {{/if}}
+
+    <div id='container'>
+
+      <nav>
+        <ul>
+          <!--For all users-->
+          <li><a href='/'>Home</a></li>
+          <li><a href='/catalog'>Catalog</a></li>
+          <!--For login users-->
+          {{#if isAuthenticated}}
+            <li><a href='/catalog/create'>Create Offer</a></li>
+            <li><a href='/catalog/search'>Search</a></li>
+            <li><a href='/auth/logout'>Logout</a></li>
+            <!--For guest user-->
+          {{else}}
+            <li><a href='/auth/login'>Login</a></li>
+            <li><a href='/auth/register'>Register</a></li>
+          {{/if}}
+        </ul>
+
+      </nav>
+
+      {{{body}}}
+
+      <footer>@SoftUni - JS Back-End - Second Hand Electronics 2023</footer>
+    </div>
+
+  </body>
+
+</html>
