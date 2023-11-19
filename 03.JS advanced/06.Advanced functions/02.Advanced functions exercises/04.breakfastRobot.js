@@ -42,12 +42,8 @@ function solution() {
     } else if (input.includes('prepare')) {
       const [command, product, quantity] = input.split(' ');
       for (let ingredient in foodLibrary[product]) {
-        if (
-          ingredients[ingredient] >=
-          foodLibrary[product][ingredient] * quantity
-        ) {
-          ingredients[ingredient] -=
-            foodLibrary[product][ingredient] * quantity;
+        if (ingredients[ingredient] >= foodLibrary[product][ingredient] * quantity) {
+          ingredients[ingredient] -= foodLibrary[product][ingredient] * quantity;
           // return 'Success';
         } else {
           return `Error: not enough ${ingredient} in stock`;
@@ -60,7 +56,7 @@ function solution() {
       }
       return report.join(' ');
     }
-    return 'Success'
+    return 'Success';
   }
 
   return manager;
