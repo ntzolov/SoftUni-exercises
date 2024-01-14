@@ -1,0 +1,113 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section-country {
+  font-family: 'Agbalumo';
+  margin: auto;
+  margin-top: 100px;
+  width: 850px;
+  height: 700px;
+  border: 2px solid black;
+  background-color: #d5ebea;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 80px;
+  border-bottom: 2px solid black;
+  margin: 0 40px 0 20px;
+}
+
+.item-heading h1 {
+  font-size: 36px;
+}
+
+.item-subheading {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 30px;
+  border-bottom: 2px solid black;
+  margin: 0 40px 0 20px;
+}
+
+.item-subheading p {
+  font-size: 18px;
+}
+
+.grid {
+  height: 430px;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+  position: relative;
+}
+
+.item-image {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  margin: 40px 20px 60px 20px;
+  padding: 10px;
+}
+
+.item-image img {
+  width: 280px;
+  margin-bottom: 25px;
+}
+
+.item-image p {
+  font-size: 11px;
+  text-indent: 25px;
+}
+
+.item-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 40px;
+  letter-spacing: 0.8px;
+}
+
+.item-text p:first-child {
+  margin-bottom: 10px;
+}
+
+.item-text p {
+  text-indent: 30px;
+}
+
+.item-facts {
+  background-color: black;
+  color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  padding: 0 70px;
+}
+
+.item-footer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 40px;
+  font-size: 16px;
+}
+
+.item-footer p {
+}

@@ -1,0 +1,13 @@
+@media only screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .tm-gallery-page {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
