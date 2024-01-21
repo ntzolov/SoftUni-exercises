@@ -340,6 +340,7 @@ ORDER BY salary DESC;
 /*****17*****/
 
 UPDATE employees SET salary = salary * 1.1;
+
 SELECT salary FROM employees;
 
 
