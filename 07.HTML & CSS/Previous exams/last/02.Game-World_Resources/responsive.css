@@ -10,4 +10,68 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .tm-site-logo {
+    width: 55px;
+    height: 55px;
+  }
+
+  .tm-site-title {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 5px;
+  }
+
+  .tm-site-description {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  .tm-nav {
+    text-align: center;
+    margin-top: 20;
+    display: flex;
+    justify-content: center;
+  }
+
+  .tm-welcome-section {
+    margin: 60px auto;
+    max-width: 655px;
+  }
+
+  .tm-section-title {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .tm-cta-section {
+    margin: 0 auto;
+    width: auto;
+    display: flex;
+    /* flex-direction: column; */
+    align-content: center;
+    justify-content: center;
+  }
+
+  .tm-description-figure {
+    text-align: center;
+    width: 100%;
+  }
+
+  .tm-description-box {
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    /* max-width: 530px; */
+  }
+
+  .tm-description-box p {
+    word-wrap: break-word;
+  }
 }
