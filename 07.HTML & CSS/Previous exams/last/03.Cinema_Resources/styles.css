@@ -1,0 +1,249 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: darkslategrey;
+}
+
+.global-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header-container {
+  position: relative;
+  height: 60px;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: baseline;
+  padding-left: 25px;
+  text-transform: uppercase;
+}
+
+.logo > .logo__text {
+  color: rgb(16, 16, 16);
+  font-size: 24px;
+  font-weight: 700;
+  border-right: 2px solid rgb(224, 224, 224);
+  padding-right: 15px;
+}
+
+.logo > .logo__text--after {
+  font-size: 8px;
+  font-weight: 700;
+  align-self: baseline;
+  padding-left: 20px;
+  color: rgb(126, 126, 126);
+  letter-spacing: 1.2px;
+}
+
+.navigation {
+  align-self: center;
+  margin: 5px 30px 10px 0;
+}
+
+.navigation > ul {
+  list-style-type: none;
+  display: flex;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.navigation > ul li:not(:last-child) {
+  margin-right: 1px;
+}
+
+.navigation ul li a:link,
+.navigation ul li a:visited {
+  color: rgb(116, 115, 122);
+  text-decoration: none;
+}
+
+.navigation ul li a:hover,
+.navigation ul li a:active {
+  color: rgb(12, 12, 12);
+  background-color: rgb(79, 205, 165);
+  text-decoration: none;
+}
+
+.btn {
+  background-color: rgb(236, 236, 236);
+  padding: 12px;
+}
+
+.image-wide {
+  width: 100%;
+  height: 310px;
+  /* object-fit: cover; */
+}
+
+.image-wide > img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+}
+
+.text-wide {
+  display: flex;
+  align-items: center;
+  background-color: rgb(86, 219, 177);
+  height: 135px;
+  padding: 0 100px;
+  line-height: 1.5;
+}
+
+.text-wide .text-wide__text {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.icons {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 330px;
+  background-color: rgb(53, 52, 52);
+  color: aliceblue;
+}
+
+.icons .icons__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+}
+
+.icons__card:not(:last-child) {
+  margin-right: 15px;
+}
+
+.icons .icons__icon {
+  align-self: center;
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 35px;
+  background-color: rgb(86, 219, 177);
+}
+
+.icons .icons__text {
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.icons .icons__separator {
+  height: 1px;
+  border-top: 1px solid rgb(166, 166, 166);
+}
+
+.icons .icons__text--after {
+  font-size: 10px;
+  line-height: 2;
+  color: rgb(93, 90, 87);
+  margin-top: 10px;
+  text-align: center;
+}
+
+.text-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 190px;
+  background-color: white;
+}
+
+.text-btn .text-btn__text {
+  color: rgb(87, 97, 105);
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.text-btn .text-btn__text--2 {
+  font-size: 11px;
+  color: rgb(190, 190, 190);
+}
+
+.btn-2 {
+  background-color: rgb(151, 77, 27);
+  padding: 10px 20px;
+  color: rgb(228, 228, 228);
+  text-decoration: none;
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  margin-top: 20px;
+}
+
+.icons-2 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 330px;
+  background-color: rgb(53, 52, 52);
+  color: aliceblue;
+}
+
+.icons-2 .icons-2__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+}
+
+.icons-2__card:not(:last-child) {
+  margin-right: 15px;
+}
+
+.icons-2 .icons-2__text {
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.icons-2 .icons-2__text--after {
+  font-size: 10px;
+  line-height: 2;
+  color: rgb(93, 90, 87);
+  margin-top: 10px;
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(27, 151, 114);
+  color: rgb(67, 213, 177);
+  height: 100px;
+  width: 100%;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.special-green {
+  color: rgb(223, 249, 235);
+}
