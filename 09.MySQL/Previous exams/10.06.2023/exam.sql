@@ -458,51 +458,93 @@ USE exam;
 
 /* EXERCISES */
 
-INSERT INTO courses(name, duration_hours, start_date, teacher_name, description, university_id)
-SELECT concat(teacher_name, ' course'),
-char_length(name) / 10,
-date_add(start_date, INTERVAL 5 DAY),
-reverse(teacher_name),
-concat('Course ', teacher_name, reverse(description)),
-day(start_date)
-FROM courses
-WHERE id <= 5;
+-- INSERT INTO courses(name, duration_hours, start_date, teacher_name, description, university_id)
+-- SELECT concat(teacher_name, ' course'),
+-- char_length(name) / 10,
+-- date_add(start_date, INTERVAL 5 DAY),
+-- reverse(teacher_name),
+-- concat('Course ', teacher_name, reverse(description)),
+-- day(start_date)
+-- FROM courses
+-- WHERE id <= 5;
+-- 
+-- UPDATE universities 
+-- SET tuition_fee = tuition_fee + 300
+-- WHERE id BETWEEN 5 AND 12;
+-- 
+-- DELETE FROM universities
+-- WHERE number_of_staff IS NULL;
+-- 
+-- SELECT * FROM cities
+-- ORDER BY population DESC;
+-- 
+-- SELECT first_name, last_name, age, phone, email FROM students
+-- WHERE age >= 21
+-- ORDER BY first_name DESC, email ASC, id ASC
+-- LIMIT 10;
+-- 
+-- SELECT concat_ws(' ', s.first_name, s.last_name) AS full_name,
+-- substr(s.email, 2, 10) AS username,
+-- reverse(s.phone) AS password
+-- FROM students s
+-- LEFT JOIN students_courses sc ON sc.student_id = s.id
+-- WHERE sc.course_id IS NULL
+-- GROUP BY s.id
+-- ORDER BY `password` DESC;
+-- 
+-- SELECT count(*) AS students_count, u.name AS university_name FROM universities u
+-- JOIN courses c ON c.university_id = u.id
+-- JOIN students_courses sc ON sc.course_id = c.id
+-- GROUP BY u.name
+-- HAVING `students_count` >= 8
+-- ORDER BY `students_count` DESC, `university_name` DESC;
+-- 
+-- SELECT u.name AS university_name,
+-- c.name AS city_name,
+-- u.address,
+-- CASE
+-- 	WHEN u.tuition_fee < 800 THEN 'cheap'
+-- 	WHEN u.tuition_fee < 1200 THEN 'normal'
+-- 	WHEN u.tuition_fee < 2500 THEN 'high'
+-- 	WHEN u.tuition_fee >= 2500 THEN 'expensive'
+-- END AS price_rank,
+-- u.tuition_fee
+-- FROM universities u
+-- JOIN cities c ON u.city_id = c.id
+-- ORDER BY u.tuition_fee;
 
-UPDATE universities 
-SET tuition_fee = tuition_fee + 300
-WHERE id BETWEEN 5 AND 12;
+-- DELIMITER $
+-- 
+-- CREATE FUNCTION udf_average_alumni_grade_by_course_name(course_name VARCHAR(60)) RETURNS DECIMAL(10, 2)
+-- DETERMINISTIC
+-- BEGIN	
+-- 	DECLARE res DECIMAL(10, 2);
+-- SET res := (SELECT avg(sc.grade) FROM courses c
+-- JOIN students_courses sc ON c.id = sc.course_id
+-- JOIN students s ON s.id = sc.student_id
+-- WHERE c.name = course_name AND s.is_graduated = 1
+-- GROUP BY c.id);
+-- RETURN res;
+-- END $
+-- 
+-- DELIMITER ;
+-- 
+-- SELECT udf_average_alumni_grade_by_course_name('Quantum Physics') as average_alumni_grade FROM courses c
 
-DELETE FROM universities
-WHERE number_of_staff IS NULL;
+-- DELIMITER $
+-- 
+-- CREATE PROCEDURE udp_graduate_all_students_by_year(year_started INT)
+-- BEGIN
+-- 	UPDATE students s
+-- 	JOIN students_courses sc ON sc.student_id = s.id
+-- 	JOIN courses c ON sc.course_id = c.id
+-- 	SET is_graduated = 1
+-- 	WHERE YEAR(start_date) = year_started;
+-- END $
+-- 
+-- DELIMITER ;
 
-SELECT * FROM cities
-ORDER BY population DESC;
-
-SELECT first_name, last_name, age, phone, email FROM students
-WHERE age >= 21
-ORDER BY first_name DESC, email ASC, id ASC
-LIMIT 10;
-
-SELECT concat_ws(' ', s.first_name, s.last_name) AS full_name,
-substr(s.email, 2, 10) AS username,
-reverse(s.phone) AS password
-FROM students s
-LEFT students_courses sc ON sc.student_id = s.id
-WHERE sc.course_id IS NULL
-GROUP BY s.id
-ORDER BY `password` DESC;
-
-
-
-
-
-
-
-
-
-
-
-
+-- CALL udp_graduate_all_students_by_year(2017);
 
 
 
