@@ -1,0 +1,92 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+}
+
+.container-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 136px 104px 136px;
+}
+
+.cards-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.cards-text__header {
+  font-size: 4.2rem;
+  font-weight: 500;
+}
+
+.cards-text__subheader {
+  font-size: 2rem;
+}
+
+.header-colored {
+  color: rgb(50, 125, 196);
+}
+
+.cards {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.card {
+  flex: 1 1 33%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(129, 157, 175);
+  border-radius: 3.2rem;
+  overflow: hidden;
+}
+
+.card__img {
+  width: 100%;
+}
+
+.card__img img {
+  width: 100%;
+  border-radius: 3.2rem;
+}
+
+.card__header {
+  margin-top: 25px;
+  margin-left: 25px;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.card_text {
+  margin-left: 25px;
+  margin-top: 1.5rem;
+  font-size: 2.1rem;
+}
+
+.card__btn:link,
+.card__btn:visited {
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-bottom: 25px;
+  text-decoration: none;
+  background-color: rgb(50, 125, 196);
+  align-self: flex-start;
+  padding: 8px 30px;
+  border-radius: 30px;
+  color: white;
+  outline: 1px solid white;
+}
