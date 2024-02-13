@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: 'Inter';
+}
+
+.main-container {
+  max-width: 192rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 23rem;
+  height: 13rem;
+}
+
+.header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.nav-buttons ul {
+  display: flex;
+  list-style: none;
+  gap: 6rem;
+}
+
+.nav-buttons ul li a {
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.active {
+  padding: 2rem 3rem;
+  background-color: rgb(173, 226, 223);
+  border-radius: 1rem;
+  font-weight: 600;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 53rem;
+  background-color: rgb(173, 226, 223);
+  line-height: 2;
+}
+
+.links-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.links-content h1 {
+  font-size: 7.8rem;
+}
+
+.links-content p {
+  font-size: 2.2rem;
+}
+
+.links-buttons {
+  display: flex;
+  gap: 2rem;
+  margin-top: 8rem;
+}
+
+.links-buttons a:link,
+.links-buttons a:visited {
+  text-decoration: none;
+  font-size: 2rem;
+  color: white;
+  padding: 3rem 4.5rem;
+  background-color: black;
+  border-radius: 1rem;
+}
+
+.fa-apple,
+.fa-android {
+  margin-right: 1rem;
+}
+
+.numbers {
+  height: 49rem;
+  display: flex;
+  align-items: center;
+}
+
+.numbers-cards {
+  margin: 12rem 22.6rem 10rem 22.6rem;
+  display: flex;
+}
+
+.numbers-card {
+  flex: 1 1 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 27rem;
+}
+
+.numbers-card h1 {
+  font-size: 5.6rem;
+  font-weight: 600;
+}
+
+.numbers-card p {
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: 400;
+  padding: 4rem 4rem 0 4rem;
+}
+
+.border {
+  border-left: 2px solid rgb(219, 219, 219);
+  border-right: 2px solid rgb(219, 219, 219);
+}
+
+.info {
+  background-color: rgb(172, 225, 222);
+  height: 67.5rem;
+}

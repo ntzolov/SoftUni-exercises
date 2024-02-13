@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.cards-container {
+  font-family: 'Inter';
+  display: flex;
+  padding: 7rem 13.5rem 8rem 7rem;
+  background-color: rgb(217, 217, 217);
+  gap: 4rem;
+  color: rgb(89, 89, 89);
+}
+
+.card {
+  flex: 1 1 33%;
+  box-shadow: 3px 3px 20px -8px #a6a6a6;
+}
+
+.image img {
+  width: 100%;
+  height: 31rem;
+}
+
+.footer-image img {
+  width: 10%;
+}
+
+.text {
+  margin: 2.5rem 4.5rem 1rem 4.5rem;
+  border-bottom: 1px solid rgb(89, 89, 89);
+}
+
+.pretext {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.text h3 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 4rem;
+}
+
+.text p {
+  font-size: 1.9rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4.5rem 4rem 4.5rem;
+}
+
+.image-name {
+  display: flex;
+}
+
+.footer-name {
+  align-self: center;
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.footer-time {
+  font-size: 2rem;
+  align-self: center;
+  color: rgb(161, 162, 162);
+}
+
+.footer-image img {
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
