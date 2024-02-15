@@ -133,6 +133,225 @@ html {
 }
 
 .info {
+  padding: 0 32rem;
   background-color: rgb(172, 225, 222);
   height: 67.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.info-left {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 40%;
+  border: 2px dashed rgb(152, 184, 182);
+}
+
+.info-right {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 12rem;
+  padding-top: 12.5rem;
+}
+
+.info-right h1 {
+  font-size: 5rem;
+  font-weight: 600;
+  margin-bottom: 4rem;
+}
+
+.info-right h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+.info-right p {
+  font-size: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.info-right a:link,
+.info-right a:visited {
+  font-size: 2.2rem;
+  color: black;
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.5rem;
+}
+
+.pricing-title {
+  display: flex;
+  height: 104rem;
+  background-color: rgb(243, 245, 250);
+  flex-direction: column;
+  align-items: center;
+  padding: 7rem 0;
+}
+
+.pricing-title a {
+  text-decoration: none;
+  background-color: rgb(173, 226, 223);
+  padding: 1rem 2rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: black;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+}
+
+.pricing-title > h1 {
+  font-size: 5.5rem;
+  font-weight: 600;
+  margin-bottom: 9rem;
+}
+
+.pricing-cards {
+  background-color: white;
+  display: flex;
+  height: 67rem;
+  border-radius: 3rem;
+  overflow: hidden;
+}
+
+.cards {
+  flex: 1 1 55%;
+  display: flex;
+  margin-top: 4.5rem;
+}
+
+.card {
+  border-right: 1px solid rgb(219, 219, 219);
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  flex: 1 1 45%;
+}
+
+.header-card {
+  padding: 0 3.5rem 0 3.5rem;
+}
+
+.header-card h1 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.header-card p {
+  font-size: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.card-special {
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+.main-card {
+  border-top: 1px solid rgb(219, 219, 219);
+  width: 80%;
+  align-self: center;
+  padding: 3.5rem 0;
+}
+
+.main-card p {
+  font-size: 1.7rem;
+  font-weight: 500;
+  line-height: 2;
+}
+
+.footer-card {
+  align-self: center;
+  margin-top: 5rem;
+}
+
+.footer-card a {
+  text-decoration: none;
+  background-color: rgb(173, 226, 223);
+  padding: 3rem 7rem;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: black;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  align-self: center;
+}
+
+.text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  background-color: rgb(173, 226, 223);
+}
+
+.pretext {
+  align-self: center;
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.text h1 {
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin-bottom: 5rem;
+}
+
+.text p {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.text a {
+  background-color: black;
+  color: white;
+  font-weight: 500;
+  width: 90%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  padding: 3rem 4rem;
+  transform: translate(-3rem, -2rem);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10rem;
+}
+
+.copyright {
+  padding-left: 8rem;
+  font-size: 2rem;
+}
+
+.socials {
+  display: flex;
+  gap: 3rem;
+  padding-right: 8rem;
+  font-size: 2.2rem;
+}
+
+.a {
+  padding: 0 60rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.b {
+  font-size: 2.6rem !important;
+  padding: 0 55rem;
+  text-align: center;
+}
+
+.c {
+  height: 66rem;
 }
